@@ -18,17 +18,17 @@ nota que há novos componentes e fornece essa informação, que será introduzid
 <h2>Repartição dos objectivos</h2>
 <h3>Objetivos primários:</h3>
 <ol>
-    <li></li>
     <li>- Criar um servidor funcional, com base de dados (MySQL), web service (Apache) e interpretador de linguagem de scripts (PHP)</li>
     <li>- Esboço dos ecrãs da aplicação Android e da aplicação web</li>
     <li>- Protótipo funcional Invision da aplicação Android</li>
     <li>- Template da aplicação web</li>
-    <ol>- Features principais:
+    <li>- Features principais:</li>
+    <ol>
         <li>- Configuração de um computador consoante a compatibilidade de componentes</li>
         <li>- Login/Registo</li>
         <li>- Contas de utilizador/administrador</li>
     </ol>
-    
+
 </ol>
 
 </body>
