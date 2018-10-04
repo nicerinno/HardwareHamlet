@@ -1,3 +1,3 @@
 # HardwareHamlet
-Hi "<br>"
+Hi <br>
 hello
