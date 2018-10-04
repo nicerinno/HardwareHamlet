@@ -4,9 +4,7 @@
         <meta charset="UTF-8">
     </head>
     <body>
-
         <h1>Hardware Hamlet</h1>
-
         <h2>Explicação do tema</h2>
         <p> O Hardware Hamlet é uma aplicação android e web que permite ao utilizador
         criar a sua configuração de computador, sem ter de se preocupar com problemas de compatibilidade. E ainda saber que componentes
@@ -14,7 +12,6 @@
         <p> É também possível postar as configurações online, de modo a ajudar outros utilizadores que não sejam tão entendidos.
         É possível avaliar essas configurações, e comentar. Os dados das aplicações são atualizados através da comunidade: um utilizador
         nota que há novos componentes e fornece essa informação, que será introduzida na base de dados da aplicação.</p>
-
         <h2>Repartição dos objectivos</h2>
         <h3>Objetivos primários:</h3>
         <ol>
@@ -39,7 +36,6 @@
             </ol>
             <li>- Coding da aplicação web com as features principais</li>
         </ol>
-
         <h3>Objetivos intermédio</h3>
         <ol>
             <li>- Possibilidade de os utilizadores atualizarem os componentes existentes na base de dados, e acrescentarem novos componentes</li>
@@ -47,7 +43,6 @@
             <li>- Possibilidade de vários utilizadores classificarem uma configuração de outro utilizador</li>
             <li>- Possibilidade de vários utilizadores comentarem outras configurações</li>
         </ol>
-
         <h3>Objetivos avançados</h3>
         <ol>
             <li>- Sistema de rankings funcional, para os utilizadores que contribuam para a comunidade ao adicionarem componentes ou na criação
@@ -55,15 +50,12 @@
             <li>- Implementação dos preços de lojas portuguesas nos componentes</li>
             <li>- Report de informação falsa colocada por outros utilizadores</li>
         </ol>
-
         <h2>Requisitos mínimos para a aplicação ficar utilizável</h2>
         <ol>
             <li>- Servidor funcional</li>
             <li>- Aplicação web e aplicação android funcionais, a comunicar com o mesmo servidor, com as features principais (indicadas nos objectivos primários)</li>
         </ol>
-    
         <h2>Logs dos Task Managers</h2>
     .....
-
     </body>
 </html>
