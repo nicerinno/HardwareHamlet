@@ -15,12 +15,6 @@
 <h2>Repartição dos objectivos</h2>
 <h3>Objetivos primários:</h3>
 <ol>
-<!--     <li>- Criar um servidor funcional, com database management system (MySQL), web service (Apache) e interpretador de linguagem de scripts (PHP) ✔️</li>
-    <ol>
-        <li>- Instalar database management system ✔️</li>
-        <li>- Instalar web service ✔️</li>
-        <li>- Instalar interpretador de linguagem script ✔️</li>
-    </ol> -->
     <li>- Esboço da estrutura da base de dados</li>
     <li>- Escrita da base de dados</li>
     <li>- Popular a base de dados</li>
@@ -35,6 +29,12 @@
         <li>- Contas de utilizador/administrador</li>
     </ol>
     <li>- Coding da aplicação web com as features principais</li>
+    <li>- Criar um servidor funcional, com database management system (MySQL), web service (Apache) e interpretador de linguagem de scripts (PHP), para alojar o projeto</li>
+    <ol>
+        <li>- Instalar database management system </li>
+        <li>- Instalar web service </li>
+        <li>- Instalar interpretador de linguagem script </li>
+    </ol>
 </ol>
 <h3>Objetivos intermédio</h3>
 <ol>
