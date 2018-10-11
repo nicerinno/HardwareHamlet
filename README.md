@@ -15,12 +15,12 @@
 <h2>Repartição dos objectivos</h2>
 <h3>Objetivos primários:</h3>
 <ol>
-    <li>- Criar um servidor funcional, com database management system (MySQL), web service (Apache) e interpretador de linguagem de scripts (PHP) ✔️</li>
+<!--     <li>- Criar um servidor funcional, com database management system (MySQL), web service (Apache) e interpretador de linguagem de scripts (PHP) ✔️</li>
     <ol>
         <li>- Instalar database management system ✔️</li>
         <li>- Instalar web service ✔️</li>
         <li>- Instalar interpretador de linguagem script ✔️</li>
-    </ol>
+    </ol> -->
     <li>- Esboço da estrutura da base de dados</li>
     <li>- Escrita da base de dados</li>
     <li>- Popular a base de dados</li>
@@ -85,12 +85,12 @@
 <p><strong>Status:</strong> Concluído.</p>
 <p><strong>Auto-avaliação:</strong> 4(0-5).</p>
 
-<h3>Criação e configuraçao do servidor virtual LAMP e estruturação da base de dados</h3>
+<h3>Estruturação da base de dados</h3>
 <p><strong>Task Manager -</strong> Rodrigo Fernadnes </p>
 <p><strong>Descrição da tarefa:</strong></p>
-<p>Começámos por fazer o download do VirtualBox e do Ubunto Server. Criámos uma máquina virtual com o sistema operativo Ubunto Server e definimos o nome do host, do utilizador e a password.</p>
-<p>Instalámos os programas necessários: Apache2, MySQL, PHP7 e phpmyadmin. Como adição, colocamos também o serviço de email a funcionar.</p>
-<p><strong>Status:</strong> Primeira fase concluída.</p>
+<p>Decidi utilizar o draw.io para o grupo fazer a estrutura da base de dados.</p>
+<p></p>
+<p><strong>Status:</strong> Em curso.</p>
 <p><strong>Auto-avaliação:</strong> (0-5).</p>
 
 
