@@ -87,7 +87,7 @@
 
 <h3>Criação e configuraçao do servidor virtual LAMP e estruturação da base de dados</h3>
 <p><strong>Task Manager -</strong> Rodrigo Fernadnes </p>
-<p><strong>Descrição da tarega:</p>
+<p><strong>Descrição da tarega:</strong></p>
 <p>Começámos por fazer o download do VirtualBox e do Ubunto Server. Criámos uma máquina virtual com o sistema operativo Ubunto Server e definimos o nome do host, do utilizador e a password.</p>
 <p>Instalámos os programas necessários: Apache2, MySQL, PHP7 e phpmyadmin. Como adição, colocamos também o serviço de email a funcionar.</p>
 <p><strong>Status:</strong> Primeira fase concluída.</p>
