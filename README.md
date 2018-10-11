@@ -19,7 +19,7 @@
     <li>- Contas de utilizador/administrador</li>
     <li>- Configuração de um computador consoante a compatibilidade de componentes</li>
     <li>- Possibilidade de o utilizador postar uma configuração que tenha feito</li>
-    <li>- Possibilidade de os utilizadores atualizarem os componentes existentes na base de dados, e acrescentarem novos componentes</li>
+    <li>- Possibilidade de os utilizadores atualizarem os componentes existentes na base de dados, e acrescentarem novos componentes (apenas através da página web)</li>
 </ol>
 <h3>Objetivos intermédios:</h3>
 <ol>
