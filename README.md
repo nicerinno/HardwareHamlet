@@ -15,31 +15,14 @@
 <h2>Repartição dos objectivos</h2>
 <h3>Objetivos primários:</h3>
 <ol>
-    <li>- Esboço da estrutura da base de dados</li>
-    <li>- Escrita da base de dados</li>
-    <li>- Popular a base de dados</li>
-    <li>- Esboço dos ecrãs da aplicação Android e da aplicação web</li>
-    <li>- Protótipo funcional Invision da aplicação Android</li>
-    <li>- Template da aplicação web</li>
-    <li>- Coding da aplicação android</li>
-    <li>- Features principais:</li>
-    <ol>
-        <li>- Configuração de um computador consoante a compatibilidade de componentes</li>
-        <li>- Login/Registo, com login com "remember me"</li>
-        <li>- Contas de utilizador/administrador</li>
-    </ol>
-    <li>- Coding da aplicação web com as features principais</li>
-    <li>- Criar um servidor funcional, com database management system (MySQL), web service (Apache) e interpretador de linguagem de scripts (PHP), para alojar o projeto</li>
-    <ol>
-        <li>- Instalar database management system </li>
-        <li>- Instalar web service </li>
-        <li>- Instalar interpretador de linguagem script </li>
-    </ol>
-</ol>
-<h3>Objetivos intermédio</h3>
-<ol>
+    <li>- Login/Registo, com login com "remember me"</li>
+    <li>- Contas de utilizador/administrador</li>
+    <li>- Configuração de um computador consoante a compatibilidade de componentes</li>
+    <li>- Possibilidade de o utilizador postar uma configuração que tenha feito</li>
     <li>- Possibilidade de os utilizadores atualizarem os componentes existentes na base de dados, e acrescentarem novos componentes</li>
-    <li>- Possibilidade de o utilizar postar uma configuração que tenha feito</li>
+</ol>
+<h3>Objetivos intermédios:</h3>
+<ol>
     <li>- Possibilidade de vários utilizadores classificarem uma configuração de outro utilizador</li>
     <li>- Possibilidade de vários utilizadores comentarem outras configurações</li>
 </ol>
