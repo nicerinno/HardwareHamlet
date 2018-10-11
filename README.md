@@ -54,7 +54,7 @@
 <h2>Logs dos Task Managers</h2>
 <h3>1º Objetivo - Elaboração de uma apresentação da nossa aplicação.</h3>
 <p><strong>Task Manager -</strong> Alexandre Amorim</p>
-<p><strong>Descrição da tarefa:</strong>
+<p><strong>Descrição da tarefa:</strong></p>
 <ol>
     <li>Criação de um PowerPoint da apresentação; </li>
     <li>Atribuição dos slides a apresentar aos membros do grupo;</li>
@@ -67,7 +67,7 @@
 
 <h3>2º Objetivo - Criar uma conta GitHub e um repositório partilhado.</h3>
 <p><strong>Task Manager -</strong> Rodrigo Serra</p>
-<p><strong>Descrição da tarefa:</strong>
+<p><strong>Descrição da tarefa:</strong></p>
 <p>Os 3 membros começaram por criar uma conta no github.
     O task manager, eu, ficou encarregue de criar o repositório git e colocar os restantes membros como colaboradores do repositório.
     Após essa tarefa, procedeu-se para a criação do ficheiro readme onde ficará registada toda a informação do projeto, incluindo a sua evolução.
@@ -85,6 +85,13 @@
 <p><strong>Status:</strong> Concluído.</p>
 <p><strong>Auto-avaliação:</strong> 4(0-5).</p>
 
+<h3>Criação e configuraçao do servidor virtual LAMP e estruturação da base de dados</h3>
+<p><strong>Task Manager -</strong> Rodrigo Fernadnes </p>
+<p><strong>Descrição da tarega:</p>
+<p>Começámos por fazer o download do VirtualBox e do Ubunto Server. Criámos uma máquina virtual com o sistema operativo Ubunto Server e definimos o nome do host, do utilizador e a password.</p>
+<p>Instalámos os programas necessários: Apache2, MySQL, PHP7 e phpmyadmin. Como adição, colocamos também o serviço de email a funcionar.</p>
+<p><strong>Status:</strong> Primeira fase concluída.</p>
+<p><strong>Auto-avaliação:</strong> (0-5).</p>
 
 
 
