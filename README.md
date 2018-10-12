@@ -14,6 +14,7 @@
 <h2>Repartição dos objectivos</h2>
 <h3>Objetivos primários:</h3>
 <ol>
+	<li>- Aplicação Android e web, que partilham dados entre si</li>
     <li>- Login/Registo, com login com "remember me"</li>
     <li>- Contas de utilizador/administrador</li>
     <li>- Configuração de um computador consoante a compatibilidade de componentes</li>
@@ -67,10 +68,10 @@
 <p><strong>Status:</strong> Concluído.</p>
 <p><strong>Auto-avaliação:</strong> 4(0-5).</p>
 
-<h3>4º Objetivo - Estruturação da base de dados</h3>
+<h3>4º Objetivo - Estrutura e design das aplicações</h3>
 <p><strong>Task Manager -</strong> Rodrigo Fernadnes </p>
 <p><strong>Descrição da tarefa:</strong></p>
-<p>Decidi utilizar o draw.io para o grupo fazer a estrutura da base de dados.</p>
+<p>Começámos por definir o design geral da aplicação web.</p>
 <p></p>
 <p><strong>Status:</strong> Em curso.</p>
 <p><strong>Auto-avaliação:</strong> (0-5).</p>
