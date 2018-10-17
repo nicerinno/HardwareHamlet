@@ -72,7 +72,7 @@
 <p><strong>Task Manager -</strong> Rodrigo Fernadnes </p>
 <p><strong>Descrição da tarefa:</strong></p>
 <p>Começámos por definir o design geral da aplicação web.</p>
-<p></p>
+<p>Após terminar o design da aplicação web (ainda por colocar no repositório de imagens), procedemos para o design da aplicação Android.</p>
 <p><strong>Status:</strong> Em curso.</p>
 <p><strong>Auto-avaliação:</strong> (0-5).</p>
 
