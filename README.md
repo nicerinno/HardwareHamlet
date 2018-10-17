@@ -5,12 +5,13 @@
 <body>
 <h1>Hardware Hamlet</h1>
 <h2>Explicação do tema</h2>
-<p> O Hardware Hamlet é uma aplicação android e web que permite ao utilizador
-    criar a sua configuração de computador, sem ter de se preocupar com problemas de compatibilidade. E ainda saber que componentes
-    são compatíveis com o seu computador fixo/portátil, caso queira fazer update do seu hardware.</p>
-<p> É também possível postar as configurações online, de modo a ajudar outros utilizadores que não sejam tão entendidos.
-    É possível avaliar essas configurações, e comentar. Os dados das aplicações são atualizados através da comunidade: um utilizador
-    nota que há novos componentes e fornece essa informação, que será introduzida na base de dados da aplicação.</p>
+<p> O Hardware Hamlet é uma aplicação android e web que permite ao utilizador criar a sua configuração de computador, 
+sem ter de se preocupar com problemas de compatibilidade, e ainda saber que componentes são compatíveis com o seu computador fixo, caso queira fazer update do seu hardware. 
+É também possível postar as configurações online, de modo a ajudar outros utilizadores que não sejam tão entendidos. É possível avaliar essas configurações, e comentar.
+ É também possível saber o preço de cada configuração, com base em lojas portuguesas.</p>
+<p> Os dados das aplicações são atualizados através da comunidade: um utilizador nota que há novos componentes e fornece essa informação, 
+que será introduzida na base de dados da empresa. Para motivar a comunidade a participar na atualização da base de dados da empresa, será introduzido um sistema
+ de reputação onde os utilizadores são recompensados com títulos de medalhas pela sua participação.</p>
 <h2>Repartição dos objectivos</h2>
 <h3>Objetivos primários:</h3>
 <ol>
