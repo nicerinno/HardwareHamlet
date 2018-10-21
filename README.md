@@ -74,7 +74,8 @@ que será introduzida na base de dados da empresa. Para motivar a comunidade a p
 <p><strong>Descrição da tarefa:</strong></p>
 <p>Começámos por definir o design geral da aplicação web.</p>
 <p>Após terminar o design da aplicação web (ainda por colocar no repositório de imagens), procedemos para o design da aplicação Android.</p>
-<p>Terminamos a estruturação da aplicação android. Vamos proceder para os desenhos da base de dados.</p>
+<p>Terminamos a estruturação da aplicação android.</p>
+<p>Após umas dicas e correções fornecidas pelos professores, fizemos um aperfeiçoamento do design inicial, tendo mais em conta a UX. </p>
 <p><strong>Status:</strong> Em curso.</p>
 <p><strong>Auto-avaliação:</strong> (0-5).</p>
 
