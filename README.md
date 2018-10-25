@@ -35,6 +35,18 @@ que será introduzida na base de dados da empresa. Para motivar a comunidade a p
     <li>- Report de informação falsa colocada por outros utilizadores</li>
 </ol>
 
+<h2>Requisitos mínimos para o Servidor(UBUNTO)</h2>
+<ol>
+	<li>Sistema operativo: Ubunto server, última versão LTS</li>
+	<li>RAM: entre 1,5 a 3GB de RAM</li>
+	<li>Espaço de armazenamento: entre 10 a 20GB</li>
+	<li>Velocidade do precessador: mais de 1,8GHz</li>
+</ol>
+<h3>Razão da escolha dos requisitos</h3>
+<p>Escolhemos o Ubunto server, a ultima versão LTS disponível, para garantir maior longevidade do nosso servidor, sem precisar de uma atualização do SO. <br>
+Pensamos que a memória RAM seja suficiente, pois não é necessário haver mais recursos para o tipo de aplicações que vamos criar. <br>
+Talvez, mais tarde, precisaremos de aumentar o espaço de armazenamento, dependendo do tamanho da base de dados.</p>
+
 <h2>Logs dos Task Managers</h2>
 <h3>1º Objetivo - Elaboração de uma apresentação da nossa aplicação.</h3>
 <p><strong>Task Manager -</strong> Alexandre Amorim</p>
@@ -78,6 +90,8 @@ que será introduzida na base de dados da empresa. Para motivar a comunidade a p
 <p>Após umas dicas e correções fornecidas pelos professores, fizemos um aperfeiçoamento do design inicial, tendo mais em conta a UX. </p>
 <p><strong>Status:</strong> Em curso.</p>
 <p><strong>Auto-avaliação:</strong> (0-5).</p>
+
+<h3>5º Objetivo - Defini</h3>
 
 
 
