@@ -81,7 +81,7 @@ Talvez, mais tarde, precisaremos de aumentar o espaço de armazenamento, depende
 <p><strong>Auto-avaliação:</strong> 4(0-5).</p>
 
 <h3>4º Objetivo - Estrutura e design das aplicações</h3>
-<p><strong>Task Manager -</strong> Rodrigo Fernadnes </p>
+<p><strong>Task Manager -</strong> Rodrigo Fernandes </p>
 <p><strong>Descrição da tarefa:</strong></p>
 <p>Começámos por definir o design geral da aplicação web.</p>
 <p>Após terminar o design da aplicação web (ainda por colocar no repositório de imagens), procedemos para o design da aplicação Android.</p>
