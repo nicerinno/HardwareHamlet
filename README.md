@@ -97,7 +97,7 @@ Talvez, mais tarde, precisaremos de aumentar o espaço de armazenamento, depende
 <p><strong>Status:</strong> Terminado.</p>
 <p><strong>Auto-avaliação:</strong> 4(0-5).</p>
 
-<h3>6º Objetivo - </h3>
+<h3>6º Objetivo - Criação do servidor</h3>
 <p><strong>Task Manager -</strong> Mário Miguel </p>
 <p><strong>Descrição da tarefa:</strong></p>
 <p><strong>Status:</strong> Em Curso.</p>
