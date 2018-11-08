@@ -76,23 +76,32 @@ Talvez, mais tarde, precisaremos de aumentar o espaço de armazenamento, depende
 <p><strong>Descrição da tarefa:</strong>
 <p>Nesta tarefa introduzimos no ficheiro readme, em formato HTML, a ideia do projeto e uma lista de objetivos, dividida entre objetivos primários, intermédios e avançados.<br>
     Introduzimos os logs das tarefas concluidas até à data, onde cada log é da autoria do respetivo task manager.
-
 </p>
 <p><strong>Status:</strong> Concluído.</p>
 <p><strong>Auto-avaliação:</strong> 4(0-5).</p>
 
 <h3>4º Objetivo - Estrutura e design das aplicações</h3>
-<p><strong>Task Manager -</strong> Rodrigo Fernadnes </p>
+<p><strong>Task Manager -</strong> Rodrigo Fernandes </p>
 <p><strong>Descrição da tarefa:</strong></p>
 <p>Começámos por definir o design geral da aplicação web.</p>
 <p>Após terminar o design da aplicação web (ainda por colocar no repositório de imagens), procedemos para o design da aplicação Android.</p>
 <p>Terminamos a estruturação da aplicação android.</p>
 <p>Após umas dicas e correções fornecidas pelos professores, fizemos um aperfeiçoamento do design inicial, tendo mais em conta a UX. </p>
-<p><strong>Status:</strong> Em curso.</p>
+<p><strong>Status:</strong> Terminado.</p>
+<p><strong>Auto-avaliação:</strong> 3(0-5).</p>
+
+<h3>5º Objetivo - Estruturação da base de dados</h3>
+<p><strong>Task Manager -</strong> Alexandre Amorim </p>
+<p><strong>Descrição da tarefa:</strong></p>
+<p>Nesta tarefa começámos por destinguir todos os atributos do nosso projeto para criar as tabelas da base de dados, depois com a ajuda dos professores atribuímos as suas relações para evitar possíveis redundâncias.</p> 
+<p><strong>Status:</strong> Terminado.</p>
+<p><strong>Auto-avaliação:</strong> 4(0-5).</p>
+
+<h3>6º Objetivo - Criação do servidor</h3>
+<p><strong>Task Manager -</strong> Mário Miguel </p>
+<p><strong>Descrição da tarefa:</strong></p>
+<p><strong>Status:</strong> Em Curso.</p>
 <p><strong>Auto-avaliação:</strong> (0-5).</p>
-
-<h3>5º Objetivo - Defini</h3>
-
 
 
 
