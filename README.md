@@ -93,7 +93,9 @@ Talvez, mais tarde, precisaremos de aumentar o espaço de armazenamento, depende
 <h3>5º Objetivo - Estruturação da base de dados</h3>
 <p><strong>Task Manager -</strong> Alexandre Amorim </p>
 <p><strong>Descrição da tarefa:</strong></p>
-<p><strong>Status:</strong> Em curso.</p>
+<p>Nesta tarefa começámos por destinguir todos os atributos do nosso projeto para criar as tabelas da base de dados, depois com a ajuda</p> 
+<p>dos professores atribuímos as suas relações para evitar possíveis redundâncias.</p> 
+<p><strong>Status:</strong> Terminado.</p>
 <p><strong>Auto-avaliação:</strong> (0-5).</p>
 
 
