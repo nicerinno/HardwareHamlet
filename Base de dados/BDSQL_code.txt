@@ -39,6 +39,8 @@ CREATE TABLE users(
     password varchar(100) not null,
     description varchar(500) not null,
     reputation int not null,
+    active boolean not null,
+    validation_code varchar(10) not null,
     FOREIGN KEY (title_id) REFERENCES titles(title_id),
     FOREIGN KEY (usertype_id) REFERENCES user_type(usertype_id),
     FOREIGN KEY (medal_id) REFERENCES medals(medal_id)
@@ -53,6 +55,7 @@ CREATE TABLE components(
     description varchar(500) not null,
     price varchar(50) not null,
     flg_available boolean not null,
+    url_img varchar(255) not null,
     FOREIGN KEY (component_type_id) REFERENCES component_type(component_type_id),
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
