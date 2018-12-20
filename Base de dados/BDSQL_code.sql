@@ -55,7 +55,7 @@ CREATE TABLE components(
     description varchar(2000) not null,
     price double not null,
     flg_available boolean not null,
-	icon_url varchar(200) not null,
+	icon_url varchar(255) not null,
     FOREIGN KEY (component_type_id) REFERENCES component_type(component_type_id),
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
