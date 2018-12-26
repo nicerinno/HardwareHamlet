@@ -2,6 +2,7 @@
 
 function connDB ()
 {
+
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -16,7 +17,6 @@ function connDB ()
         die("Connection failed: " . $conn->connect_error);
     }
     else {
-        // echo "<br>","Ligado","<br>";
         return $conn;
     }
 

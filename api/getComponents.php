@@ -1,22 +1,19 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: R_Rod
+ * Users: R_Rod
  * Date: 20/12/2018
  * Time: 22:53
  */
 
-include_once "Component.php";
+include_once (__DIR__ . "/model/Component.php");
 include_once "db.php";
 
 header("Content-Type: application/json");
 
-
-
-$component[] = Component::class;
-
+$component = array();
 $conn = connDB();
-
+//TODO : tratar da questão de mostrar os componentes de cada build
 if(isset($_GET['component_type_id'])){
     $type = $_GET['component_type_id'];
 
@@ -26,7 +23,7 @@ if(isset($_GET['component_type_id'])){
 
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            array_push($component, $row);
+            array_push($component, $newComponent = new Component($row['component_id'],$row['component_type_id'],$row['user_id'],$row['brand'], $row['name'],$row['description'],$row['price'],$row['flg_available'],$row['icon_url']));
         }
     }
 
@@ -39,7 +36,7 @@ if(isset($_GET['component_type_id'])){
 
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            array_push($component, $row);
+            array_push($component, $newComponent = new Component($row['component_id'],$row['component_type_id'],$row['user_id'],$row['brand'], $row['name'],$row['description'],$row['price'],$row['flg_available'],$row['icon_url']));
         }
     }
 
@@ -52,7 +49,7 @@ if(isset($_GET['component_type_id'])){
 
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            array_push($component, $row);
+            array_push($component, $newComponent = new Component($row['component_id'],$row['component_type_id'],$row['user_id'],$row['brand'], $row['name'],$row['description'],$row['price'],$row['flg_available'],$row['icon_url']));
         }
     }
  } else if($_GET['price-order'] && $_GET['component_type_id']) {
@@ -65,7 +62,7 @@ if(isset($_GET['component_type_id'])){
 
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            array_push($component, $row);
+            array_push($component, $newComponent = new Component($row['component_id'],$row['component_type_id'],$row['user_id'],$row['brand'], $row['name'],$row['description'],$row['price'],$row['flg_available'],$row['icon_url']));
         }
     }
 } else{
@@ -74,7 +71,7 @@ if(isset($_GET['component_type_id'])){
     endConnDB($conn);
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            array_push($component, $row);
+            array_push($component, $newComponent = new Component($row['component_id'],$row['component_type_id'],$row['user_id'],$row['brand'], $row['name'],$row['description'],$row['price'],$row['flg_available'],$row['icon_url']));
         }
     }
 }

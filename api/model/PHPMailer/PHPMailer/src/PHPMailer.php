@@ -96,7 +96,7 @@ class PHPMailer
      *
      * @var string
      */
-    public $FromName = 'Root User';
+    public $FromName = 'Root Users';
 
     /**
      * The envelope sender of the message.
@@ -2044,7 +2044,7 @@ class PHPMailer
         ];
         if (empty($lang_path)) {
             // Calculate an absolute path so it can work if CWD is not here
-            $lang_path = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'language' . DIRECTORY_SEPARATOR;
+            $lang_path = dirname(__DIR__) . DIRECTORY_SEPARATOR . DIRECTORY_SEPARATOR;
         }
         //Validate $langcode
         if (!preg_match('/^[a-z]{2}(?:_[a-zA-Z]{2})?$/', $langcode)) {
@@ -2085,7 +2085,7 @@ class PHPMailer
      * @param array  $addr An array of recipients,
      *                     where each recipient is a 2-element indexed array with element 0 containing an address
      *                     and element 1 containing a name, like:
-     *                     [['joe@example.com', 'Joe User'], ['zoe@example.com', 'Zoe User']]
+     *                     [['joe@example.com', 'Joe Users'], ['zoe@example.com', 'Zoe Users']]
      *
      * @return string
      */
@@ -2103,7 +2103,7 @@ class PHPMailer
      * Format an address for use in a message header.
      *
      * @param array $addr A 2-element indexed array, element 0 containing an address, element 1 containing a name like
-     *                    ['joe@example.com', 'Joe User']
+     *                    ['joe@example.com', 'Joe Users']
      *
      * @return string
      */

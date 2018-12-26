@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: R_Rod
+ * Users: R_Rod
  * Date: 21/12/2018
  * Time: 01:07
  */
@@ -9,8 +9,8 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require_once(__DIR__ . '/PHPMailer/PHPMailer/src/Exception.php');
-require_once(__DIR__ .  '/PHPMailer/PHPMailer/src/PHPMailer.php');
-require_once(__DIR__ . '/PHPMailer/PHPMailer/src/SMTP.php') ;
+require_once(__DIR__ . '/PHPMailer/PHPMailer/src/PHPMailer.php');
+require_once(__DIR__ . '/PHPMailer/PHPMailer/src/SMTP.php');
 class Email
 {
     private $userEmail, $username, $validationCode;
@@ -51,7 +51,10 @@ class Email
         $mail->Username = "hardwarehamlet.mail@gmail.com";
         $mail->Password = "hardwarehamlet.arm";
 
-        $mail->setFrom('hardwarehamlet.mail@gmail.com', 'HardwareHamlet');
+        try {
+            $mail->setFrom('hardwarehamlet.mail@gmail.com', 'HardwareHamlet');
+        } catch (Exception $e) {
+        }
         $mail->addReplyTo('hardwarehamlet.mail@gmail.com', 'HardwareHamlet');
         $mail->addAddress($this->userEmail , $this->username);
         $mail->isHTML(true);
@@ -72,10 +75,13 @@ class Email
 //            echo 'Message could not be sent. Error: ' . $mail->ErrorInfo;
 //        }
 
-        if (!$mail->send()) {
-            echo "Mailer Error: " . $mail->ErrorInfo;
-        } else {
-            echo "Message sent!";
+        try {
+            if (!$mail->send()) {
+                echo "Mailer Error: " . $mail->ErrorInfo;
+            } else {
+                echo "Message sent!";
+            }
+        } catch (Exception $e) {
         }
 
     }
