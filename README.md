@@ -3,12 +3,10 @@
     <meta charset="UTF-8">
 </head>
 <style>
-h1 {
-color:red;
-}
+
 </style>
 <body>
-<h1>Hardware Hamlet</h1>
+<h1 style="color:blue;">Hardware Hamlet</h1>
 <h2>Explicação do tema</h2>
 <p> O Hardware Hamlet é uma aplicação android e web que permite ao utilizador criar a sua configuração de computador, 
 sem ter de se preocupar com problemas de compatibilidade, e ainda saber que componentes são compatíveis com o seu computador fixo, caso queira fazer update do seu hardware. 
