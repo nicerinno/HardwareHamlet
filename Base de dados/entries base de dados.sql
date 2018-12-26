@@ -233,8 +233,39 @@ Suporta 1 x ventoinha 120mm (1 x incluída com LED azul), Traseira: Suporta 1 x 
 (11, 1, "Cooler Master", "Caixa ATX Cooler Master MasterBox 5t com Janela Preta", "Motherboards suportadas: ATX, Micro-ATX, Mini-ITX, Slots de Expansão: 7, Sistema de Refrigeração: Superior: Suporta 1 x ventoinha 120mm ou 1 x 140mm (opcionais/não incluídas); Frontal: Suporta 3 x ventoinhas 120mm ou 2 x 140mm (1 x 120mm incluída); Traseira: Suporta 1 x ventoinha 120mm (incluída)", 90.90, true, "https://www.pcdiga.com/media/catalog/product/cache/1/image/2718f121925249d501c6086d4b8f9401/1/_/1_491.jpg"),
 (11, 1, "NZXT", "Caixa ATX NZXT S340 Special Edition com Janela Preta", "Motherboards Compatíveis: Mini-ITX, MicroATX, ATX ; Slots de Expansão: 7; Sistema de Refrigeração:
 Frontal: Suporta 2 x ventoinhas 140mm ou 2 x ventoinhas 120mm (opcionais/não incluídas), Topo: Suporta 1 x ventoinha 140/120mm (inclui 1 x ventoinha 120mm FN V2), Traseira: Suporta 1 x ventoinha 120mm (inclui 1 x ventoinha 120mm FN V2)", 99.90, true, "https://www.pcdiga.com/media/catalog/product/cache/1/image/2718f121925249d501c6086d4b8f9401/2/1/21891_1.jpg");
-
 	
 insert into builds(build_id, user_id, build_type_id, name, description, cpu_description, gpu_description, ram_description, price, likes)
 values
-(1,1,1,'Build teste', 'Apenas uma descrição da build de teste', 'Descrição do cpu teste', 'Descrição da gpu de teste', 'Descrição da ram de teste', ,0);
+(1,1,1,'Build teste', 'Apenas uma descrição da build de teste', 'Descrição do cpu teste', 'Descrição da gpu de teste', 'Descrição da ram de teste', 0 ,0);
+(2,1,2,'Build teste2', 'Apenas uma descrição da build de teste', 'Descrição do cpu teste', 'Descrição da gpu de teste', 'Descrição da ram de teste', 0 ,0);
+
+insert into build_components values 
+(1,1),
+(1,9),
+(1,15),
+(1,19),
+(1,19),
+(1,19),
+(1,20),
+(1,25),
+(1,27),
+(1,27),
+(1,27),
+(1,42),
+(1,42),
+(1,47),
+
+(2,5),
+(2,13),
+(2,17),
+(2,19),
+(2,19),
+(2,19),
+(2,21),
+(2,25),
+(2,27),
+(2,27),
+(2,27),
+(2,42),
+(2,42),
+(2,46);
