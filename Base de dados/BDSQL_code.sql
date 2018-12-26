@@ -63,12 +63,13 @@ CREATE TABLE components(
 CREATE TABLE builds(
     build_id int not null PRIMARY KEY AUTO_INCREMENT,
     user_id int not null,
-    buildtype_id int not null,
+    build_type_id int not null,
     name varchar(100) not null,
     description varchar(500) not null,
     cpu_description varchar(500) not null,
     gpu_description varchar(500) not null,
     ram_description varchar(500) not null,
+	price int not null,
     likes int not null,
     FOREIGN KEY (user_id) REFERENCES users(user_id),
     FOREIGN KEY (buildtype_id) REFERENCES build_type(buildtype_id)
