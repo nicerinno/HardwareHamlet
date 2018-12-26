@@ -97,12 +97,26 @@ Talvez, mais tarde, precisaremos de aumentar o espaço de armazenamento, depende
 <p><strong>Status:</strong> Terminado.</p>
 <p><strong>Auto-avaliação:</strong> 4(0-5).</p>
 
-<h3>6º Objetivo - Criação do servidor</h3>
+<h3>6º Objetivo - Configuração do servidor real</h3>
 <p><strong>Task Manager -</strong> Rodrigo Serra </p>
 <p><strong>Descrição da tarefa:</strong></p>
-<p><strong>Status:</strong> Em Curso.</p>
+<p>Configuração dos serviços Apache2, MySQL e PHP7.0 no servidor fornecido pela instituição, incluindo algumas medidas de segurança</p>
+<p><strong>Status:</strong> Terminado.</p>
+<p><strong>Auto-avaliação:</strong> 5 (0-5).</p>
+
+<h3>7º Objetivo - Escolha de um template para o website</h3>
+<p><strong>Task Manager -</strong> Mário Miguel </p>
+<p><strong>Descrição da tarefa:</strong></p>
+<p>Utilizando websites de templates gratuitos, procedemos para a escolha de um template para o nosso website.</p>
+<p>Estudámos a framework Smartie de modo a implementar o código php que iremos desenvolver mais tarde.</p>
+<p><strong>Status:</strong> Em curso.</p>
 <p><strong>Auto-avaliação:</strong> (0-5).</p>
 
-
+<h3>8º Objetivo - Desenvolvimento da API para a APP Android</h3>
+<p><strong>Task Manager -</strong> Rodrigo Serra </p>
+<p><strong>Descrição da tarefa:</strong></p>
+<p>Utilizando a linguagem PHP e os exemplos desenvolvidos nas aulas de Programação para a Web, procedemos para o desenvolvimento da API que iremos utilizar na Aplicação Android que iremos desenvolver.</p>
+<p><strong>Status:</strong> Em curso.</p>
+<p><strong>Auto-avaliação:</strong> (0-5).</p>
 
     .....
