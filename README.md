@@ -2,6 +2,11 @@
 <head>
     <meta charset="UTF-8">
 </head>
+<style>
+h1 {
+color:red;
+}
+</style>
 <body>
 <h1>Hardware Hamlet</h1>
 <h2>Explicação do tema</h2>
