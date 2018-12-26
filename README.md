@@ -2,9 +2,6 @@
 <head>
     <meta charset="UTF-8">
 </head>
-<style>
-
-</style>
 <body>
 <h1 style="color:blue;">Hardware Hamlet</h1>
 <h2>Explicação do tema</h2>
