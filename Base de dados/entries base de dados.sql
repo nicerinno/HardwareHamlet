@@ -239,7 +239,8 @@ values
 (1,1,1,'Build teste', 'Apenas uma descrição da build de teste', 'Descrição do cpu teste', 'Descrição da gpu de teste', 'Descrição da ram de teste', 0 ,0);
 (2,1,2,'Build teste2', 'Apenas uma descrição da build de teste', 'Descrição do cpu teste', 'Descrição da gpu de teste', 'Descrição da ram de teste', 0 ,0);
 
-insert into build_components values 
+insert into build_components(build_id,component_id) 
+values 
 (1,1),
 (1,9),
 (1,15),
