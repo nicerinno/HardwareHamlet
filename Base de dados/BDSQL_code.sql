@@ -31,16 +31,16 @@ CREATE TABLE build_type(
 
 CREATE TABLE users(
     user_id int not null PRIMARY KEY AUTO_INCREMENT,
-    title_id int not null,
+    title_id int not null,	
     usertype_id int not null,
     medal_id int not null,
     email varchar(100) not null,
-    username varchar(100) not null,
-    password varchar(100) not null,
+    username varchar(15) not null,
+    password varchar(61) not null,
     description varchar(500) not null,
     reputation int not null,
 	active boolean not null,
-	validation_code varchar(12) not null,
+	validation_code varchar(6) not null,
     FOREIGN KEY (title_id) REFERENCES titles(title_id),
     FOREIGN KEY (usertype_id) REFERENCES user_type(usertype_id),
     FOREIGN KEY (medal_id) REFERENCES medals(medal_id)

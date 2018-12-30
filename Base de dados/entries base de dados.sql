@@ -216,3 +216,57 @@ AMD AM4 / AM3 + / AM3 / AM2 + / AM2 / FM2 + / FM2 / FM1',65.90, true,'https://d3
 
 (9, 1, "Seagate", "SSHD Seagate 2TB + 8GB SSD FireCuda SATA III 64MB", "O Disco Seagate FireCuda de 2TB SATA III é a solução de armazenamento de dados que ajuda a garantir uma gestão de dados acessível de longo prazo. Um disco híbrido com 8GB SSD e uma velocidade de rotação de 7200RPM, para os melhores acessos possíveis.", 109.90, true, "https://d36djlzg0xu24k.cloudfront.net/media/catalog/product/cache/c687aa7517cf01e65c009f6943c2b1e9/S/T/ST2000DX002.jpg"),
 (9, 1, "Seagate", "SSHD Seagate 1TB + 8GB SSD FireCuda SATA III 64MB", "› O Disco Seagate FireCuda de 1TB SATA III é a solução de armazenamento de dados› Ajuda a garantir uma gestão de dados acessível de longo prazo› Um disco híbrido com 8GB SSD e uma velocidade de rotação de 7200RPM", 82.90, true,"https://d36djlzg0xu24k.cloudfront.net/media/catalog/product/cache/c687aa7517cf01e65c009f6943c2b1e9/S/T/ST1000DX002.jpg"),
+
+(10, 1,"HyperX", "Fury 4GB (1x4GB) DDR4-2400MHz CL15", "Capacidade: 4GB (1x4GB), Velocidade de Frequência: 2400MHz, Latência CAS: CL15, Tensão: 1.2V, Dimensões: 13335 mm x 3424 mm", 39.50, true,"https://d36djlzg0xu24k.cloudfront.net/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/H/X/HX424C15FB_2F4.jpg"),
+(10, 1, "HyperX", "Fury 8GB (1x8GB) DDR4-2400MHz CL15", "Capacidade: 8GB (1x8GB), Velocidade de Frequência: 2400MHz, Latência CAS: CL15, Tensão: 1.2V, Dimensões: 13335 mm x 3424 mm", 74.70, true, "https://d36djlzg0xu24k.cloudfront.net/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/H/X/HX424C15FB_2F4.jpg"),
+(10, 1, "HyperX", "Fury 8GB (2x4GB) DDR4-2400MHz CL15", "Capacidade: 8GB (2x4GB), Velocidade de Frequência: 2400MHz, Latência CAS: CL15, Dimensões: 13335 mm x 3424 mm", 84.90, true, "https://d36djlzg0xu24k.cloudfront.net/media/catalog/product/cache/926507dc7f93631a094422215b778fe0/H/X/HX421C14FBK2_2F8.jpg"),
+(10, 1, "HyperX", "Fury 16GB (1x16GB) DDR4-2400MHz CL15", "Capacidade: 16GB (1x16GB), Velocidade de Frequência: 2400MHz, Latência CAS: CL15, Tensão: 1.2V, Dimensões: 133.35 mm x 34.24 mm", 144.90, true, "https://www.pcdiga.com/media/catalog/product/cache/1/image/2718f121925249d501c6086d4b8f9401/2/0/20774_1.jpg"),
+(10, 1, "HyperX", "Fury 16GB (2x8GB) DDR4-2400MHz CL15", "Capacidade: 16GB (2x8GB), Velocidade de Frequência: 2400MHz, Latência CAS: CL15, Tensão: 1.2V, Dimensões: 133.35 mm x 34.24 mm", 159.30, true, "https://d3fa68hw0m2vcc.cloudfront.net/5ba/181576111.jpeg"),
+(10, 1, "Corsair", "Vengeance LPX 8GB (1x8GB) DDR4-2400MHz CL14", "Série: Vengeance® LPX, Capacidade: Single Channel 4GB (4GBx1), Tipo: DDR4, Velocidade: 2400MHz, Latência: 16-16-16-39, Voltagem: 1.2v, Recursos: Intel XMP 2.0 (Extreme Memory Profile) Ready", 56.50, true, "https://www.pcdiga.com/media/catalog/product/cache/1/image/2718f121925249d501c6086d4b8f9401/s/e/sem-t_tulo-3_16.jpg"),
+(10, 1, "Corsair", "Vengeance LPX 8GB (1x8GB) DDR4-2400MHz CL16", "Série: Vengeance® LPX, Capacidade: Single Channel 8GB (8GBx1), Tipo: DDR4, Velocidade: 2400MHz, Latência: 16-16-16-39,Voltagem: 1.2v, Recursos: Intel XMP 2.0 (Extreme Memory Profile) Ready", 103.50, true, "https://www.pcdiga.com/media/catalog/product/cache/1/image/2718f121925249d501c6086d4b8f9401/s/e/sem-t_tulo-3_16.jpg"),
+(10, 1, "Corsair", "Vengeance LPX 8GB (2x4GB) DDR4-2400MHz CL14", "Série: Vengeance® LPX, Capacidade: Kit Dual-Channel 8GB (4GBx2), Tipo: DDR4, Velocidade: 2400MHz, Latência: 14-16-16-31, Voltagem: 1.2V, Recursos: Intel XMP 2.0 (Extreme Memory Profile) Ready", 112.90, true, "https://www.pcdiga.com/media/catalog/product/cache/1/image/2718f121925249d501c6086d4b8f9401/1/_/1_31_7_7.jpg"),
+
+(11, 1, "Nox", "Caixa ATX Nox Modus Blue LED Edition Preta", "Motherboards Compatíveis: ATX; micro ATX, Slots de expansão: 7, Sistema de refrigeração: Frontal: 
+Suporta 1 x ventoinha 120mm (1 x incluída com LED azul), Traseira: Suporta 1 x ventoinha 80mm (opcional/não incluída)",27.90 , true, "https://www.pcdiga.com/media/catalog/product/cache/1/image/2718f121925249d501c6086d4b8f9401/1/_/1_2_93.jpg"),
+(11, 1, "Corsair", "Caixa ATX Corsair Crystal 460X RGB Preta", "Motherboards compatíveis: Mini-ITX, MicroATX, ATX, Slots de expansão: 7, Ventoinhas incluídas: Frontal: 3 x 120mm SP120 RGB LED", 169.90, true, "https://www.pcdiga.com/media/catalog/product/cache/1/image/2718f121925249d501c6086d4b8f9401/1/_/1_2_62.jpg"),
+(11, 1, "Corsair", "Caixa Micro-ATX Corsair Carbide 88R com Janela Preta", "Motherboards compatíveis: Mini-ITX, MicroATX, Slots de expansão: 4, Ventoinhas incluídas: Traseira: 1 x 120mm", 48.90, true, "https://www.pcdiga.com/media/catalog/product/cache/1/image/2718f121925249d501c6086d4b8f9401/1/_/1_8_57.jpg"),
+(11, 1, "Cooler Master", "Caixa ATX Cooler Master MasterBox 5t com Janela Preta", "Motherboards suportadas: ATX, Micro-ATX, Mini-ITX, Slots de Expansão: 7, Sistema de Refrigeração: Superior: Suporta 1 x ventoinha 120mm ou 1 x 140mm (opcionais/não incluídas); Frontal: Suporta 3 x ventoinhas 120mm ou 2 x 140mm (1 x 120mm incluída); Traseira: Suporta 1 x ventoinha 120mm (incluída)", 90.90, true, "https://www.pcdiga.com/media/catalog/product/cache/1/image/2718f121925249d501c6086d4b8f9401/1/_/1_491.jpg"),
+(11, 1, "NZXT", "Caixa ATX NZXT S340 Special Edition com Janela Preta", "Motherboards Compatíveis: Mini-ITX, MicroATX, ATX ; Slots de Expansão: 7; Sistema de Refrigeração:
+Frontal: Suporta 2 x ventoinhas 140mm ou 2 x ventoinhas 120mm (opcionais/não incluídas), Topo: Suporta 1 x ventoinha 140/120mm (inclui 1 x ventoinha 120mm FN V2), Traseira: Suporta 1 x ventoinha 120mm (inclui 1 x ventoinha 120mm FN V2)", 99.90, true, "https://www.pcdiga.com/media/catalog/product/cache/1/image/2718f121925249d501c6086d4b8f9401/2/1/21891_1.jpg");
+	
+insert into builds(build_id, user_id, build_type_id, name, description, cpu_description, gpu_description, ram_description, price, likes)
+values
+(1,1,1,'Build teste', 'Apenas uma descrição da build de teste', 'Descrição do cpu teste', 'Descrição da gpu de teste', 'Descrição da ram de teste', 0 ,0);
+(2,1,2,'Build teste2', 'Apenas uma descrição da build de teste', 'Descrição do cpu teste', 'Descrição da gpu de teste', 'Descrição da ram de teste', 0 ,0);
+
+insert into build_components(build_id,component_id) 
+values 
+(1,1),
+(1,9),
+(1,15),
+(1,19),
+(1,19),
+(1,19),
+(1,20),
+(1,25),
+(1,27),
+(1,27),
+(1,27),
+(1,42),
+(1,42),
+(1,47),
+
+(2,5),
+(2,13),
+(2,17),
+(2,19),
+(2,19),
+(2,19),
+(2,21),
+(2,25),
+(2,27),
+(2,27),
+(2,27),
+(2,42),
+(2,42),
+(2,46);
