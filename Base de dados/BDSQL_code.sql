@@ -25,7 +25,7 @@ CREATE TABLE component_type(
 );
 
 CREATE TABLE build_type(
-    buildtype_id int not null PRIMARY KEY AUTO_INCREMENT,
+    build_type_id int not null PRIMARY KEY AUTO_INCREMENT,
     name varchar(100) not null
 );
 
@@ -72,12 +72,13 @@ CREATE TABLE builds(
 	price int not null,
     likes int not null,
     FOREIGN KEY (user_id) REFERENCES users(user_id),
-    FOREIGN KEY (buildtype_id) REFERENCES build_type(buildtype_id)
+    FOREIGN KEY (build_type_id) REFERENCES build_type(build_type_id)
 );
 
 CREATE TABLE build_components(
     build_id int not null,
     component_id int not null,
+	quantity int not null,
     PRIMARY KEY(build_id, component_id),
     FOREIGN KEY(build_id) REFERENCES builds(build_id),
     FOREIGN KEY(component_id) REFERENCES components(component_id)
@@ -87,5 +88,7 @@ CREATE TABLE comments(
     comment_id int not null PRIMARY KEY AUTO_INCREMENT,
     build_id int not null,
     content varchar(500) not null,
-    FOREIGN KEY (build_id) REFERENCES builds(build_id)
+	user_id int not null,
+    FOREIGN KEY (build_id) REFERENCES builds(build_id),
+	FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
