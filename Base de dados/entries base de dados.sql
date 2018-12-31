@@ -236,37 +236,27 @@ Frontal: Suporta 2 x ventoinhas 140mm ou 2 x ventoinhas 120mm (opcionais/não in
 	
 insert into builds(build_id, user_id, build_type_id, name, description, cpu_description, gpu_description, ram_description, price, likes)
 values
-(1,1,1,'Build teste', 'Apenas uma descrição da build de teste', 'Descrição do cpu teste', 'Descrição da gpu de teste', 'Descrição da ram de teste', 0 ,0);
+(1,1,1,'Build teste', 'Apenas uma descrição da build de teste', 'Descrição do cpu teste', 'Descrição da gpu de teste', 'Descrição da ram de teste', 0 ,0),
 (2,1,2,'Build teste2', 'Apenas uma descrição da build de teste', 'Descrição do cpu teste', 'Descrição da gpu de teste', 'Descrição da ram de teste', 0 ,0);
 
-insert into build_components(build_id,component_id) 
+insert into build_components(build_id,component_id,quantity) 
 values 
-(1,1),
-(1,9),
-(1,15),
-(1,19),
-(1,19),
-(1,19),
-(1,20),
-(1,25),
-(1,27),
-(1,27),
-(1,27),
-(1,42),
-(1,42),
-(1,47),
+(1,1,1),
+(1,9,1),
+(1,15,1),
+(1,19,3),
+(1,20,1),
+(1,25,1),
+(1,27,3),
+(1,42,2),
+(1,47,1),
 
-(2,5),
-(2,13),
-(2,17),
-(2,19),
-(2,19),
-(2,19),
-(2,21),
-(2,25),
-(2,27),
-(2,27),
-(2,27),
-(2,42),
-(2,42),
-(2,46);
+(2,5,1),
+(2,13,1),
+(2,17,1),
+(2,19,3),
+(2,21,1),
+(2,25,1),
+(2,27,3),
+(2,42,2),
+(2,46,1);
