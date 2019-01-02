@@ -69,7 +69,7 @@ CREATE TABLE builds(
     cpu_description varchar(500) not null,
     gpu_description varchar(500) not null,
     ram_description varchar(500) not null,
-	price int not null,
+	price double not null,
     likes int not null,
     FOREIGN KEY (user_id) REFERENCES users(user_id),
     FOREIGN KEY (build_type_id) REFERENCES build_type(build_type_id)
