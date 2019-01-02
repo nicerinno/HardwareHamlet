@@ -13,7 +13,7 @@ header("Content-Type: application/json");
 
 $component = array();
 $conn = connDB();
-//TODO : tratar da questão de mostrar os componentes de cada build
+
 if(isset($_GET['component_type_id'])){
     $type = $_GET['component_type_id'];
 

@@ -16,7 +16,7 @@ class Users implements JsonSerializable
     public $medal_id;
     public $email;
     public $username;
-    public $password;
+    private $password;
     public $description;
     public $reputation;
     public $active;
@@ -102,7 +102,7 @@ class Users implements JsonSerializable
     /**
      * @return mixed
      */
-    public function getPassword()
+    private function getPassword()
     {
         return $this->password;
     }
@@ -149,7 +149,6 @@ class Users implements JsonSerializable
      */
     public function jsonSerialize()
     {
-        // TODO: Implement jsonSerialize() method.
         return [
             [
                 'user_id' => $this->getUserId(),

@@ -20,11 +20,9 @@ if(!empty($input->username) && !empty($input->email) && !empty($input->password)
     $email = $input->email;
     $password = $input->password;
 
-//    $user = new Users($email,$username,$password);
     $sql = "SELECT * FROM users WHERE username='$username'";
     $check = $conn->query($sql);
     //checking if there is another user with the username the user typed
-    //$check = $user->checkUserAvailability();
 $data = [];
     if($check->num_rows == 0){
         //password hashing
@@ -38,10 +36,11 @@ $data = [];
         $sql = "INSERT INTO users VALUES('', '1', '1', '1', '$email', '$username', '$passwordHash', 'No description yet.', '0', 'false', '$validation_code')";
         $regist = $conn->query($sql);
         if($regist){
+            //json response body success
             $data = ["request-type" => "register", "result" => "successfull"];
             $email = new Email($email,$username,$user->validation_code);
         } else{
-            //json response body success
+            //json response body failure
             $data = ["request-type" => "register", "result" => "failure " . $username . " " . $email . " " . $passwordHash];
         }
         endConnDB($conn);

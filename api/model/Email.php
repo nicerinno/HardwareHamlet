@@ -11,6 +11,8 @@ use PHPMailer\PHPMailer\Exception;
 require_once(__DIR__ . '/PHPMailer/PHPMailer/src/Exception.php');
 require_once(__DIR__ . '/PHPMailer/PHPMailer/src/PHPMailer.php');
 require_once(__DIR__ . '/PHPMailer/PHPMailer/src/SMTP.php');
+
+require '../vendor/autoload.php';
 class Email
 {
     private $userEmail, $username, $validationCode;

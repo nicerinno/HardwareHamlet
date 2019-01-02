@@ -5,13 +5,13 @@
  * Date: 26/12/2018
  * Time: 00:48
  */
-
+include_once "C:\xampp\htdocs\hhapi\db.php";
 class Build implements JsonSerializable
 {
     public $build_id;
     public $user_id;
     public $build_type_id;
-    public $name;
+    public $build_name;
     public $description;
     public $cpu_description;
     public $gpu_description;
@@ -37,7 +37,7 @@ class Build implements JsonSerializable
         $this->build_id = $build_id;
         $this->user_id = $user_id;
         $this->build_type_id = $build_type_id;
-        $this->name = $name;
+        $this->build_name = $name;
         $this->description = $description;
         $this->cpu_description = $cpu_description;
         $this->gpu_description = $gpu_description;
@@ -73,9 +73,9 @@ class Build implements JsonSerializable
     /**
      * @return mixed
      */
-    public function getName()
+    public function getBuildName()
     {
-        return $this->name;
+        return $this->build_name;
     }
 
     /**
@@ -128,21 +128,34 @@ class Build implements JsonSerializable
 
     public function jsonSerialize()
     {
-        // TODO: Implement jsonSerialize() method.
         return
             [
                 'build_id' => $this->getBuildId(),
                 'user_id' => $this->getUserId(),
                 'build_type_id' => $this->getBuildTypeId(),
-                'name' => $this->getName(),
+                'build_name' => $this->getBuildName(),
                 'description' => $this->getDescription(),
                 'cpu_description' => $this->getCpuDescription(),
                 'gpu_description' => $this->getGpuDescription(),
                 'ram_description' => $this->getRamDescription(),
                 'price' => $this->getPrice(),
-                'likes' => $this->getLikes()
+                'likes' => $this->getLikes(),
+                'components' => $this->getComponentsFromBuild($this->getBuildId())
             ];
     }
 
+    public function getComponentsFromBuild($buildId){
+        $componentsArray = array();
+        $conn = connDB();
+        $components = "SELECT * FROM components WHERE component_id IN (SELECT component_id FROM build_components WHERE build_id =" . $buildId .  ")";
+        $componentResult = $conn->query($components);
+        if($componentResult->num_rows >0){
+            while($row = $componentResult->fetch_assoc()){
+                array_push($componentsArray, $newComponent = new Component($row['component_id'],$row['component_type_id'],$row['user_id'],$row['brand'],$row['build_name'],$row['description'],$row['price'],$row['flg_available'],$row['icon_url']));
+            }
+        }
+
+        return $componentsArray;
+    }
 
 }

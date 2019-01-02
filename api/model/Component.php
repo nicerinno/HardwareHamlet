@@ -128,7 +128,6 @@ class Component implements JsonSerializable
      */
     public function jsonSerialize()
     {
-        // TODO: Implement jsonSerialize() method.
         return
             [
                 'component_id' => $this->getComponentId(),
