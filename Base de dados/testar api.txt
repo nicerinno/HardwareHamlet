@@ -1,0 +1,33 @@
+buildRegistration.php
+{
+	"build_id" : "4",
+	"user_id": "1",
+	"build_type_id": "1",
+	"build_name": "test build 6",
+	"description": "test description",
+	"cpu_description": "test description",
+	"gpu_description": "test description",
+	"ram_description": "test description",
+	"price": "0",
+	"likes": "0",
+	"components": [{
+			"component_id": "1",
+			"quantity": "1"
+		},
+		{
+			"component_id": "9",
+			"quantity": "1"
+		},
+		{
+			"component_id": "15",
+			"quantity": "1"
+		}
+	]
+}
+
+insertComment.php
+{
+	"build_id" : "1",
+	"content" : "Awesome!",
+	"user_id" : "1"
+}

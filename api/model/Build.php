@@ -151,7 +151,7 @@ class Build implements JsonSerializable
         $componentResult = $conn->query($components);
         if($componentResult->num_rows >0){
             while($row = $componentResult->fetch_assoc()){
-                array_push($componentsArray, $newComponent = new Component($row['component_id'],$row['component_type_id'],$row['user_id'],$row['brand'],$row['build_name'],$row['description'],$row['price'],$row['flg_available'],$row['icon_url']));
+                array_push($componentsArray, $newComponent = new Component($row['component_id'],$row['component_type_id'],$row['user_id'],$row['brand'],$row['name'],$row['description'],$row['price'],$row['flg_available'],$row['icon_url']));
             }
         }
 
