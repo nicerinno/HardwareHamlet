@@ -1,4 +1,4 @@
-CREATE DATABASE HardwareHamlet;
+CREATE DATABASE HardwareHamlet CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE TABLE medals(
     medal_id int not null PRIMARY KEY AUTO_INCREMENT,
