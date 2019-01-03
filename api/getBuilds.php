@@ -22,8 +22,6 @@ if(isset($_GET['build_type_id'])){
     $result = $conn->query($sql);
 
 
-
-    endConnDB($conn);
     if ($result->num_rows > 0) {
         while ($buildRow = $result->fetch_assoc()) {
             array_push($buildArray, $newBuild = new Build($buildRow['build_id'],$buildRow['user_id'],$buildRow['build_type_id'],$buildRow['build_name'],$buildRow['description'], $buildRow['cpu_description'],$buildRow['gpu_description'],$buildRow['ram_description'],$buildRow['price'],$buildRow['likes']));
@@ -35,7 +33,6 @@ if(isset($_GET['build_type_id'])){
 
     $sql = "SELECT * FROM builds WHERE build_name='$name'";
     $result = $conn->query($sql);
-    endConnDB($conn);
 
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
@@ -46,12 +43,12 @@ if(isset($_GET['build_type_id'])){
 } else{
     $sql = "SELECT * FROM builds";
     $result = $conn->query($sql);
-    endConnDB($conn);
+
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             array_push($buildArray, $newBuild = new Build($row['build_id'],$row['user_id'],$row['build_type_id'],$row['build_name'],$row['description'], $row['cpu_description'],$row['gpu_description'],$row['ram_description'],$row['price'],$row['likes']));
         }
     }
 }
-
+$conn->close();
 echo json_encode($buildArray);

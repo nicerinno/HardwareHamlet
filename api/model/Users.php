@@ -10,17 +10,17 @@
 
 class Users implements JsonSerializable
 {
-    public $user_id;
-    public $title_id;
-    public $usertype_id;
-    public $medal_id;
-    public $email;
-    public $username;
+    private $user_id;
+    private $title_id;
+    private $usertype_id;
+    private $medal_id;
+    private $email;
+    private $username;
     private $password;
-    public $description;
-    public $reputation;
-    public $active;
-    public $validation_code;
+    private $description;
+    private $reputation;
+    private $active;
+    private $validation_code;
 
     /**
      * Users constructor.

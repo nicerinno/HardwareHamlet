@@ -43,9 +43,9 @@ $data = [];
             //json response body failure
             $data = ["request-type" => "register", "result" => "failure " . $username . " " . $email . " " . $passwordHash];
         }
-        endConnDB($conn);
     } else {
         $data = ["request-type" => "register", "result" => "Username already exists"];
     }
 }
+$conn->close();
 echo json_encode($data);

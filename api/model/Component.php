@@ -9,15 +9,15 @@
 
 class Component implements JsonSerializable
 {
-    public $component_id;
-    public $component_type_id;
-    public $user_id;
-    public $brand;
-    public $name;
-    public $description;
-    public $price;
-    public $flg_available;
-    public $icon_url;
+    private $component_id;
+    private $component_type_id;
+    private $user_id;
+    private $brand;
+    private $name;
+    private $description;
+    private $price;
+    private $flg_available;
+    private $icon_url;
 
     /**
      * Component constructor.
