@@ -30,7 +30,7 @@ CREATE TABLE build_type(
 );
 
 CREATE TABLE users(
-    user_id long not null PRIMARY KEY AUTO_INCREMENT,
+    user_id bigint not null PRIMARY KEY AUTO_INCREMENT,
     title_id int not null,	
     usertype_id int not null,
     medal_id int not null,
@@ -41,30 +41,30 @@ CREATE TABLE users(
     reputation int not null,
 	active boolean not null,
 	validation_code varchar(6) not null,
-	regist_date long not null,
+	regist_date bigint not null,
     FOREIGN KEY (title_id) REFERENCES titles(title_id),
     FOREIGN KEY (usertype_id) REFERENCES user_type(usertype_id),
     FOREIGN KEY (medal_id) REFERENCES medals(medal_id)
 );
 
 CREATE TABLE components(
-    component_id long not null PRIMARY KEY AUTO_INCREMENT,
+    component_id bigint not null PRIMARY KEY AUTO_INCREMENT,
     component_type_id int not null,
-    user_id long not null,
+    user_id bigint not null,
     brand varchar(100) not null,
     name varchar(150) not null,
     description varchar(2000) not null,
     price double not null,
     flg_available boolean not null,
 	icon_url varchar(255) not null,
-	regist_date long not null,
+	regist_date bigint not null,
     FOREIGN KEY (component_type_id) REFERENCES component_type(component_type_id),
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
 CREATE TABLE builds(
-    build_id long not null PRIMARY KEY AUTO_INCREMENT,
-    user_id long not null,
+    build_id bigint not null PRIMARY KEY AUTO_INCREMENT,
+    user_id bigint not null,
     build_type_id int not null,
     build_name varchar(100) not null,
     description varchar(500) not null,
@@ -72,15 +72,15 @@ CREATE TABLE builds(
     gpu_description varchar(500) not null,
     ram_description varchar(500) not null,
 	price double not null,
-    likes long not null,
-	regist_date long not null,
+    likes bigint not null,
+	regist_date bigint not null,
     FOREIGN KEY (user_id) REFERENCES users(user_id),
     FOREIGN KEY (build_type_id) REFERENCES build_type(build_type_id)
 );
 
 CREATE TABLE build_components(
-    build_id long not null,
-    component_id long not null,
+    build_id bigint not null,
+    component_id bigint not null,
 	quantity int not null,
     PRIMARY KEY(build_id, component_id),
     FOREIGN KEY(build_id) REFERENCES builds(build_id),
@@ -88,10 +88,10 @@ CREATE TABLE build_components(
 );
 
 CREATE TABLE comments(
-    comment_id long not null PRIMARY KEY AUTO_INCREMENT,
-    build_id long not null,
+    comment_id bigint not null PRIMARY KEY AUTO_INCREMENT,
+    build_id bigint not null,
     content varchar(500) not null,
-	user_id long not null,
+	user_id bigint not null,
     FOREIGN KEY (build_id) REFERENCES builds(build_id),
 	FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
