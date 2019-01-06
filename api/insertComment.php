@@ -16,11 +16,11 @@ if(!empty($input->build_id) && !empty($input->content) && !empty($input->user_id
     $sql = "INSERT INTO comments(build_id, content, user_id) VALUES('$input->build_id','$input->content','$input->user_id')";
     $regist = $conn->query($sql);
     if($regist){
-        $data = ["request-type" => "comment registration", "result" => "successfull"];
+        $data = ["request_type" => "comment registration", "result" => "successfull"];
         $comment = new Comments("",$input->build_id,$input->content,$input->user_id);
     } else{
         //json response body success
-        $data = ["request-type" => "comment registration", "result" => "failure " ];
+        $data = ["request_type" => "comment registration", "result" => "failure " ];
     }
     endConnDB($conn);
 }

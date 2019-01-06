@@ -20,6 +20,7 @@ class Comments implements JsonSerializable
     private $build_id;
     private $content;
     private $user_id;
+    private $regist_date;
 
     /**
      * Comments constructor.
@@ -27,13 +28,15 @@ class Comments implements JsonSerializable
      * @param $build_id
      * @param $content
      * @param $user_id
+     * @param $regist_date
      */
-    public function __construct($comment_id, $build_id, $content, $user_id)
+    public function __construct($comment_id, $build_id, $content, $user_id, $regist_date)
     {
         $this->comment_id = $comment_id;
         $this->build_id = $build_id;
         $this->content = $content;
         $this->user_id = $user_id;
+        $this->regist_date = $regist_date;
     }
 
     /**
@@ -68,6 +71,15 @@ class Comments implements JsonSerializable
         return $this->user_id;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getRegistDate()
+    {
+        return $this->regist_date;
+    }
+
+
 
     /**
      * Specify data which should be serialized to JSON
@@ -83,7 +95,8 @@ class Comments implements JsonSerializable
             'comment_id' => $this->getCommentId(),
             'user_id' => $this->getUserId(),
             'build_id' => $this->getBuildId(),
-            'content' => $this->getContent()
+            'content' => $this->getContent(),
+            'regist_date' => $this->getRegistDate()
         ];
     }
 }

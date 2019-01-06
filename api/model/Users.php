@@ -21,6 +21,7 @@ class Users implements JsonSerializable
     private $reputation;
     private $active;
     private $validation_code;
+    private $regist_date;
 
     /**
      * Users constructor.
@@ -35,8 +36,9 @@ class Users implements JsonSerializable
      * @param $reputation
      * @param $active
      * @param $validation_code
+     * @param $regist_date
      */
-    public function __construct($user_id, $title_id, $usertype_id, $medal_id, $email, $username, $password, $description, $reputation, $active, $validation_code)
+    public function __construct($user_id, $title_id, $usertype_id, $medal_id, $email, $username, $password, $description, $reputation, $active, $validation_code, $regist_date)
     {
         $this->user_id = $user_id;
         $this->title_id = $title_id;
@@ -49,6 +51,7 @@ class Users implements JsonSerializable
         $this->reputation = $reputation;
         $this->active = $active;
         $this->validation_code = $validation_code;
+        $this->regist_date = $regist_date;
     }
 
     /**
@@ -102,7 +105,7 @@ class Users implements JsonSerializable
     /**
      * @return mixed
      */
-    private function getPassword()
+    public function getPassword()
     {
         return $this->password;
     }
@@ -139,6 +142,14 @@ class Users implements JsonSerializable
         return $this->validation_code;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getRegistDate()
+    {
+        return $this->regist_date;
+    }
+
 
     /**
      * Specify data which should be serialized to JSON
@@ -161,7 +172,8 @@ class Users implements JsonSerializable
                 'description' => $this->getDescription(),
                 'reputation' => $this->getReputation(),
                 'active' => $this->getActive(),
-                'validation_code' => $this->getValidationCode()
+                'validation_code' => $this->getValidationCode(),
+                'regist_date' => $this->getRegistDate()
             ]
 
         ];
