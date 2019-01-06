@@ -24,7 +24,7 @@ if(!empty($input->username) && !empty($input->password)){
     $queryUser = $conn->query($sqlUser);
 
     if($queryUser->num_rows >0){
-        
+
         $sqlP = "SELECT password FROM users WHERE username = '$username'";
         $queryPass = $conn->query($sqlP);
         $hashedP = $queryPass->fetch_assoc();
