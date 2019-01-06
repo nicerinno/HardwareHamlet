@@ -14,7 +14,7 @@ header("Content-Type: application/json");
 $buildArray = array();
 $componentsArray = array();
 $conn = connDB();
-
+//cenas
 if(isset($_GET['build_type_id'])){
     $type = $_GET['build_type_id'];
 

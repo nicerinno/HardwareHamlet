@@ -4,10 +4,12 @@ function connDB ()
 {
 
     $servername = "localhost";
+//    $username = "hhadmin";
+//    $password = "rs22352";
     $username = "root";
     $password = "";
         //$password = "XfuH4ft1TRtdwfki";
-    $dbname = "hardwarehamlet";
+    $dbname = "HardwareHamlet";
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);

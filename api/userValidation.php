@@ -14,7 +14,7 @@ header("Content-Type: application/json");
 $input = json_decode(file_get_contents('php://input'));
 
 $conn = connDB();
-$data = [];
+$data = array();
 
 if(!empty($input->username) && !empty($input->password)){
     $username = $input->username;
@@ -23,20 +23,25 @@ if(!empty($input->username) && !empty($input->password)){
     $sqlUser = "SELECT * FROM users WHERE username = '$username'";
     $queryUser = $conn->query($sqlUser);
 
-    if($queryUser->num_rows >0){
+    if($queryUser->num_rows > 0){
 
-        $sqlP = "SELECT password FROM users WHERE username = '$username'";
-        $queryPass = $conn->query($sqlP);
-        $hashedP = $queryPass->fetch_assoc();
+        $sqlActve ="SELECT * FROM users WHERE username = '$username' AND active= true";
+        $queryActive = $conn->query($sqlActve);
+        if($queryActive->num_rows > 0){
+            $sqlP = "SELECT password FROM users WHERE username = '$username'";
+            $queryPass = $conn->query($sqlP);
+            $hashedP = $queryPass->fetch_assoc();
 
-        $verify = password_verify($password,$hashedP['password']);
+            $verify = password_verify($password,$hashedP['password']);
 
-        if($verify){
-            $data = ["request_type" => "user validation", "result" => "successful"];
-        }else {
-            $data = ["request_type" => "user validation", "result" => "incorrect password"];
+            if($verify){
+                $data = ["request_type" => "user validation", "result" => "successful"];
+            }else {
+                $data = ["request_type" => "user validation", "result" => "incorrect password"];
+            }
+        }else{
+            $data = ["request_type" => "user validation", "result" => "account not active"];
         }
-
     } else {
         $data = ["request_type" => "user validation", "result" => "username does not exist"];
     }

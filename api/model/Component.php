@@ -140,7 +140,7 @@ class Component implements JsonSerializable
     public function jsonSerialize()
     {
         return
-            [
+            array(
                 'component_id' => $this->getComponentId(),
                 'component_type_id' => $this->getComponentTypeId(),
                 'user_id' => $this->getUserId(),
@@ -151,6 +151,6 @@ class Component implements JsonSerializable
                 'flg_available' => $this->getFlgAvailable(),
                 'icon_url' => $this->getIconUrl(),
                 'regist_date' => $this->getRegistDate()
-            ];
+            );
     }
 }
