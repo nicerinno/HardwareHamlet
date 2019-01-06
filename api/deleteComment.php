@@ -17,11 +17,11 @@ if(!empty($input->comment_id)){
     $sql = "DELETE FROM comments WHERE comment_id = $input->comment_id";
     $regist = $conn->query($sql);
     if($regist){
-        $data = ["request-type" => "comment delete", "result" => "successfull"];
+        $data = ["request_type" => "comment delete", "result" => "successfull"];
         $comment = new Comments("",$input->build_id,$input->content,$input->user_id);
     } else{
         //json response body success
-        $data = ["request-type" => "comment delete", "result" => "failure " ];
+        $data = ["request_type" => "comment delete", "result" => "failure " ];
     }
     endConnDB($conn);
 }

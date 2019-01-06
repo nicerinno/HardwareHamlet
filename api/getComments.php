@@ -22,7 +22,7 @@ if(isset($_GET['build_id'])){
 
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            array_push($component, $newComment = new Comments($row['comment_id'],$row['build_id'],$row['content'],$row['user_id']));
+            array_push($component, $newComment = new Comments($row['comment_id'],$row['build_id'],$row['content'],$row['user_id'],$row['regist_date']));
         }
     }
 }

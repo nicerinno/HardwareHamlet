@@ -28,7 +28,6 @@ if(!empty($input->build_id) &&!empty($input->user_id) && !empty($input->build_ty
     if ($checkExisting->num_rows == 0){
         $insert = "INSERT INTO builds(build_id,user_id, build_type_id, build_name, description, cpu_description, gpu_description, ram_description, price, likes) VALUES('$input->build_id','$input->user_id','$input->build_type_id','$input->build_name', '$input->description', '$input->cpu_description', '$input->gpu_description', '$input->ram_description', '0' ,'0')";
         $query1 = $conn->query($insert);
-
         $build_components = $input->components;
         if($query1){
             for($i = 0; $i < count($build_components); $i++){
@@ -42,21 +41,21 @@ if(!empty($input->build_id) &&!empty($input->user_id) && !empty($input->build_ty
                 $queryUpdatePrice = $conn->query($updatePrice);
                 if($queryUpdatePrice){
                     //json response body success
-                    $data = ["request-type" => "build registration", "result" => "successfull"];
+                    $data = ["request_type" => "build registration", "result" => "successfull"];
                     $newBuildComponent = new Build_Components($input->build_id,$component->component_id ,$component->quantity);
                 } else{
                     //json response body failure
-                    $data = ["request-type" => "build registration", "result" => "Failure. Couldn't set the price"];
+                    $data = ["request_type" => "build registration", "result" => "Failure. Couldn't set the price"];
                 }
 
             }else{
                 //json response body failure
-                $data = ["request-type" => "build registration", "result" => "Failure. Couldn't regist the component"];
+                $data = ["request_type" => "build registration", "result" => "Failure. Couldn't regist the component"];
             }
         }
     } else {
         //json response body failure
-        $data = ["request-type" => "build registration", "result" => "A build with this name already exists"];
+        $data = ["request_type" => "build registration", "result" => "A build with this name already exists"];
     }
     $conn->close();
 }

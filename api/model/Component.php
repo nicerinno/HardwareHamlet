@@ -18,6 +18,7 @@ class Component implements JsonSerializable
     private $price;
     private $flg_available;
     private $icon_url;
+    private $regist_date;
 
     /**
      * Component constructor.
@@ -30,8 +31,9 @@ class Component implements JsonSerializable
      * @param $price
      * @param $flg_available
      * @param $icon_url
+     * @param $regist_date
      */
-    public function __construct($component_id, $component_type_id, $user_id, $brand, $name, $description, $price, $flg_available, $icon_url)
+    public function __construct($component_id, $component_type_id, $user_id, $brand, $name, $description, $price, $flg_available, $icon_url, $regist_date)
     {
         $this->component_id = $component_id;
         $this->component_type_id = $component_type_id;
@@ -42,6 +44,7 @@ class Component implements JsonSerializable
         $this->price = $price;
         $this->flg_available = $flg_available;
         $this->icon_url = $icon_url;
+        $this->regist_date = $regist_date;
     }
 
     /**
@@ -113,9 +116,17 @@ class Component implements JsonSerializable
      */
     public function getIconUrl()
     {
-
         return $this->icon_url;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getRegistDate()
+    {
+        return $this->regist_date;
+    }
+
 
 
 
@@ -138,7 +149,8 @@ class Component implements JsonSerializable
                 'description' => $this->getDescription(),
                 'price' => $this->getPrice(),
                 'flg_available' => $this->getFlgAvailable(),
-                'icon_url' => $this->getIconUrl()
+                'icon_url' => $this->getIconUrl(),
+                'regist_date' => $this->getRegistDate()
             ];
     }
 }

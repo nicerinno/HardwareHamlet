@@ -38,10 +38,10 @@ if(isset($_GET['build_id'])){
             $query = $conn->query($setNewMedal);
         }
         //json responde body success
-        $data = ["request-type" => "post like", "result" => "successfull"];
+        $data = ["request_type" => "post like", "result" => "successfull"];
     } else{
         //json response body failure
-        $data = ["request-type" => "post like", "result" => "failure." ];
+        $data = ["request_type" => "post like", "result" => "failure." ];
     }
 
     endConnDB($conn);

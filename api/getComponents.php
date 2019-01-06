@@ -52,7 +52,19 @@ if(isset($_GET['component_type_id'])){
             array_push($component, $newComponent = new Component($row['component_id'],$row['component_type_id'],$row['user_id'],$row['brand'], $row['name'],$row['description'],$row['price'],$row['flg_available'],$row['icon_url']));
         }
     }
- } else if($_GET['price-order'] && $_GET['component_type_id']) {
+}else if($_GET['flg_available']){
+    $order = $_GET['flg_available'];
+
+    $sql = "SELECT * FROM components WHERE flg_available = true";
+    $result = $conn->query($sql);
+    endConnDB($conn);
+
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            array_push($component, $newComponent = new Component($row['component_id'],$row['component_type_id'],$row['user_id'],$row['brand'], $row['name'],$row['description'],$row['price'],$row['flg_available'],$row['icon_url']));
+        }
+    }
+} else if($_GET['price-order'] && $_GET['component_type_id']) {
     $type = $_GET['component_type_id'];
     $order = $_GET['price-order'];
 

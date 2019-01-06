@@ -46,11 +46,11 @@ if(!empty($input->component_type_id) && !empty($input->user_id) && !empty($input
         }
 
         //json response body success
-        $data = ["request-type" => "component registration", "result" => "successfull"];
+        $data = ["request_type" => "component registration", "result" => "successfull"];
         $component = new Component('',$input->component_type_id,$input->user_id,$input->brand,$input->name,$input->description,$input->price,$input->flg_available,$input->icon_url);
     } else{
         //json response body failure
-        $data = ["request-type" => "component registration", "result" => "failure " ];
+        $data = ["request_type" => "component registration", "result" => "failure " ];
     }
     endConnDB($conn);
 }

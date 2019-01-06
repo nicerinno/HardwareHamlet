@@ -13,7 +13,10 @@ $conn = connDB();
 
 $getLastId = "SELECT MAX(build_id) FROM builds";
 $executeLastId = $conn->query($getLastId);
+$lastId = $executeLastId->fetch_assoc();
 
 $conn->close();
 
-echo json_encode($executeLastId->fetch_assoc());
+$data = ["request_type" => "last build id", "result" => $lastId['MAX(build_id)']];
+
+echo json_encode($data);
