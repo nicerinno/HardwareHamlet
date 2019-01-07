@@ -145,7 +145,7 @@
     <session id="583302505">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.opened" value="2" />
@@ -209,7 +209,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/userRegistration.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1853">
+            <state relative-caret-position="935">
               <caret line="118" column="61" selection-start-line="118" selection-start-column="61" selection-end-line="118" selection-end-column="61" />
             </state>
           </provider>
@@ -343,8 +343,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="43" />
-    <option name="y" value="27" />
+    <option name="x" value="42" />
+    <option name="y" value="26" />
     <option name="width" value="980" />
     <option name="height" value="1040" />
   </component>
@@ -434,12 +434,12 @@
       <workItem from="1546713815832" duration="3630000" />
       <workItem from="1546728573537" duration="7315000" />
       <workItem from="1546800371906" duration="20000" />
-      <workItem from="1546873765894" duration="9975000" />
+      <workItem from="1546873765894" duration="10684000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91829000" />
+    <option name="totallyTimeSpent" value="92538000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -709,7 +709,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/userRegistration.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1853">
+        <state relative-caret-position="935">
           <caret line="118" column="61" selection-start-line="118" selection-start-column="61" selection-end-line="118" selection-end-column="61" />
         </state>
       </provider>
