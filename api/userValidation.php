@@ -25,22 +25,16 @@ if(!empty($input->username) && !empty($input->password)){
 
     if($queryUser->num_rows > 0){
 
-        $sqlActve ="SELECT * FROM users WHERE username = '$username' AND active= true";
-        $queryActive = $conn->query($sqlActve);
-        if($queryActive->num_rows > 0){
-            $sqlP = "SELECT password FROM users WHERE username = '$username'";
-            $queryPass = $conn->query($sqlP);
-            $hashedP = $queryPass->fetch_assoc();
+        $sqlP = "SELECT password FROM users WHERE username = '$username'";
+        $queryPass = $conn->query($sqlP);
+        $hashedP = $queryPass->fetch_assoc();
 
-            $verify = password_verify($password,$hashedP['password']);
+        $verify = password_verify($password,$hashedP['password']);
 
-            if($verify){
-                $data = ["request_type" => "user validation", "result" => "successful"];
-            }else {
-                $data = ["request_type" => "user validation", "result" => "incorrect password"];
-            }
-        }else{
-            $data = ["request_type" => "user validation", "result" => "account not active"];
+        if($verify){
+            $data = ["request_type" => "user validation", "result" => "successful"];
+        }else {
+            $data = ["request_type" => "user validation", "result" => "incorrect password"];
         }
     } else {
         $data = ["request_type" => "user validation", "result" => "username does not exist"];
