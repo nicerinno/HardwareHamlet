@@ -153,12 +153,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="529" />
+          <entry key="php" value="530" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="529" />
+          <entry key="PHP" value="530" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -196,8 +196,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/userRegistration.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-952">
-              <caret line="22" selection-start-line="22" selection-end-line="22" selection-end-column="55" />
+            <state relative-caret-position="221">
+              <caret line="46" selection-start-line="46" selection-end-line="46" />
             </state>
           </provider>
         </entry>
@@ -211,16 +211,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/userValidation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+            <state relative-caret-position="340">
+              <caret line="34" column="68" lean-forward="true" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="68" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/accountActivation.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
@@ -290,8 +290,8 @@
         <option value="$PROJECT_DIR$/buildRegistration.php" />
         <option value="$PROJECT_DIR$/getLastBuildId.php" />
         <option value="$PROJECT_DIR$/userValidation.php" />
-        <option value="$PROJECT_DIR$/userRegistration.php" />
         <option value="$PROJECT_DIR$/accountActivation.php" />
+        <option value="$PROJECT_DIR$/userRegistration.php" />
       </list>
     </option>
   </component>
@@ -395,12 +395,12 @@
       <workItem from="1546713815832" duration="3630000" />
       <workItem from="1546728573537" duration="7315000" />
       <workItem from="1546800371906" duration="20000" />
-      <workItem from="1546873765894" duration="3061000" />
+      <workItem from="1546873765894" duration="3352000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84915000" />
+    <option name="totallyTimeSpent" value="85206000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -601,24 +601,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/userValidation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/getLastBuildId.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="19" column="81" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userRegistration.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-952">
-          <caret line="22" selection-start-line="22" selection-end-line="22" selection-end-column="55" />
         </state>
       </provider>
     </entry>
@@ -640,6 +626,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userRegistration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userValidation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="34" column="68" lean-forward="true" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="68" />
         </state>
       </provider>
     </entry>
