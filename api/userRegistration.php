@@ -99,7 +99,7 @@ VALUES('1', '1', '1', '$email', '$username', '$passwordHash', 'No description ye
                 $mail->msgHTML("
 <h2>Welcome to HardwareHamlet!</h2>
 <p>We're very pleased to welcome you to our hamlet. But in order to continue, you need to enter the validation code below when requested: </p>
-<h3>" . $validation_code . "</h3>
+<a href='http://194.210.139.1/api/accountActivation.php?username=$username&validation_code=$validation_code'>Click here to validate your account.</a>
 <p>We'll see you there. Cheers!</p>
 <h4>The HardwareHamlet Team.</h4>");
                 $mail->AltBody = 'Welcome to Hardware Hamlet! In order to officialy join our hamlet, 
