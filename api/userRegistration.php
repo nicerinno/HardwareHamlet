@@ -7,7 +7,7 @@
  */
 
 include_once (__DIR__ . "/model/Users.php");
-//include_once (__DIR__ . "/model/Email.php");
+
 include_once (__DIR__ . "/model/PHPMailer/PHPMailer/src/PHPMailer.php");
 include_once (__DIR__ . "/model/PHPMailer/PHPMailer/src/Exception.php");
 include_once (__DIR__ . "/model/PHPMailer/PHPMailer/src/SMTP.php");
