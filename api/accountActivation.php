@@ -8,6 +8,7 @@
 
 include_once (__DIR__ . "/model/Users.php");
 include_once "db.php";
+include_once "accountActivated.html";
 
 header("Content-Type: application/json");
 
@@ -26,4 +27,4 @@ if(isset($_GET['username']) && isset($_GET['validation_code'])){
     }
 }
 ?>
-<h1>ACCOUNT ACTIVATED</h1>
+
