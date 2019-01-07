@@ -47,3 +47,4 @@ if(!empty($input->username) && !empty($input->password)){
     }
 }
 echo json_encode($data);
+
