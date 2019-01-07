@@ -116,7 +116,7 @@ VALUES('1', '1', '1', '$email', '$username', '$passwordHash', 'No description ye
             $data = ["request_type" => "register", "result" => "failure " . $username . " " . $email . " " . $passwordHash . " " . $validation_code];
         }
     } else {
-        $data = ["request_type" => "register", "result" => "Username already exists"];
+        $data = ["request_type" => "register", "result" => "username already exists"];
     }
 }
 $conn->close();
