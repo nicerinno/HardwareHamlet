@@ -14,75 +14,60 @@ header("Content-Type: application/json");
 $component = array();
 $conn = connDB();
 
-if(isset($_GET['component_type_id'])){
-    $type = $_GET['component_type_id'];
+if(isset($_GET['price_order']) && isset($_GET['component_type_id']) && isset($_GET['search'])){
 
-    $sql = "SELECT * FROM components WHERE component_type_id='$type'";
-    $result = $conn->query($sql);
-    endConnDB($conn);
+    $search = $_GET['search'];
+    $order = $_GET['price_order'];
+    $type_id = $_GET['component_type_id'];
 
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            array_push($component, $newComponent = new Component($row['component_id'],$row['component_type_id'],$row['user_id'],$row['brand'], $row['name'],$row['description'],$row['price'],$row['flg_available'],$row['icon_url'],$row['regist_date']));
+    if($search=='none' && $type_id=='0'){
+        $sql1 = "SELECT * FROM components ORDER BY price $order";
+        $result1 = $conn->query($sql1);
+        endConnDB($conn);
+
+        if ($result1->num_rows > 0) {
+            while ($row = $result1->fetch_assoc()) {
+                array_push($component, $newComponent = new Component($row['component_id'],$row['component_type_id'],$row['user_id'],$row['brand'], $row['name'],$row['description'],$row['price'],$row['flg_available'],$row['icon_url'],$row['regist_date']));
+            }
+        }
+    } else if($search=='none'){
+        $sql2 = "SELECT * FROM components WHERE component_type_id = '$type_id' ORDER BY price $order";
+        $result2 = $conn->query($sql2);
+        endConnDB($conn);
+
+        if ($result2->num_rows > 0) {
+            while ($row = $result2->fetch_assoc()) {
+                array_push($component, $newComponent = new Component($row['component_id'],$row['component_type_id'],$row['user_id'],$row['brand'], $row['name'],$row['description'],$row['price'],$row['flg_available'],$row['icon_url'],$row['regist_date']));
+            }
+        }
+    } else if($type_id=='0'){
+        $sql3 = "SELECT * FROM components WHERE concat(brand,' ', name) REGEXP '$search' ORDER BY price $order";
+        $result3 = $conn->query($sql3);
+        endConnDB($conn);
+
+        if ($result3->num_rows > 0) {
+            while ($row = $result3->fetch_assoc()) {
+                array_push($component, $newComponent = new Component($row['component_id'],$row['component_type_id'],$row['user_id'],$row['brand'], $row['name'],$row['description'],$row['price'],$row['flg_available'],$row['icon_url'],$row['regist_date']));
+            }
+        }
+    } else{
+        $sql4 = "SELECT * FROM components WHERE concat(brand,' ', name) REGEXP '$search' AND component_type_id = '$type_id' ORDER BY price $order";
+        $result4 = $conn->query($sql4);
+        endConnDB($conn);
+
+        if ($result4->num_rows > 0) {
+            while ($row = $result4->fetch_assoc()) {
+                array_push($component, $newComponent = new Component($row['component_id'],$row['component_type_id'],$row['user_id'],$row['brand'], $row['name'],$row['description'],$row['price'],$row['flg_available'],$row['icon_url'],$row['regist_date']));
+            }
         }
     }
-
-} else if($_GET['brand']){
-    $brand = $_GET['brand'];
-
-    $sql = "SELECT * FROM components WHERE brand='$brand'";
-    $result = $conn->query($sql);
+}else{
+    $sql1 = "SELECT * FROM components ORDER BY price desc";
+    $result1 = $conn->query($sql1);
     endConnDB($conn);
 
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            array_push($component, $newComponent = new Component($row['component_id'],$row['component_type_id'],$row['user_id'],$row['brand'], $row['name'],$row['description'],$row['price'],$row['flg_available'],$row['icon_url'],$row['regist_date']));
-        }
-    }
-
-} else if($_GET['price-order']){
-    $order = $_GET['price-order'];
-
-    $sql = "SELECT * FROM components ORDER BY price $order";
-    $result = $conn->query($sql);
-    endConnDB($conn);
-
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            array_push($component, $newComponent = new Component($row['component_id'],$row['component_type_id'],$row['user_id'],$row['brand'], $row['name'],$row['description'],$row['price'],$row['flg_available'],$row['icon_url'],$row['regist_date']));
-        }
-    }
-}else if($_GET['flg_available']){
-    $order = $_GET['flg_available'];
-
-    $sql = "SELECT * FROM components WHERE flg_available = true";
-    $result = $conn->query($sql);
-    endConnDB($conn);
-
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            array_push($component, $newComponent = new Component($row['component_id'],$row['component_type_id'],$row['user_id'],$row['brand'], $row['name'],$row['description'],$row['price'],$row['flg_available'],$row['icon_url'],$row['regist_date']));
-        }
-    }
-} else if($_GET['price-order'] && $_GET['component_type_id']) {
-    $type = $_GET['component_type_id'];
-    $order = $_GET['price-order'];
-
-    $sql = "SELECT * FROM components WHERE component_type_id='$type' ORDER BY price $order";
-    $result = $conn->query($sql);
-    endConnDB($conn);
-
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            array_push($component, $newComponent = new Component($row['component_id'],$row['component_type_id'],$row['user_id'],$row['brand'], $row['name'],$row['description'],$row['price'],$row['flg_available'],$row['icon_url'],$row['regist_date']));
-        }
-    }
-} else{
-    $sql = "SELECT * FROM components";
-    $result = $conn->query($sql);
-    endConnDB($conn);
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
+    if ($result1->num_rows > 0) {
+        while ($row = $result1->fetch_assoc()) {
             array_push($component, $newComponent = new Component($row['component_id'],$row['component_type_id'],$row['user_id'],$row['brand'], $row['name'],$row['description'],$row['price'],$row['flg_available'],$row['icon_url'],$row['regist_date']));
         }
     }

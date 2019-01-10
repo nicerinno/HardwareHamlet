@@ -143,7 +143,7 @@ class Build implements JsonSerializable
     public function jsonSerialize()
     {
         return
-            [
+            array(
                 'build_id' => $this->getBuildId(),
                 'username' => $this->getUserId(),
                 'build_type_name' => $this->getBuildTypeId(),
@@ -154,9 +154,8 @@ class Build implements JsonSerializable
                 'ram_description' => $this->getRamDescription(),
                 'price' => $this->getPrice(),
                 'likes' => $this->getLikes(),
-                'regist_date' => $this->getRegistDate(),
-                'components' => $this->getComponentsFromBuild($this->getBuildId())
-            ];
+                'regist_date' => $this->getRegistDate()
+            );
     }
 
     public function getComponentsFromBuild($buildId){
@@ -172,35 +171,4 @@ class Build implements JsonSerializable
 
         return $componentsArray;
     }
-
-    public function getBuildUserName($user_id){
-        $userData = "";
-        $conn = connDB();
-
-        $sqlUSER = "SELECT username FROM users WHERE user_id = '$user_id'";
-        $query = $conn->query($sqlUSER);
-
-        if($query->num_rows > 0){
-            $userData = $query->fetch_assoc();
-            $username = $userData['username'];
-        }
-
-        return $username;
-    }
-
-    public function getBuildTypeName($build_type_id){
-        $typeData = "";
-        $conn = connDB();
-
-        $sqlType = "SELECT name FROM build_type WHERE build_type_id = '$build_type_id'";
-        $query = $conn->query($sqlType);
-
-        if($query->num_rows > 0){
-            $typeData = $query->fetch_assoc();
-            $name = $typeData['name'];
-        }
-
-        return $name;
-    }
-
 }
