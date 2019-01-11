@@ -78,13 +78,13 @@ CREATE TABLE builds(
     FOREIGN KEY (build_type_id) REFERENCES build_type(build_type_id)
 );
 
-CREATE TABLE likes{
+CREATE TABLE likes(
 	build_id bigint not null,
 	user_id bigint not null,
-	PRIMARY KEY (build_id,user_id),
-	FOREIGN KEY (user_id) REFERENCES users(user_id),
-    FOREIGN KEY (build_id) REFERENCES builds(builds)
-}
+	PRIMARY KEY(build_id,user_id),
+	FOREIGN KEY(user_id) REFERENCES users(user_id),
+    FOREIGN KEY(build_id) REFERENCES builds(build_id)
+);
 
 CREATE TABLE build_components(
     build_id bigint not null,
