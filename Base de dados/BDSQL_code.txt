@@ -72,11 +72,18 @@ CREATE TABLE builds(
     gpu_description varchar(500) not null,
     ram_description varchar(500) not null,
 	price double not null,
-    likes bigint not null,
 	regist_date bigint not null,
     FOREIGN KEY (user_id) REFERENCES users(user_id),
     FOREIGN KEY (build_type_id) REFERENCES build_type(build_type_id)
 );
+
+CREATE TABLE likes{
+	build_id bigint not null,
+	user_id bigint not null,
+	PRIMARY KEY (build_id,user_id),
+	FOREIGN KEY (user_id) REFERENCES users(user_id),
+    FOREIGN KEY (build_id) REFERENCES builds(builds)
+}
 
 CREATE TABLE build_components(
     build_id bigint not null,

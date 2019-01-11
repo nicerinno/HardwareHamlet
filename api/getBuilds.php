@@ -27,7 +27,7 @@ if(isset($_GET['recent']) && isset($_GET['build_type_id']) && isset($_GET['searc
 
         if ($result1->num_rows > 0) {
             while ($buildRow = $result1->fetch_assoc()) {
-                array_push($buildArray, $newBuild = new Builds($buildRow['build_id'],$buildRow['user_id'],$buildRow['build_type_id'],$buildRow['build_name'],$buildRow['description'], $buildRow['cpu_description'],$buildRow['gpu_description'],$buildRow['ram_description'],$buildRow['price'],$buildRow['likes'],$buildRow['regist_date']));
+                array_push($buildArray, $newBuild = new Builds($buildRow['build_id'],$buildRow['user_id'],$buildRow['build_type_id'],$buildRow['build_name'],$buildRow['description'], $buildRow['cpu_description'],$buildRow['gpu_description'],$buildRow['ram_description'],$buildRow['price'],$buildRow['regist_date']));
             }
         }
     } else if($search=='none'){
@@ -75,6 +75,21 @@ if(isset($_GET['recent']) && isset($_GET['build_type_id']) && isset($_GET['searc
             array_push($buildArray, $newBuild = new Builds($buildRow['build_id'],$buildRow['user_id'],$buildRow['build_type_id'],$buildRow['build_name'],$buildRow['description'], $buildRow['cpu_description'],$buildRow['gpu_description'],$buildRow['ram_description'],$buildRow['price'],$buildRow['likes'],$buildRow['regist_date']));
         }
     }
+
+}else if(isset($_GET['build_type_id'])){
+
+    $build_type_id = $_GET['build_type_id'];
+
+    $sql1 = "SELECT * FROM builds WHERE build_type_id='$build_type_id'";
+    $result1 = $conn->query($sql1);
+    endConnDB($conn);
+
+    if ($result1->num_rows > 0) {
+        while ($buildRow = $result1->fetch_assoc()) {
+            array_push($buildArray, $newBuild = new Builds($buildRow['build_id'],$buildRow['user_id'],$buildRow['build_type_id'],$buildRow['build_name'],$buildRow['description'], $buildRow['cpu_description'],$buildRow['gpu_description'],$buildRow['ram_description'],$buildRow['price'],$buildRow['likes'],$buildRow['regist_date']));
+        }
+    }
+    //cenas
 
 }else{
     $sql1 = "SELECT * FROM builds ORDER BY regist_date desc";

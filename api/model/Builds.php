@@ -145,8 +145,8 @@ class Builds implements JsonSerializable
         return
             array(
                 'build_id' => $this->getBuildId(),
-                'username' => $this->getUserId(),
-                'build_type_name' => $this->getBuildTypeId(),
+                'user_id' => $this->getUserId(),
+                'build_type_id' => $this->getBuildTypeId(),
                 'build_name' => $this->getBuildName(),
                 'description' => $this->getDescription(),
                 'cpu_description' => $this->getCpuDescription(),
