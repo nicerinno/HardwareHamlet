@@ -11,7 +11,6 @@ include_once "db.php";
 
 $conn = connDB();
 
-$conn = connDB();
 
 if(isset($_GET['user_id'])){
     $id = $_GET['user_id'];
@@ -23,17 +22,6 @@ if(isset($_GET['user_id'])){
     if($query->num_rows > 0){
         $row = $query->fetch_assoc();
         $data = new Users($row['user_id'],$row['title_id'],$row['usertype_id'],$row['medal_id'],$row['email'],$row['username'],$row['password'], $row['description'],$row['reputation'],$row['active'],$row['validation_code'],$row['regist_date']);
-    }
-}else {
-    $data = array();
-
-    $sql = "SELECT * FROM users";
-    $query = $conn->query($sql);
-
-    if($query->num_rows > 0){
-        while($row = $query->fetch_assoc()){
-            array_push($data, new Users($row['user_id'],$row['title_id'],$row['usertype_id'],$row['medal_id'],$row['email'],$row['username'],$row['password'], $row['description'],$row['reputation'],$row['active'],$row['validation_code'],$row['regist_date']));
-        }
     }
 }
 $conn->close();

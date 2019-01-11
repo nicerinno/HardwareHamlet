@@ -6,7 +6,7 @@
  * Time: 14:21
  */
 
-include_once (__DIR__ . "/model/Build.php");
+include_once (__DIR__ . "/model/Builds.php");
 include_once "db.php";
 
 header("Content-Type: application/json");

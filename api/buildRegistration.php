@@ -5,7 +5,7 @@
  * Date: 31/12/2018
  * Time: 15:14
  */
-//include_once (__DIR__ . "/model/Build.php");
+//include_once (__DIR__ . "/model/Buildss.php");
 //include_once (__DIR__ . "/model/Component.php");
 include_once (__DIR__ . "/model/Build_Components.php");
 include_once "db.php";
@@ -17,7 +17,7 @@ $input = json_decode(file_get_contents('php://input'));
 $build_components = array();
 
 $conn = connDB();
-$data = [];
+$data = array();
 
 if(!empty($input->build_id) &&!empty($input->user_id) && !empty($input->build_type_id) && !empty($input->build_name) && !empty($input->description) && !empty($input->cpu_description) && !empty($input->gpu_description)
     && !empty($input->ram_description) && !empty($input->components)){

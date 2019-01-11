@@ -5,8 +5,8 @@
  * Date: 26/12/2018
  * Time: 00:48
  */
-include_once "C:\xampp\htdocs\hhapi\db.php";
-class Build implements JsonSerializable
+
+class Builds implements JsonSerializable
 {
     private $build_id;
     private $user_id;
@@ -21,7 +21,7 @@ class Build implements JsonSerializable
     private $regist_date;
 
     /**
-     * Build constructor.
+     * Builds constructor.
      * @param $build_id
      * @param $user_id
      * @param $build_type_id
@@ -171,4 +171,5 @@ class Build implements JsonSerializable
 
         return $componentsArray;
     }
+
 }

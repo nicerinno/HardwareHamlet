@@ -3243,7 +3243,7 @@ class PHPMailer
                 break;
             /*
              * RFC 2047 section 5.2.
-             * Build $pattern without including delimiters and []
+             * Builds $pattern without including delimiters and []
              */
             /* @noinspection PhpMissingBreakStatementInspection */
             case 'comment':
