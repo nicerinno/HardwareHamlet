@@ -15,7 +15,9 @@ include_once (__DIR__ . "/model/PHPMailer/PHPMailer/src/SMTP.php");
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require '/var/www/html/api/composer/vendor/autoload.php';
+//server escola
+//require '/var/www/html/api/composer/vendor/autoload.php';
+require_once (__DIR__ . "/composer/vendor/autoload.php");
 include_once "db.php";
 
 header("Content-Type: application/json");
@@ -72,7 +74,7 @@ VALUES('1', '1', '1', '$email', '$username', '$passwordHash', 'No description ye
 // 0 = off (for production use)
 // 1 = client messages
 // 2 = client and server messages
-                $mail->SMTPDebug = 2;
+                $mail->SMTPDebug = 0;
 //Set the hostname of the mail server
                 $mail->Host = 'tls://smtp.gmail.com:587';
 // use

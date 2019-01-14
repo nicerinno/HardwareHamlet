@@ -20,12 +20,12 @@ if(!empty($input->username) && !empty($input->password)){
     $username = $input->username;
     $password = $input->password;
 
-    $sqlUser = "SELECT * FROM users WHERE username = '$username'";
+    $sqlUser = "SELECT * FROM users WHERE username = '$username' or email='$username'";
     $queryUser = $conn->query($sqlUser);
 
     if($queryUser->num_rows > 0){
 
-        $sqlP = "SELECT password FROM users WHERE username = '$username'";
+        $sqlP = "SELECT password FROM users WHERE username = '$username' or email='$username'";
         $queryPass = $conn->query($sqlP);
         $hashedP = $queryPass->fetch_assoc();
 

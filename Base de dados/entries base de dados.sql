@@ -28,7 +28,7 @@ values
 ('Budget'),
 ('Gaming'),
 ('Gaming EXPERT'),
-('Designer/Editer'),
+('Designer/Editor'),
 ('Workstation'),
 ('Farming');
 
