@@ -19,7 +19,7 @@ $build_components = array();
 $conn = connDB();
 $data = array();
 
-if(!empty($input->build) && !empty($input->components)){
+if(!empty($input->build)){
     $build = $input->build;
 
     $checkIfActive = "SELECT * FROM users WHERE user_id='$build->user_id' AND active=true";
@@ -32,31 +32,12 @@ if(!empty($input->build) && !empty($input->components)){
         if ($checkExisting->num_rows == 0){
             $insert = "INSERT INTO builds(build_id,user_id, build_type_id, build_name, description, cpu_description, gpu_description, ram_description, price, likes) VALUES('$build->build_id','$build->user_id','$build->build_type_id','$build->build_name', '$build->description', '$build->cpu_description', '$build->gpu_description', '$build->ram_description', '0' ,'0')";
             $query1 = $conn->query($insert);
-            $build_components = $input->components;
             if($query1){
-                for($i = 0; $i < count($build_components); $i++){
-                    $component = $build_components[$i];
-                    $insertBuildComponent = "INSERT INTO build_components(build_id,component_id,quantity) VALUES ('$build->build_id' , '$component->component_id' , '$component->quantity')";
-                    $query2 = $conn->query($insertBuildComponent);
-                }
-                if($query2){
-                    //update the price of the build
-                    $updatePrice = "UPDATE builds SET price = (SELECT round ((SELECT SUM(price) FROM components WHERE component_id IN (SELECT component_id FROM build_components WHERE build_id = '$build->build_id')),2)) WHERE build_id= '$build->build_id'";
-                    $queryUpdatePrice = $conn->query($updatePrice);
-                    if($queryUpdatePrice){
-                        //json response body success
-                        $data = ["request_type" => "build registration", "result" => "successfull"];
-                        $newBuildComponent = new Build_Components($build->build_id,$component->component_id ,$component->quantity);
-                    } else{
-                        //json response body failure
-                        $data = ["request_type" => "build registration", "result" => "Failure. Couldn't set the price"];
-                    }
-
-                }else{
-                    //json response body failure
-                    $data = ["request_type" => "build registration", "result" => "Failure. Couldn't regist the component"];
-                }
+                $data = ["request_type" => "build registration", "result" => "success"];
+            }else{
+                $data = ["request_type" => "build registration", "result" => "failure"];
             }
+
         } else {
             //json response body failure
             $data = ["request_type" => "build registration", "result" => "A build with this name already exists"];
@@ -68,6 +49,30 @@ if(!empty($input->build) && !empty($input->components)){
 
 
     $conn->close();
+}else if(!empty($input->build_components)){
+    $build_components = $input->components;
+    $build_id = $build_components[0]->build_id;
+        for($i = 0; $i < count($build_components); $i++){
+            $component = $build_components[$i];
+            $insertBuildComponent = "INSERT INTO build_components(build_id,component_id,quantity) VALUES ('$build_id' , '$component->component_id' , '$component->quantity')";
+            $query2 = $conn->query($insertBuildComponent);
+        }
+        if($query2){
+            //update the price of the build
+            $updatePrice = "UPDATE builds SET price = (SELECT round ((SELECT SUM(price) FROM components WHERE component_id IN (SELECT component_id FROM build_components WHERE build_id = '$build_id')),2)) WHERE build_id= '$build_id'";
+            $queryUpdatePrice = $conn->query($updatePrice);
+            if($queryUpdatePrice){
+                //json response body success
+                $data = ["request_type" => "components registration", "result" => "successfull"];
+            } else{
+                //json response body failure
+                $data = ["request_type" => "build registration", "result" => "Failure. Couldn't set the price"];
+            }
+
+        }else{
+            //json response body failure
+            $data = ["request_type" => "build registration", "result" => "Failure. Couldn't regist the component"];
+        }
 }
 
 echo json_encode($data);
