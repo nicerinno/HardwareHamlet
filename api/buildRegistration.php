@@ -30,7 +30,9 @@ if(!empty($input->build)){
         $checkExisting = $conn->query($sql);
 
         if ($checkExisting->num_rows == 0){
-            $insert = "INSERT INTO builds(build_id,user_id, build_type_id, build_name, description, cpu_description, gpu_description, ram_description, price, likes) VALUES('$build->build_id','$build->user_id','$build->build_type_id','$build->build_name', '$build->description', '$build->cpu_description', '$build->gpu_description', '$build->ram_description', '0' ,'0')";
+            $insert = "INSERT INTO builds(build_id,user_id, build_type_id, build_name, description, cpu_description, 
+gpu_description, ram_description, price, likes,regist_date) VALUES('$build->build_id','$build->user_id','$build->build_type_id',
+'$build->build_name', '$build->description', '$build->cpu_description', '$build->gpu_description', '$build->ram_description', '0' ,'0','$build->regist_date')";
             $query1 = $conn->query($insert);
             if($query1){
                 $data = ["request_type" => "build registration", "result" => "success"];

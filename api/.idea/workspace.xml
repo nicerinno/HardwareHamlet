@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="97553d2d-063a-4008-ac8e-d2945f25719e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/buildRegistration.php" beforeDir="false" afterPath="$PROJECT_DIR$/buildRegistration.php" afterDir="false" />
-    </list>
+    <list default="true" id="97553d2d-063a-4008-ac8e-d2945f25719e" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +214,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/getComponents.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="621">
@@ -255,7 +253,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/buildRegistration.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="556">
@@ -450,12 +448,12 @@
       <workItem from="1547070842741" duration="91000" />
       <workItem from="1547072750344" duration="57000" />
       <workItem from="1547425848077" duration="4500000" />
-      <workItem from="1547563346264" duration="3264000" />
+      <workItem from="1547563346264" duration="3899000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106154000" />
+    <option name="totallyTimeSpent" value="106789000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -681,13 +679,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/getComponents.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="78" selection-start-line="78" selection-end-line="78" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/db.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -699,6 +690,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="556">
           <caret line="51" column="30" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getComponents.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
         </state>
       </provider>
     </entry>
