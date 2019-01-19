@@ -20,6 +20,7 @@ if(isset($_GET['component_type_id'])){
     if($query->num_rows > 0){
         $row = $query->fetch_assoc();
         $data = new Build_Type($row['component_type_id'],$row['name']);
+
     }
 }else {
     $data = [];

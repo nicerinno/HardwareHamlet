@@ -4,13 +4,11 @@ function connDB ()
 {
 
     $servername = "localhost";
-    //user server escola
-   // $username = "hhadmin";
-    //$password = "rs22352";
+  // $username = "hhadmin";
+//    $password = "rs22352";
    $username = "root";
-    $password = "";
-    //password server escola
-    //$password = "XfuH4ft1TRtdwfki";
+//    $password = "";
+    $password = "XfuH4ft1TRtdwfki";
     $dbname = "HardwareHamlet";
 
     // Create connection
