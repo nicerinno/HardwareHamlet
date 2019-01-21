@@ -24,17 +24,23 @@ if(!empty($input->username) && !empty($input->password)){
     $queryUser = $conn->query($sqlUser);
 
     if($queryUser->num_rows > 0){
+        $sqlUserAct = "SELECT * FROM users WHERE active = true AND username = '$username' or email='$username'";
+        $queryUserAct = $conn->query($sqlUserAct);
 
-        $sqlP = "SELECT password FROM users WHERE username = '$username' or email='$username'";
-        $queryPass = $conn->query($sqlP);
-        $hashedP = $queryPass->fetch_assoc();
+        if($queryUserAct->num_rows > 0){
+            $sqlP = "SELECT password FROM users WHERE username = '$username' or email='$username'";
+            $queryPass = $conn->query($sqlP);
+            $hashedP = $queryPass->fetch_assoc();
 
-        $verify = password_verify($password,$hashedP['password']);
+            $verify = password_verify($password,$hashedP['password']);
 
-        if($verify){
-            $data = ["request_type" => "user validation", "result" => "successful"];
-        }else {
-            $data = ["request_type" => "user validation", "result" => "incorrect password"];
+            if($verify){
+                $data = ["request_type" => "user validation", "result" => "successful"];
+            }else {
+                $data = ["request_type" => "user validation", "result" => "incorrect password"];
+            }
+        }else if($queryUserAct->num_rows == 0){
+            $data = ["request_type" => "user validation", "result" => "user inactive"];
         }
     } else {
         $data = ["request_type" => "user validation", "result" => "username does not exist"];

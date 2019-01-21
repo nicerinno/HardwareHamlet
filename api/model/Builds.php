@@ -142,34 +142,73 @@ class Builds implements JsonSerializable
 
     public function jsonSerialize()
     {
+        $build = new Builds($this->getBuildId(),$this->getUserId()
+            ,$this->getBuildTypeId(),$this->getBuildName(),$this->getDescription(),$this->getCpuDescription()
+            ,$this->getGpuDescription(),$this->getRamDescription(),$this->getPrice(),$this->getLikes(),$this->getRegistDate());
         return
             array(
-                'build_id' => $this->getBuildId(),
-                'user_id' => $this->getUserId(),
-                'build_type_id' => $this->getBuildTypeId(),
-                'build_name' => $this->getBuildName(),
-                'description' => $this->getDescription(),
-                'cpu_description' => $this->getCpuDescription(),
-                'gpu_description' => $this->getGpuDescription(),
-                'ram_description' => $this->getRamDescription(),
-                'price' => $this->getPrice(),
-                'likes' => $this->getLikes(),
-                'regist_date' => $this->getRegistDate()
+//                'build_id' => $this->getBuildId(),
+//                'user_id' => $this->getUserId(),
+//                'build_type_id' => $this->getBuildTypeId(),
+//                'build_name' => $this->getBuildName(),
+//                'description' => $this->getDescription(),
+//                'cpu_description' => $this->getCpuDescription(),
+//                'gpu_description' => $this->getGpuDescription(),
+//                'ram_description' => $this->getRamDescription(),
+//                'price' => $this->getPrice(),
+//                'likes' => $this->getLikes(),
+//                'regist_date' => $this->getRegistDate(),
+                'build' => array(
+                    'build_id' => $this->getBuildId(),
+                    'user_id' => $this->getUserId(),
+                    'build_type_id' => $this->getBuildTypeId(),
+                    'build_name' => $this->getBuildName(),
+                    'description' => $this->getDescription(),
+                    'cpu_description' => $this->getCpuDescription(),
+                    'gpu_description' => $this->getGpuDescription(),
+                    'ram_description' => $this->getRamDescription(),
+                    'price' => $this->getPrice(),
+                    'likes' => $this->getLikes(),
+                    'regist_date' => $this->getRegistDate()
+                ),
+                'components' => $this->getComponentsFromBuild($this->getBuildId()),
+                'comments' => $this->getComments($this->getBuildId())
             );
+    }
+
+    public function getBuild($build_id,$user_id,$build_type,$build_name,$description,$cpuDescription,$gpuDescription,$ramDescription,$price,$likes,$regist_date){
+        $build=0;
+
+
+        return $build;
     }
 
     public function getComponentsFromBuild($buildId){
         $componentsArray = array();
         $conn = connDB();
-        $components = "SELECT * FROM components WHERE component_id IN (SELECT component_id FROM build_components WHERE build_id =" . $buildId .  ")";
+        $components = "SELECT * FROM build_components WHERE build_id = $buildId";
         $componentResult = $conn->query($components);
         if($componentResult->num_rows >0){
             while($row = $componentResult->fetch_assoc()){
-                array_push($componentsArray, $newComponent = new Component($row['component_id'],$row['component_type_id'],$row['user_id'],$row['brand'],$row['name'],$row['description'],$row['price'],$row['flg_available'],$row['icon_url'],$row['regist_date']));
+                array_push($componentsArray, $newComponent = new Build_Components($row['build_id'],$row['component_id'],$row['quantity']));
             }
         }
-
+        endConnDB($conn);
         return $componentsArray;
+    }
+
+    public function getComments($build_id){
+        $commentsArray = array();
+        $conn = connDB();
+        $sqlComments = "SELECT * FROM comments WHERE build_id = $build_id";
+        $sqlCommentsResult = $conn->query($sqlComments);
+        if($sqlCommentsResult->num_rows > 0){
+            while($row = $sqlCommentsResult->fetch_assoc()){
+                array_push($commentsArray, $newComment = new Comments($row['comment_id'],$build_id,$row['content'],$row['user_id'],$row['regist_date']));
+            }
+        }
+        endConnDB($conn);
+        return $commentsArray;
     }
 
 }

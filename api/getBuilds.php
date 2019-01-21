@@ -6,6 +6,8 @@
  * Time: 01:35
  */
 include_once (__DIR__ . "/model/Builds.php");
+include_once (__DIR__ . "/model/Build_Components.php");
+include_once (__DIR__ . "/model/Comments.php");
 
 include_once "db.php";
 
@@ -64,7 +66,7 @@ if(isset($_GET['recent']) && isset($_GET['build_type_id']) && isset($_GET['searc
 
 }else if(isset($_GET['build_id'])){
 
-    $component_id = $_GET['build_id'];
+    $build_id = $_GET['build_id'];
 
     $sql1 = "SELECT * FROM builds WHERE build_id='$build_id'";
     $result1 = $conn->query($sql1);
@@ -89,8 +91,6 @@ if(isset($_GET['recent']) && isset($_GET['build_type_id']) && isset($_GET['searc
             array_push($buildArray, $newBuild = new Builds($buildRow['build_id'],$buildRow['user_id'],$buildRow['build_type_id'],$buildRow['build_name'],$buildRow['description'], $buildRow['cpu_description'],$buildRow['gpu_description'],$buildRow['ram_description'],$buildRow['price'],$buildRow['likes'],$buildRow['regist_date']));
         }
     }
-    //cenas
-
 }else{
     $sql1 = "SELECT * FROM builds ORDER BY regist_date desc";
     $result1 = $conn->query($sql1);
