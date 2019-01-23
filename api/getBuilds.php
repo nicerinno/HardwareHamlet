@@ -42,17 +42,7 @@ if(isset($_GET['recent']) && isset($_GET['build_type_id']) && isset($_GET['searc
                 array_push($buildArray, $newBuild = new Builds($buildRow['build_id'],$buildRow['user_id'],$buildRow['build_type_id'],$buildRow['build_name'],$buildRow['description'],$buildRow['price'],$buildRow['likes'],$buildRow['regist_date']));
             }
         }
-    } else if($type_id=='0'){
-        $sql3 = "SELECT * FROM builds WHERE name REGEXP '$search' ORDER BY regist_date $order";
-        $result3 = $conn->query($sql3);
-        endConnDB($conn);
-
-        if ($result3->num_rows > 0) {
-            while ($buildRow = $result3->fetch_assoc()) {
-                array_push($buildArray, $newBuild = new Builds($buildRow['build_id'],$buildRow['user_id'],$buildRow['build_type_id'],$buildRow['build_name'],$buildRow['description'],$buildRow['price'],$buildRow['likes'],$buildRow['regist_date']));
-            }
-        }
-    } else{
+    }else{
         $sql4 = "SELECT * FROM builds WHERE name REGEXP '$search' AND build_type_id = '$type_id' ORDER BY regist_date $order";
         $result4 = $conn->query($sql4);
         endConnDB($conn);

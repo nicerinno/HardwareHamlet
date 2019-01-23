@@ -2,10 +2,9 @@
 /**
  * Created by PhpStorm.
  * User: R_Rod
- * Date: 31/12/2018
- * Time: 14:21
+ * Date: 23/01/2019
+ * Time: 19:18
  */
-
 include_once (__DIR__ . "/model/Builds.php");
 include_once "db.php";
 
@@ -21,11 +20,11 @@ if(isset($_GET['build_id']) && isset($_GET['user_id'])){
     $runCheckActive = $conn->query($checkIfActive);
 
     if($runCheckActive->num_rows > 0){
-        $sql2 = "INSERT INTO likes (build_id,user_id) values ($build_id,$user_id)";
+        $sql2 = "DELETE FROM likes WHERE build_id = '$build_id' AND user_id ='$user_id'";
         $registLike = $conn->query($sql2);
 
         if($registLike){
-            $sql = "UPDATE builds SET likes = likes + 1 WHERE build_id = '$build_id'";
+            $sql = "UPDATE builds SET likes = likes - 1 WHERE build_id = '$build_id'";
             $regist = $conn->query($sql);
             if($regist){
                 //checking if the user is eligible for a new medal
@@ -46,22 +45,15 @@ if(isset($_GET['build_id']) && isset($_GET['user_id'])){
                     $query = $conn->query($setNewMedal);
                 }
                 //json responde body success
-                $data = array("request_type" => "post like", "result" => "successfull");
+                $data = array("request_type" => "remove like", "result" => "successfull");
             } else{
                 //json response body failure
-                $data = array("request_type" => "post like", "result" => "failure");
+                $data = array("request_type" => "remove like", "result" => "failure");
             }
-        }else {
-            $sql2 = "INSERT INTO likes (build_id,user_id) values ($build_id,$user_id)";
-            $registLike = $conn->query($sql2);
-            if ($registLike) {
-                $data = array("request_type" => "post like", "result" => "already liked");
-            }
-
         }
     }else{
         //json response body failure
-        $data = array("request_type" => "post like", "result" => "User not active");
+        $data = array("request_type" => "remove like", "result" => "User not active");
     }
     endConnDB($conn);
 
