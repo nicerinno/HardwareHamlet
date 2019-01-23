@@ -10,8 +10,8 @@ include_once(__DIR__ . "/model/Users.php");
 include_once "db.php";
 
 $conn = connDB();
+header("Content-Type: application/json");
 
-$conn = connDB();
 
 if(isset($_GET['user_id'])){
     $id = $_GET['user_id'];
@@ -24,17 +24,19 @@ if(isset($_GET['user_id'])){
         $row = $query->fetch_assoc();
         $data = new Users($row['user_id'],$row['title_id'],$row['usertype_id'],$row['medal_id'],$row['email'],$row['username'],$row['password'], $row['description'],$row['reputation'],$row['active'],$row['validation_code'],$row['regist_date']);
     }
-}else {
-    $data = array();
+}else if(isset($_GET['username'])){
+    $id = $_GET['username'];
+    $data = 0;
 
-    $sql = "SELECT * FROM users";
+    $sql = "SELECT user_id FROM users WHERE username = '$id'";
     $query = $conn->query($sql);
 
-    if($query->num_rows > 0){
-        while($row = $query->fetch_assoc()){
-            array_push($data, new Users($row['user_id'],$row['title_id'],$row['usertype_id'],$row['medal_id'],$row['email'],$row['username'],$row['password'], $row['description'],$row['reputation'],$row['active'],$row['validation_code'],$row['regist_date']));
-        }
+
+    if($query->num_rows > 0) {
+        $row = $query->fetch_assoc();
+        $user_id = $row['user_id'];
+        $data = ["request_type" => "user_id", "result" => "$user_id"];
     }
 }
-$conn->close();
+endConnDB($conn);
 echo json_encode($data);

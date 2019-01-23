@@ -12,16 +12,22 @@ header("Content-Type: application/json");
 
 $input = json_decode(file_get_contents('php://input'));
 $conn = connDB();
-if(!empty($input->build_id) && !empty($input->content) && !empty($input->user_id)){
-    $sql = "INSERT INTO comments(build_id, content, user_id) VALUES('$input->build_id','$input->content','$input->user_id')";
-    $regist = $conn->query($sql);
-    if($regist){
-        $data = ["request_type" => "comment registration", "result" => "successfull"];
-        $comment = new Comments("",$input->build_id,$input->content,$input->user_id);
-    } else{
-        //json response body success
-        $data = ["request_type" => "comment registration", "result" => "failure " ];
-    }
+if(isset($_GET['build_id']) && isset($_GET['content']) && isset($_GET['user_id']) && isset($_GET['regist_date'])){
+    $build_id = $_GET['build_id'];
+    $content = $_GET['content'];
+    $user_id = $_GET['user_id'];
+    $regist_date = $_GET['regist_date'];
+
+
+        $sql = "INSERT INTO comments(build_id, content, user_id, regist_date) VALUES('$build_id','$content','$user_id','$regist_date')";
+        $regist = $conn->query($sql);
+        if($regist){
+            $data = ["request_type" => "comment registration", "result" => "successful"];
+        } else{
+            //json response body success
+            $data = ["request_type" => "comment registration", "result" => "failure " ];
+        }
+
     endConnDB($conn);
 }
 echo json_encode($data);

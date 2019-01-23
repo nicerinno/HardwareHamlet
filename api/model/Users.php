@@ -160,8 +160,8 @@ class Users implements JsonSerializable
      */
     public function jsonSerialize()
     {
-        return [
-            [
+        return array(
+
                 'user_id' => $this->getUserId(),
                 'title_id' => $this->getTitleId(),
                 'usertype_id' => $this->getUsertypeId(),
@@ -174,8 +174,7 @@ class Users implements JsonSerializable
                 'active' => $this->getActive(),
                 'validation_code' => $this->getValidationCode(),
                 'regist_date' => $this->getRegistDate()
-            ]
 
-        ];
+        );
     }
 }
