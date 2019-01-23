@@ -30,10 +30,8 @@ if(!empty($input->build) && !empty($input->components)){
         $checkExisting = $conn->query($sql);
 
         if ($checkExisting->num_rows == 0){
-            $insert = "INSERT INTO builds(build_id,user_id, build_type_id, build_name, description, cpu_description
-, gpu_description, ram_description, price, likes, regist_date)
- VALUES('$build->build_id','$build->user_id','$build->build_type_id','$build->build_name', '$build->description', '$build->cpu_description'
- , '$build->gpu_description', '$build->ram_description', '0' ,'0','$build->regist_date')";
+            $insert = "INSERT INTO builds(build_id,user_id, build_type_id, build_name, description, price, likes, regist_date)
+ VALUES('$build->build_id','$build->user_id','$build->build_type_id','$build->build_name', '$build->description','0' ,'0','$build->regist_date')";
             $query1 = $conn->query($insert);
             $build_components = $input->components;
             if($query1){
@@ -48,9 +46,14 @@ if(!empty($input->build) && !empty($input->components)){
 (SELECT component_id FROM build_components WHERE build_id = '$build->build_id')),2)) WHERE build_id= '$build->build_id'";
                     $queryUpdatePrice = $conn->query($updatePrice);
                     if($queryUpdatePrice){
-                        //json response body success
-                        $data = ["request_type" => "build registration", "result" => "success"];
-                        $newBuildComponent = new Build_Components($build->build_id,$component->component_id ,$component->quantity);
+
+                        $addRep = "UPDATE users SET reputation = reputation+25 WHERE user_id = '$build->user_id'";
+                        $sqlRep = $conn->query($addRep);
+                        if($sqlRep){
+                            //json response body success
+                            $data = ["request_type" => "build registration", "result" => "success"];
+                            $newBuildComponent = new Build_Components($build->build_id,$component->component_id ,$component->quantity);
+                        }
                     } else{
                         //json response body failure
                         $data = ["request_type" => "build registration", "result" => "Failure. Couldn't set the price"];

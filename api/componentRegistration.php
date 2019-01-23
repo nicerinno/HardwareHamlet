@@ -48,10 +48,13 @@ if(!empty($input->component_type_id) && !empty($input->user_id) && !empty($input
                 $setNewTitle = "UPDATE users SET title_id = '$title_id' WHERE user_id = '$input->user_id'";
                 $queryNewTitel = $conn->query($setNewTitle);
             }
+            $addRep = "UPDATE users SET reputation = reputation+25 WHERE user_id = '$input->user_id'";
+            $sqlRep = $conn->query($addRep);
+            if($sqlRep){
+                //json response body success
+                $data = ["request_type" => "component registration", "result" => "successfull"];
+            }
 
-            //json response body success
-            $data = ["request_type" => "component registration", "result" => "successfull"];
-            $component = new Component('',$input->component_type_id,$input->user_id,$input->brand,$input->name,$input->description,$input->price,$input->flg_available,$input->icon_url);
         } else{
             //json response body failure
             $data = ["request_type" => "component registration", "result" => "failure " ];

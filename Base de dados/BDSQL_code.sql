@@ -68,9 +68,6 @@ CREATE TABLE builds(
     build_type_id int not null,
     build_name varchar(100) not null,
     description varchar(500) not null,
-    cpu_description varchar(500) not null,
-    gpu_description varchar(500) not null,
-    ram_description varchar(500) not null,
 	price double not null,
 	likes bigint not null,
 	regist_date bigint not null,
@@ -100,6 +97,7 @@ CREATE TABLE comments(
     build_id bigint not null,
     content varchar(500) not null,
 	user_id bigint not null,
+	regist_date bigint not null,
     FOREIGN KEY (build_id) REFERENCES builds(build_id),
 	FOREIGN KEY (user_id) REFERENCES users(user_id)
 );

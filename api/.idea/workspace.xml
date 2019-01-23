@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="97553d2d-063a-4008-ac8e-d2945f25719e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accountActivated.html" beforeDir="false" afterPath="$PROJECT_DIR$/accountActivated.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accountActivation.php" beforeDir="false" afterPath="$PROJECT_DIR$/accountActivation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buildRegistration.php" beforeDir="false" afterPath="$PROJECT_DIR$/buildRegistration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/getBuildTypeInfo.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/getBuilds.php" beforeDir="false" afterPath="$PROJECT_DIR$/getBuilds.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Builds.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Builds.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setLike.php" beforeDir="false" afterPath="$PROJECT_DIR$/setLike.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userRegistration.php" beforeDir="false" afterPath="$PROJECT_DIR$/userRegistration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userValidation.php" beforeDir="false" afterPath="$PROJECT_DIR$/userValidation.php" afterDir="false" />
-    </list>
+    <list default="true" id="97553d2d-063a-4008-ac8e-d2945f25719e" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +168,7 @@
     <session id="583302505">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.12" value="1" />
@@ -188,30 +177,30 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="144" />
+          <entry key="php" value="145" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="142" />
+          <entry key="PHP" value="143" />
           <entry key="SQL" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="php" value="5" />
+          <entry key="php" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PHP" value="5" />
+          <entry key="PHP" value="7" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/getComponents.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="621">
@@ -232,7 +221,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/getBuilds.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
+            <state relative-caret-position="-93">
               <caret line="53" column="9" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
               <folding>
                 <element signature="e#6#87#0#PHP" />
@@ -244,9 +233,25 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/buildRegistration.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
+            <state relative-caret-position="357">
+              <caret line="47" column="82" selection-start-line="47" selection-start-column="82" selection-end-line="47" selection-end-column="82" />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/setLike.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="338">
+              <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/Builds.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2550" />
           </provider>
         </entry>
       </file>
@@ -328,9 +333,9 @@
         <option value="$PROJECT_DIR$/db.php" />
         <option value="$PROJECT_DIR$/getComponents.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/db.php" />
-        <option value="$PROJECT_DIR$/buildRegistration.php" />
         <option value="$PROJECT_DIR$/getComponentTypeList.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/getComponents.php" />
+        <option value="$PROJECT_DIR$/buildRegistration.php" />
       </list>
     </option>
   </component>
@@ -451,12 +456,12 @@
       <workItem from="1547563346264" duration="4770000" />
       <workItem from="1547595897990" duration="2215000" />
       <workItem from="1547736282006" duration="3803000" />
-      <workItem from="1548082223696" duration="629000" />
+      <workItem from="1548082223696" duration="2953000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114307000" />
+    <option name="totallyTimeSpent" value="116631000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -469,7 +474,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.18724832" />
@@ -599,13 +603,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/setLike.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer/composer.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -669,23 +666,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/getBuilds.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="53" column="9" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
-          <folding>
-            <element signature="e#6#87#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/buildRegistration.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/getComponentTypeList.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -704,6 +684,35 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1003">
           <caret line="64" column="54" selection-start-line="64" selection-start-column="54" selection-end-line="64" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/buildRegistration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="47" column="82" selection-start-line="47" selection-start-column="82" selection-end-line="47" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getBuilds.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-93">
+          <caret line="53" column="9" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
+          <folding>
+            <element signature="e#6#87#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/Builds.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2550" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setLike.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
         </state>
       </provider>
     </entry>

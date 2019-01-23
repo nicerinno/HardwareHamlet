@@ -29,7 +29,7 @@ if(isset($_GET['recent']) && isset($_GET['build_type_id']) && isset($_GET['searc
 
         if ($result1->num_rows > 0) {
             while ($buildRow = $result1->fetch_assoc()) {
-                array_push($buildArray, $newBuild = new Builds($buildRow['build_id'],$buildRow['user_id'],$buildRow['build_type_id'],$buildRow['build_name'],$buildRow['description'], $buildRow['cpu_description'],$buildRow['gpu_description'],$buildRow['ram_description'],$buildRow['price'],$buildRow['regist_date']));
+                array_push($buildArray, $newBuild = new Builds($buildRow['build_id'],$buildRow['user_id'],$buildRow['build_type_id'],$buildRow['build_name'],$buildRow['description'],$buildRow['price'],$buildRow['likes'],$buildRow['regist_date']));
             }
         }
     } else if($search=='none'){
@@ -39,7 +39,7 @@ if(isset($_GET['recent']) && isset($_GET['build_type_id']) && isset($_GET['searc
 
         if ($result2->num_rows > 0) {
             while ($buildRow = $result2->fetch_assoc()) {
-                array_push($buildArray, $newBuild = new Builds($buildRow['build_id'],$buildRow['user_id'],$buildRow['build_type_id'],$buildRow['build_name'],$buildRow['description'], $buildRow['cpu_description'],$buildRow['gpu_description'],$buildRow['ram_description'],$buildRow['price'],$buildRow['likes'],$buildRow['regist_date']));
+                array_push($buildArray, $newBuild = new Builds($buildRow['build_id'],$buildRow['user_id'],$buildRow['build_type_id'],$buildRow['build_name'],$buildRow['description'],$buildRow['price'],$buildRow['likes'],$buildRow['regist_date']));
             }
         }
     } else if($type_id=='0'){
@@ -49,7 +49,7 @@ if(isset($_GET['recent']) && isset($_GET['build_type_id']) && isset($_GET['searc
 
         if ($result3->num_rows > 0) {
             while ($buildRow = $result3->fetch_assoc()) {
-                array_push($buildArray, $newBuild = new Builds($buildRow['build_id'],$buildRow['user_id'],$buildRow['build_type_id'],$buildRow['build_name'],$buildRow['description'], $buildRow['cpu_description'],$buildRow['gpu_description'],$buildRow['ram_description'],$buildRow['price'],$buildRow['likes'],$buildRow['regist_date']));
+                array_push($buildArray, $newBuild = new Builds($buildRow['build_id'],$buildRow['user_id'],$buildRow['build_type_id'],$buildRow['build_name'],$buildRow['description'],$buildRow['price'],$buildRow['likes'],$buildRow['regist_date']));
             }
         }
     } else{
@@ -59,7 +59,7 @@ if(isset($_GET['recent']) && isset($_GET['build_type_id']) && isset($_GET['searc
 
         if ($result4->num_rows > 0) {
             while ($buildRow = $result4->fetch_assoc()) {
-                array_push($buildArray, $newBuild = new Builds($buildRow['build_id'],$buildRow['user_id'],$buildRow['build_type_id'],$buildRow['build_name'],$buildRow['description'], $buildRow['cpu_description'],$buildRow['gpu_description'],$buildRow['ram_description'],$buildRow['price'],$buildRow['likes'],$buildRow['regist_date']));
+                array_push($buildArray, $newBuild = new Builds($buildRow['build_id'],$buildRow['user_id'],$buildRow['build_type_id'],$buildRow['build_name'],$buildRow['description'],$buildRow['price'],$buildRow['likes'],$buildRow['regist_date']));
             }
         }
     }
@@ -74,7 +74,7 @@ if(isset($_GET['recent']) && isset($_GET['build_type_id']) && isset($_GET['searc
 
     if ($result1->num_rows > 0) {
         while ($buildRow = $result1->fetch_assoc()) {
-            array_push($buildArray, $newBuild = new Builds($buildRow['build_id'],$buildRow['user_id'],$buildRow['build_type_id'],$buildRow['build_name'],$buildRow['description'], $buildRow['cpu_description'],$buildRow['gpu_description'],$buildRow['ram_description'],$buildRow['price'],$buildRow['likes'],$buildRow['regist_date']));
+            array_push($buildArray, $newBuild = new Builds($buildRow['build_id'],$buildRow['user_id'],$buildRow['build_type_id'],$buildRow['build_name'],$buildRow['description'],$buildRow['price'],$buildRow['likes'],$buildRow['regist_date']));
         }
     }
 
@@ -88,7 +88,7 @@ if(isset($_GET['recent']) && isset($_GET['build_type_id']) && isset($_GET['searc
 
     if ($result1->num_rows > 0) {
         while ($buildRow = $result1->fetch_assoc()) {
-            array_push($buildArray, $newBuild = new Builds($buildRow['build_id'],$buildRow['user_id'],$buildRow['build_type_id'],$buildRow['build_name'],$buildRow['description'], $buildRow['cpu_description'],$buildRow['gpu_description'],$buildRow['ram_description'],$buildRow['price'],$buildRow['likes'],$buildRow['regist_date']));
+            array_push($buildArray, $newBuild = new Builds($buildRow['build_id'],$buildRow['user_id'],$buildRow['build_type_id'],$buildRow['build_name'],$buildRow['description'],$buildRow['price'],$buildRow['likes'],$buildRow['regist_date']));
         }
     }
 }else{
@@ -98,7 +98,7 @@ if(isset($_GET['recent']) && isset($_GET['build_type_id']) && isset($_GET['searc
 
     if ($result1->num_rows > 0) {
         while ($buildRow = $result1->fetch_assoc()) {
-            array_push($buildArray, $newBuild = new Builds($buildRow['build_id'],$buildRow['user_id'],$buildRow['build_type_id'],$buildRow['build_name'],$buildRow['description'], $buildRow['cpu_description'],$buildRow['gpu_description'],$buildRow['ram_description'],$buildRow['price'],$buildRow['likes'],$buildRow['regist_date']));
+            array_push($buildArray, $newBuild = new Builds($buildRow['build_id'],$buildRow['user_id'],$buildRow['build_type_id'],$buildRow['build_name'],$buildRow['description'],$buildRow['price'],$buildRow['likes'],$buildRow['regist_date']));
         }
     }
 

@@ -12,7 +12,7 @@ include_once "db.php";
 header("Content-Type: application/json");
 
 $conn = connDB();
-$data = [];
+$data = array();
 if(isset($_GET['build_id']) && isset($_GET['user_id'])){
     $user_id = $_GET['user_id'];
     $build_id = $_GET['build_id'];
@@ -51,21 +51,21 @@ if(isset($_GET['build_id']) && isset($_GET['user_id'])){
                 //json response body failure
                 $data = array("request_type" => "post like", "result" => "failure");
             }
-        }else{
+        }else {
             $sql2 = "INSERT INTO likes (build_id,user_id) values ($build_id,$user_id)";
             $registLike = $conn->query($sql2);
             $sql = "UPDATE builds SET likes = likes + - WHERE build_id = '$build_id'";
             $regist = $conn->query($sql);
-            if($regist){
-            $data = array("request_type" => "post like", "result" => "already liked");
+            if ($regist) {
+                $data = array("request_type" => "post like", "result" => "already liked");
 
-            //TODO: TRATAR DO removing likes
+                //TODO: TRATAR DO removing likes
+            }
+
         }
-
-
     }else{
         //json response body failure
-        $data = ["request_type" => "build registration", "result" => "User not active"];
+        $data = array("request_type" => "build registration", "result" => "User not active");
     }
     endConnDB($conn);
 

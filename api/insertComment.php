@@ -12,24 +12,21 @@ header("Content-Type: application/json");
 
 $input = json_decode(file_get_contents('php://input'));
 $conn = connDB();
-if(!empty($input->build_id) && !empty($input->content) && !empty($input->user_id)){
-    $checkIfActive = "SELECT * FROM users WHERE user_id='$input->build_name' AND active=true";
-    $runCheckActive = $conn->query($checkIfActive);
+if(isset($_GET['build_id']) && isset($_GET['content']) && isset($_GET['user_id']) && isset($_GET['regist_date'])){
+    $build_id = $_GET['build_id'];
+    $content = $_GET['content'];
+    $user_id = $_GET['user_id'];
+    $regist_date = $_GET['regist_date'];
 
-    if($runCheckActive->num_rows > 0){
-        $sql = "INSERT INTO comments(build_id, content, user_id) VALUES('$input->build_id','$input->content','$input->user_id')";
+
+        $sql = "INSERT INTO comments(build_id, content, user_id, regist_date) VALUES('$build_id','$content','$user_id','$regist_date')";
         $regist = $conn->query($sql);
         if($regist){
-            $data = ["request_type" => "comment registration", "result" => "successfull"];
-            $comment = new Comments("",$input->build_id,$input->content,$input->user_id);
+            $data = ["request_type" => "comment registration", "result" => "successful"];
         } else{
             //json response body success
             $data = ["request_type" => "comment registration", "result" => "failure " ];
         }
-    }else{
-        //json response body failure
-        $data = ["request_type" => "build registration", "result" => "User not active"];
-    }
 
     endConnDB($conn);
 }

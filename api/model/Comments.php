@@ -91,12 +91,12 @@ class Comments implements JsonSerializable
     public function jsonSerialize()
     {
         // TODO: Implement jsonSerialize() method.
-        return [
+        return array(
             'comment_id' => $this->getCommentId(),
             'user_id' => $this->getUserId(),
             'build_id' => $this->getBuildId(),
             'content' => $this->getContent(),
             'regist_date' => $this->getRegistDate()
-        ];
+        );
     }
 }
