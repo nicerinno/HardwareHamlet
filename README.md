@@ -106,7 +106,7 @@ Talvez, mais tarde, precisaremos de aumentar o espaço de armazenamento, depende
 <p><strong>Descrição da tarefa:</strong></p>
 <p>Utilizando websites de templates gratuitos, procedemos para a escolha de um template para o nosso website.</p>
 <p>Estudámos a framework Smartie de modo a implementar o código php que iremos desenvolver mais tarde.</p>
-<p><strong>Status:</strong> Em curso.</p>
+<p><strong>Status:</strong> Terminado.</p>
 <p><strong>Auto-avaliação:</strong> (0-5).</p>
 
 <h3>8º Objetivo - Desenvolvimento da API para a APP Android</h3>
