@@ -139,9 +139,8 @@ visualizar as builds por categoria, vistualizar os detalhes dos componentes e da
 <h3>11º Objetivo - Desenvolvimento da APP(Rankings, Builds) </h3>
 <p><strong>Task Manager -</strong> Alexandre Amorim </p>
 <p><strong>Descrição da tarefa:</strong></p>
-<p>Nesta tarefa para fazer a atividade dos Rankings foi necessário criarmos um repositório, os request à API no service e um adapter para mostrar os utilizadores numa lista.
-Nos Builds foi preciso criar uma atividade através de fragments com 6 imageButtons para as diferentes categorias.
-</p>
+<p>Nesta tarefa para fazer a atividade dos Rankings foi necessário criarmos um repositório, os request à API no service e um adapter para mostrar os utilizadores numa lista.</p>
+<p>Nos Builds foi preciso criar uma atividade através de fragments com 6 imageButtons para as diferentes categorias.</p>
 <p><strong>Status:</strong> Terminado.</p>
 <p><strong>Auto-avaliação:</strong> 4(0-5).</p>
 
