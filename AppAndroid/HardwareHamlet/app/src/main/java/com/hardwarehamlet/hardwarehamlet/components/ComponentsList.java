@@ -240,7 +240,7 @@ public class ComponentsList extends Fragment{
 
                     @Override
                     public void onError(String error) {
-                        Snackbar.make(getView(),error, Snackbar.LENGTH_LONG).show();
+                        //Snackbar.make(getView(),error, Snackbar.LENGTH_LONG).show();
                     }
                 },sort_value,type_id, search);
             }
