@@ -120,7 +120,7 @@ Talvez, mais tarde, precisaremos de aumentar o espaço de armazenamento, depende
 <p><strong>Descrição da tarefa:</strong></p>
 <p>Alteramos bastante o template, pois grande parte do conteudo foi adicionado dinamicamente através de PHP e jquery. Tivemos bastantes dificuldades, especialmente na utilização de jquery pois não conhecemos muito bem a linguagem. No fim não conseguimos concluir alguns dos objetivos para o website por falta de tempo e/ou conhecimento. </p>
 <p><strong>Status:</strong> Em curso...</p>
-<p><strong>Auto-avaliação:</strong> 3(0-5).</p>
+<p><strong>Auto-avaliação:</strong> 4(0-5).</p>
 
 <h3>10º Objetivo - Desenvolvimento da app(LogIn, Registo de utilizadores, Home, Lista componentes, Detalhes de componentes, Criação das builds, Detalhes das builds)</h3>
 <p><strong>Task Manager -</strong> Rodrigo Serra </p>
