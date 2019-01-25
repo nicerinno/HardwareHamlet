@@ -3,9 +3,12 @@
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
     android:gravity="center"
     android:paddingTop="5dp"
     android:paddingBottom="5dp"
     android:text="Sample Text"
     android:textColor="@color/colorPrimaryDark"
+    android:textSize="18sp"
     android:textStyle="bold"></TextView>

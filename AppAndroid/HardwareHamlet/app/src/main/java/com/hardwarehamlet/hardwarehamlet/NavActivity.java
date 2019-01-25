@@ -23,6 +23,7 @@ import com.hardwarehamlet.hardwarehamlet.builds.Build;
 import com.hardwarehamlet.hardwarehamlet.components.ComponentsList;
 import com.hardwarehamlet.hardwarehamlet.data.local.AppDatabase;
 import com.hardwarehamlet.hardwarehamlet.preferences_manager.PreferencesManager;
+import com.hardwarehamlet.hardwarehamlet.ranking.Rankings;
 
 import static com.hardwarehamlet.hardwarehamlet.builds.Build.REQUEST_BUILD_CREATOR;
 
@@ -112,7 +113,7 @@ public class NavActivity extends AppCompatActivity {
             startActivity(new Intent(this,Login.class));
             return true;
         }else if(item.getItemId() == R.id.buttonAddBuild){
-            if(PreferencesManager.getSession(this)){
+            if( PreferencesManager.getSavedUserId(this) != 0){
                 Intent intent = new Intent(this, AddBuild.class);
                 startActivityForResult(intent,REQUEST_BUILD_CREATOR);
             }else{

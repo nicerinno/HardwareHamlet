@@ -81,4 +81,13 @@ public interface DataService {
 
     @GET("getTitlesInfo.php")
     Call<List<Titles>> getTitles();
+
+    @GET("getRankings.php?ranking=users")
+    Call<List<Users>> getRankingUsers();
+
+    @GET("getRankings.php?ranking=components")
+    Call<List<Components>> getRankingComponents();
+
+    @GET("getRankings.php?ranking=builds")
+    Call<List<BuildsResponseBody>> getRankingBuilds();
 }

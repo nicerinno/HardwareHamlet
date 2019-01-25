@@ -53,8 +53,15 @@ public class ComponentsListToPickAdapter extends BaseAdapter {
         TextView textViewDescription = convertView.findViewById(R.id.textViewDescription);
         textViewDescription.setText(components.getDescription());
         TextView textViewPrice = convertView.findViewById(R.id.textViewComponentQuantity);
-        String price = components.getPrice() + "€";
-        textViewPrice.setText(price);
+        String price = String.valueOf(components.getPrice());
+        if(price.substring(price.indexOf("."),price.length()-1).length() != 2){
+            String finalS = price + "0€";
+            textViewPrice.setText(finalS);
+        }else{
+            String finalS = price + "€";
+            textViewPrice.setText(finalS);
+        }
+
         ImageView imageView = convertView.findViewById(R.id.imageView);
         Glide.with(this.context).load(components.getIcon_url()).into(imageView);
 

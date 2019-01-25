@@ -3,6 +3,7 @@ package com.hardwarehamlet.hardwarehamlet.builds;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,13 +13,17 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.hardwarehamlet.hardwarehamlet.NavActivity;
 import com.hardwarehamlet.hardwarehamlet.R;
+import com.hardwarehamlet.hardwarehamlet.SignUpActivity;
 import com.hardwarehamlet.hardwarehamlet.data.local.AppDatabase;
 import com.hardwarehamlet.hardwarehamlet.model.Builds;
+import com.hardwarehamlet.hardwarehamlet.preferences_manager.PreferencesManager;
 import com.hardwarehamlet.hardwarehamlet.repositories.BuildsRepository;
 
 import java.util.List;
 
+import static com.hardwarehamlet.hardwarehamlet.builds.Build.REQUEST_BUILD_CREATOR;
 import static com.hardwarehamlet.hardwarehamlet.builds.BuildsDetails.BUILD_ID;
 
 public class BuildsList extends Fragment {
@@ -96,9 +101,22 @@ public class BuildsList extends Fragment {
         listViewBuildsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getActivity(),BuildsDetails.class);
-                intent.putExtra(BUILD_ID,id);
-                startActivity(intent);
+                if( PreferencesManager.getSavedUserId(getContext()) != 0){
+                    Intent intent = new Intent(getActivity(), AddBuild.class);
+                    startActivityForResult(intent,REQUEST_BUILD_CREATOR);
+                }else{
+                    Snackbar snackbar = Snackbar.make(view.findViewById(android.R.id.content)
+                            ,"Apenas utilizadores podem aceder a esta fucionalidade."
+                            , Snackbar.LENGTH_LONG);
+                    snackbar.setAction("Criar conta", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(getActivity(), SignUpActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+                    snackbar.show();
+                }
             }
         });
     }

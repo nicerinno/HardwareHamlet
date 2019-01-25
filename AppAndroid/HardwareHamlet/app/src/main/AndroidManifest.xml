@@ -31,7 +31,7 @@
             android:name=".NavActivity"
             android:label="@string/title_activity_nav" />
         <activity android:name=".Home" />
-        <activity android:name=".Rankings" />
+        <activity android:name=".ranking.Rankings" />
         <activity android:name=".builds.Build" />
         <activity android:name=".components.ComponentsDetails" />
         <activity android:name=".builds.AddBuild" />

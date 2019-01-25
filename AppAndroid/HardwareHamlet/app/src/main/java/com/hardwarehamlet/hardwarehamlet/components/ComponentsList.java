@@ -72,7 +72,7 @@ public class ComponentsList extends Fragment{
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(PreferencesManager.getSession(getContext())){
+                if( PreferencesManager.getSavedUserId(getContext()) != 0L){
                     Intent intent = new Intent(getActivity(), ComponentsDetails.class);
                     intent.putExtra(COMPONENT_ID,id);
                     startActivity(intent);
