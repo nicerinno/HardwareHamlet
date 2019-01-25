@@ -118,7 +118,7 @@ Talvez, mais tarde, precisaremos de aumentar o espaço de armazenamento, depende
 <h3>9º Objetivo - Desenvolvimento do site</h3>
 <p><strong>Task Manager -</strong> Mário Miguel </p>
 <p><strong>Descrição da tarefa:</strong></p>
-<p></p>
+<p>Alteramos bastante o template, pois grande parte do conteudo foi adicionado dinamicamente através de PHP e jquery. Tivemos bastantes dificuldades, especialmente na utilização de jquery pois não conhecemos muito bem a linguagem. No fim não conseguimos concluir alguns dos objetivos para o website por falta de tempo e/ou conhecimento. </p>
 <p><strong>Status:</strong> Em curso...</p>
 <p><strong>Auto-avaliação:</strong> (0-5).</p>
 
