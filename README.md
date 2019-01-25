@@ -125,15 +125,22 @@ Talvez, mais tarde, precisaremos de aumentar o espaço de armazenamento, depende
 <h3>10º Objetivo - Desenvolvimento da app(LogIn, Registo de utilizadores, Home, Lista componentes, Detalhes de componentes, Criação das builds, Detalhes das builds)</h3>
 <p><strong>Task Manager -</strong> Rodrigo Serra </p>
 <p><strong>Descrição da tarefa:</strong></p>
-<p></p>
-<p><strong>Status:</strong> Em curso.</p>
-<p><strong>Auto-avaliação:</strong> (0-5).</p>
+<p>Através do Android studio procedemos ao desenvolvimento da aplicação web para o nosso projeto.</p>
+<p>Começámos por criar todas as activities que iriamos precisar. Estabelecemos a activity que iria alojar a barra de navegação e o FrameLayout, onde iria ser alterado o fragment consoante solicitado</p>
+<p>Depois, criámos os repositórios, os services, para realizar requests ao servidor através do retrofit2, e o Room, para termos uma base de dados local,
+ que serve de cache e permite que a app seja utilizada sem internet (caso tenha sido iniciada pelo menos uma vez com internet)</p>
+<p>É possível aceder ao interior da nossa aplicação sendo um guest, mas não é possível realizar certas acções sem ter feito login primeiro.
+A nossa aplicação faz gestão da sessão, pelo que se no login for colocado um visto na checkbox, o utilizador irá estar sempre logado na aplicação, através das SharedPreferences</p>
+<p>Ficámos bastante contentes com a aplicação, pois tem um aspecto bonito e tem todas as funcionalidades que queriamos: visualizar os componentes por categoria,
+visualizar as builds por categoria, vistualizar os detalhes dos componentes e das builds e registar uma build e os seus componentes.</p>
+<p><strong>Status:</strong> Terminado.</p>
+<p><strong>Auto-avaliação:</strong> 5(0-5).</p>
 
 <h3>11º Objetivo - Desenvolvimento da APP(Rankings, Builds) </h3>
 <p><strong>Task Manager -</strong> Alexandre Amorim </p>
 <p><strong>Descrição da tarefa:</strong></p>
 <p></p>
-<p><strong>Status:</strong> Em curso.</p>
-<p><strong>Auto-avaliação:</strong> (0-5).</p>
+<p><strong>Status:</strong> Terminado.</p>
+<p><strong>Auto-avaliação:</strong> 4(0-5).</p>
 
     .....
