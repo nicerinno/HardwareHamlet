@@ -50,7 +50,7 @@ Talvez, mais tarde, precisaremos de aumentar o espaço de armazenamento, depende
 <ol>
     <li>Criação de um PowerPoint da apresentação; </li>
     <li>Atribuição dos slides a apresentar aos membros do grupo;</li>
-    <li>Discução e conclusão das ideias para a apresentação;</li>
+    <li>Discussão e conclusão das ideias para a apresentação;</li>
     <li>Realização da apresentação;</li>
     <li>Aquisição de ideias com base nas perguntas feitas pela turma e professor</li>
 </ol>
