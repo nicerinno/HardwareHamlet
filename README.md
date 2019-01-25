@@ -118,9 +118,9 @@ Talvez, mais tarde, precisaremos de aumentar o espaço de armazenamento, depende
 <h3>9º Objetivo - Desenvolvimento do site</h3>
 <p><strong>Task Manager -</strong> Mário Miguel </p>
 <p><strong>Descrição da tarefa:</strong></p>
-<p></p>
+<p>Alteramos bastante o template, pois grande parte do conteudo foi adicionado dinamicamente através de PHP e jquery. Tivemos bastantes dificuldades, especialmente na utilização de jquery pois não conhecemos muito bem a linguagem. No fim não conseguimos concluir alguns dos objetivos para o website por falta de tempo e/ou conhecimento. </p>
 <p><strong>Status:</strong> Em curso...</p>
-<p><strong>Auto-avaliação:</strong> (0-5).</p>
+<p><strong>Auto-avaliação:</strong> 4(0-5).</p>
 
 <h3>10º Objetivo - Desenvolvimento da app(LogIn, Registo de utilizadores, Home, Lista componentes, Detalhes de componentes, Criação das builds, Detalhes das builds)</h3>
 <p><strong>Task Manager -</strong> Rodrigo Serra </p>
@@ -139,8 +139,10 @@ visualizar as builds por categoria, vistualizar os detalhes dos componentes e da
 <h3>11º Objetivo - Desenvolvimento da APP(Rankings, Builds) </h3>
 <p><strong>Task Manager -</strong> Alexandre Amorim </p>
 <p><strong>Descrição da tarefa:</strong></p>
-<p></p>
+<p>Nesta tarefa para fazer a atividade dos Rankings foi necessário criarmos um repositório, os request à API no service e um adapter para mostrar os utilizadores numa lista.</p>
+<p>Nos Builds foi preciso criar uma atividade através de fragments com 6 imageButtons para as diferentes categorias.</p>
 <p><strong>Status:</strong> Terminado.</p>
 <p><strong>Auto-avaliação:</strong> 4(0-5).</p>
 
     .....
+</body>

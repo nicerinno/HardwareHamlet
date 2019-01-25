@@ -39,6 +39,8 @@
                     android:id="@+id/textContainer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
                     app:counterEnabled="true"
                     app:counterMaxLength="50">
 
@@ -120,6 +122,8 @@
                     android:id="@+id/textContainer1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
                     android:gravity="center"
                     app:counterEnabled="true"
                     app:counterMaxLength="500">
