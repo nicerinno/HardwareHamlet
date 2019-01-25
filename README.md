@@ -144,3 +144,4 @@ visualizar as builds por categoria, vistualizar os detalhes dos componentes e da
 <p><strong>Auto-avaliação:</strong> 4(0-5).</p>
 
     .....
+</body>
