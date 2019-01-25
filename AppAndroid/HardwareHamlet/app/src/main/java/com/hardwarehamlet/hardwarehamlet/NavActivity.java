@@ -22,8 +22,15 @@ import com.hardwarehamlet.hardwarehamlet.builds.AddBuild;
 import com.hardwarehamlet.hardwarehamlet.builds.Build;
 import com.hardwarehamlet.hardwarehamlet.components.ComponentsList;
 import com.hardwarehamlet.hardwarehamlet.data.local.AppDatabase;
+import com.hardwarehamlet.hardwarehamlet.data.remote.DataService;
+import com.hardwarehamlet.hardwarehamlet.data.remote.DataSource;
+import com.hardwarehamlet.hardwarehamlet.model.ResponseBody;
 import com.hardwarehamlet.hardwarehamlet.preferences_manager.PreferencesManager;
 import com.hardwarehamlet.hardwarehamlet.ranking.Rankings;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 import static com.hardwarehamlet.hardwarehamlet.builds.Build.REQUEST_BUILD_CREATOR;
 
@@ -107,15 +114,45 @@ public class NavActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        DataService dataService = DataSource.getDataService();
         if(item.getItemId() == R.id.logout){
             PreferencesManager.endSession(this);
             finish();
             startActivity(new Intent(this,Login.class));
             return true;
         }else if(item.getItemId() == R.id.buttonAddBuild){
-            if( PreferencesManager.getSavedUserId(this) != 0){
-                Intent intent = new Intent(this, AddBuild.class);
-                startActivityForResult(intent,REQUEST_BUILD_CREATOR);
+            if(PreferencesManager.getSavedUserId(this) != 0){
+                Call<ResponseBody> call = dataService.checkIfActive(PreferencesManager.getSavedUserId(this));
+                call.enqueue(new Callback<ResponseBody>() {
+                    @Override
+                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                        if(response.isSuccessful()){
+                            ResponseBody responseBody = response.body();
+                            if(responseBody.getResult().equals("active")){
+                                Intent intent = new Intent(NavActivity.this, AddBuild.class);
+                                startActivityForResult(intent,REQUEST_BUILD_CREATOR);
+                            }else{
+                                Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content)
+                                        ,"Conta inactiva. Por favor, consulte o seu email.", Snackbar.LENGTH_LONG);
+                                snackbar.setAction("EMAIL", new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        Intent intent = new Intent(Intent.ACTION_MAIN);
+                                        intent.addCategory(Intent.CATEGORY_APP_EMAIL);
+                                        startActivity(intent);
+                                    }
+                                });
+                                snackbar.show();
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+                    }
+                });
+
             }else{
                 Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content)
                         ,"Apenas utilizadores podem aceder a esta fucionalidade."

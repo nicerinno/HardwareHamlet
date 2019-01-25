@@ -18,10 +18,10 @@ if(isset($_GET['user_id'])){
     $runSql = $conn->query($sql);
 
     if($runSql->num_rows > 0){
-        $data = ["request_type" => "check active", "result" => "active"];
+        $data = array("request_type" => "check active", "result" => "active");
     }else{
-        $data = ["request_type" => "check active", "result" => "false"];
+        $data = array("request_type" => "check active", "result" => "false");
     }
 
 }
-return json_encode($data);
+echo json_encode($data);

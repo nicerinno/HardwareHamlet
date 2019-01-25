@@ -19,17 +19,28 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Spinner;
 
+import com.hardwarehamlet.hardwarehamlet.NavActivity;
 import com.hardwarehamlet.hardwarehamlet.R;
 import com.hardwarehamlet.hardwarehamlet.SignUpActivity;
+import com.hardwarehamlet.hardwarehamlet.builds.AddBuild;
 import com.hardwarehamlet.hardwarehamlet.data.local.AppDatabase;
+import com.hardwarehamlet.hardwarehamlet.data.remote.DataService;
+import com.hardwarehamlet.hardwarehamlet.data.remote.DataSource;
 import com.hardwarehamlet.hardwarehamlet.model.Component_Type;
 import com.hardwarehamlet.hardwarehamlet.model.Components;
+import com.hardwarehamlet.hardwarehamlet.model.ResponseBody;
 import com.hardwarehamlet.hardwarehamlet.preferences_manager.PreferencesManager;
 import com.hardwarehamlet.hardwarehamlet.repositories.ComponentTypeRepository;
 import com.hardwarehamlet.hardwarehamlet.repositories.ComponentsRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+import static com.hardwarehamlet.hardwarehamlet.builds.Build.REQUEST_BUILD_CREATOR;
 
 public class ComponentsList extends Fragment{
     public ComponentsAdapter adapter;
@@ -68,14 +79,42 @@ public class ComponentsList extends Fragment{
 
         adapter = new ComponentsAdapter(getContext());
         listView = view.findViewById(R.id.listView);
-
+        final DataService dataService = DataSource.getDataService();
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, final long id) {
                 if( PreferencesManager.getSavedUserId(getContext()) != 0L){
-                    Intent intent = new Intent(getActivity(), ComponentsDetails.class);
-                    intent.putExtra(COMPONENT_ID,id);
-                    startActivity(intent);
+                    Call<ResponseBody> call = dataService.checkIfActive(PreferencesManager.getSavedUserId(getContext()));
+                    call.enqueue(new Callback<ResponseBody>() {
+                        @Override
+                        public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                            if(response.isSuccessful()){
+                                ResponseBody responseBody = response.body();
+                                if(responseBody.getResult().equals("active")){
+                                    Intent intent = new Intent(getActivity(), ComponentsDetails.class);
+                                    intent.putExtra(COMPONENT_ID,id);
+                                    startActivity(intent);
+                                }else{
+                                    Snackbar snackbar = Snackbar.make(getView()
+                                            ,"Conta inactiva. Por favor, consulte o seu email.", Snackbar.LENGTH_LONG);
+                                    snackbar.setAction("EMAIL", new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            Intent intent = new Intent(Intent.ACTION_MAIN);
+                                            intent.addCategory(Intent.CATEGORY_APP_EMAIL);
+                                            startActivity(intent);
+                                        }
+                                    });
+                                    snackbar.show();
+                                }
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+                        }
+                    });
                 }else{
                     Snackbar snackbar = Snackbar.make(getView()
                             ,"Apenas utilizadores podem aceder aos detalhes."

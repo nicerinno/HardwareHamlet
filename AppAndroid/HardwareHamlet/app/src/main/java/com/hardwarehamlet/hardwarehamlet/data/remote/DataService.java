@@ -90,4 +90,7 @@ public interface DataService {
 
     @GET("getRankings.php?ranking=builds")
     Call<List<BuildsResponseBody>> getRankingBuilds();
+
+    @GET("checkIfActive.php")
+    Call<ResponseBody> checkIfActive(@Query("user_id") long user_id);
 }

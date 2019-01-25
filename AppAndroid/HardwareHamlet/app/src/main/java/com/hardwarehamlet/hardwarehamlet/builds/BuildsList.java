@@ -16,12 +16,20 @@ import android.widget.ListView;
 import com.hardwarehamlet.hardwarehamlet.NavActivity;
 import com.hardwarehamlet.hardwarehamlet.R;
 import com.hardwarehamlet.hardwarehamlet.SignUpActivity;
+import com.hardwarehamlet.hardwarehamlet.components.ComponentsDetails;
 import com.hardwarehamlet.hardwarehamlet.data.local.AppDatabase;
+import com.hardwarehamlet.hardwarehamlet.data.remote.DataService;
+import com.hardwarehamlet.hardwarehamlet.data.remote.DataSource;
 import com.hardwarehamlet.hardwarehamlet.model.Builds;
+import com.hardwarehamlet.hardwarehamlet.model.ResponseBody;
 import com.hardwarehamlet.hardwarehamlet.preferences_manager.PreferencesManager;
 import com.hardwarehamlet.hardwarehamlet.repositories.BuildsRepository;
 
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 import static com.hardwarehamlet.hardwarehamlet.builds.Build.REQUEST_BUILD_CREATOR;
 import static com.hardwarehamlet.hardwarehamlet.builds.BuildsDetails.BUILD_ID;
@@ -97,14 +105,42 @@ public class BuildsList extends Fragment {
                 },"desc",BuildsList.getBuild_type(),"none");
             }
         }).start();
-
+        final DataService dataService = DataSource.getDataService();
         listViewBuildsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, final long id) {
                 if( PreferencesManager.getSavedUserId(getContext()) != 0){
-                    Intent intent = new Intent(getActivity(), BuildsDetails.class);
-                    intent.putExtra(BUILD_ID, id);
-                    startActivity(intent);
+                    Call<ResponseBody> call = dataService.checkIfActive(PreferencesManager.getSavedUserId(getContext()));
+                    call.enqueue(new Callback<ResponseBody>() {
+                        @Override
+                        public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                            if(response.isSuccessful()){
+                                ResponseBody responseBody = response.body();
+                                if(responseBody.getResult().equals("active")){
+                                    Intent intent = new Intent(getActivity(), BuildsDetails.class);
+                                    intent.putExtra(BUILD_ID, id);
+                                    startActivity(intent);
+                                }else{
+                                    Snackbar snackbar = Snackbar.make(getView()
+                                            ,"Conta inactiva. Por favor, consulte o seu email.", Snackbar.LENGTH_LONG);
+                                    snackbar.setAction("EMAIL", new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            Intent intent = new Intent(Intent.ACTION_MAIN);
+                                            intent.addCategory(Intent.CATEGORY_APP_EMAIL);
+                                            startActivity(intent);
+                                        }
+                                    });
+                                    snackbar.show();
+                                }
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+                        }
+                    });
                 }else{
                     Snackbar snackbar = Snackbar.make(view.findViewById(android.R.id.content)
                             ,"Apenas utilizadores podem aceder a esta fucionalidade."
