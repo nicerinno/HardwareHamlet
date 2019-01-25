@@ -8,7 +8,8 @@ window.onscroll = function() {
         document.getElementById("header").style.top = "-200px";
     }
     prevScrollpos = currentScrollPos;
-}
+};
+
 
 $( document ).ready(function(){
     $.post(
@@ -24,7 +25,7 @@ $( document ).ready(function(){
 
                     $("tbody#componentTable").append(
                         "<tr>" +
-                            "<td><a href='components_details.php?id=" + objData[item].id + "'>" + objData[item].name + "</a></td>" +
+                            "<td><a  href='components_details.php?id=" + objData[item].id + "'>" + objData[item].name + " </a></td>" +
                             "<td>" + objData[item].price + "€" + "</td>" +
                             "<td>" + "<img src='" + objData[item].icon_url + "' alt='componente' height='100'></td>" +
                         "</tr>"
@@ -66,6 +67,7 @@ $("input[name=optradio]").change(function(){
           }
         )
 });
+
 
 
 

@@ -16,58 +16,6 @@
     <!-- Site Title -->
     <title>HardwareHamlet</title>
 
-    <?php
-
-    include_once "Users.php";
-
-
-    // define variables and set to empty values
-    $emailErr = $passwordErr = "";
-    $email = $password = "";
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (empty($_POST["email"])) {
-            $emailErr = "O email é obrigatório!";
-        } else {
-            $email = test_input($_POST["email"]);
-        }
-
-        if (empty($_POST["password"])) {
-            $passwordErr = "A senha é obrigatória!";
-        } else {
-            $password = test_input($_POST["password"]);
-        }
-    }
-
-    function test_input($data)
-    {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
-
-    ?>
-    <?php
-
-    if (isset($_POST['login']) && $emailErr=="" && $passwordErr=="")
-    {
-        $nuser = new Users("","","",$email,"",$password, "", "", "", "","");
-        $result = $nuser->passVerification();
-
-        if ($result)
-        {
-            header("Location: index.php");
-        }
-        else{
-
-        }
-
-    }
-
-    ?>
-
-
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
     <!--
     CSS
@@ -85,7 +33,7 @@
     <script src="scripts.js"></script>
 
 </head>
-<body background="img/background.png" style="background-attachment: fixed">
+<body background="img/background.png">
 <header id="header">
     <div class="container main-menu">
         <div class="row align-items-center justify-content-between d-flex">
@@ -148,35 +96,127 @@
         <div class="row d-flex align-items-center justify-content-center">
             <div class="about-content col-lg-12">
                 <h1 class="text-white">
-                    Login
+                    Registo
                 </h1>
-                <p class="text-white link-nav"><a href="index.php">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="login.php"> Login</a></p>
+                <p class="text-white link-nav"><a href="index.php">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="login.php"> Registo</a></p>
             </div>
         </div>
     </div>
 </section>
 <!-- End banner Area -->
 
+<?php
 
-<br>
-<div class="container" style="background-color: #eeeeee;margin-top: 20px;margin-bottom: 20px">
-    <form name = "loginform" method="post"  >
-        <div class="form-group">
-             <label>Email</label>
-             <input class="form-control" type="email" name="email" placeholder="Email">
-         </div>
-        <div class="form-group">
-            <label>Password</label>
-            <input class="form-control" type="password" name="password" placeholder="Password">
-        </div>
-        <input style="margin:auto; display: block" class="btn btn-primary" type="submit" name="login" value="Login"  >
-        <br>
+include_once "Users.php";
 
-    </form>
-</div>
+// define variables and set to empty values
+$usernameErr = $passwordErr = $emailErr = $re_passwordErr = "";
+$username = $password = $re_password = $email = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (empty($_POST["username"])) {
+        $usernameErr = "O username é obrigatório!";
+    } else {
+        $username = test_input($_POST["username"]);
+    }
 
 
+    if (empty($_POST["password"]) ) {
+        $passwordErr = "A password é obrigatória!";
+    } else {
+        $password = test_input($_POST["password"]);
+    }
 
+    if (empty($_POST["re_password"]) || $_POST["password"] !== $_POST["re_password"]) {
+        $re_passwordErr = "As passwords não coincidem";
+    } else {
+        $re_password = test_input($_POST["re_password"]);
+    }
+
+
+
+    if (empty($_POST["email"])) {
+        $emailErr = "O email é obrigatório!";
+    } else {
+        $email = test_input($_POST["email"]);
+        // check if e-mail address is well-formed
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $emailErr = "Formato inválido!";
+        }
+    }
+}
+
+function test_input($data)
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
+?>
+<section class="">
+
+    <div class="container" style="background-color: #eeeeee;margin-top: 20px">
+
+
+        <form method="post" accept-charset="ISO-8859-1" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+            <div style="margin-bottom: 10px">
+                <div class="form-group">
+                    <label>Username</label>
+                    <span class="error">*<?php echo $usernameErr; ?></span>
+                    <input class="form-control" type="text" name="username" placeholder="Username" value="<?php echo $username; ?>">
+                </div>
+                <div class=" form-group">
+                    <label>Email</label>
+                    <span class="error">*<?php echo $emailErr; ?></span>
+                    <input class="form-control" type="email" name="email" placeholder="Email" value="<?php echo $email; ?>">
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <span class="error">*<?php echo $passwordErr; ?></span>
+                    <input class="form-control" type="password" name="password" placeholder="Password" value="<?php echo $password; ?>">
+                </div>
+                <div class=" form-group" >
+                    <label>Repita a password</label>
+                    <span class="error">* <?php echo $re_passwordErr; ?></span>
+                    <input class="form-control"  type="password" name="re_password" placeholder="Repita a password" value="<?php echo $re_password; ?>">
+                </div>
+
+                <p><span class="error">* Preenchimento obrigatório</span></p>
+
+                <input style="margin:auto; display: block" class="btn btn-primary" type="submit" name="submit" value="Registar">
+                <br>
+            </div>
+
+        </form>
+
+    </div>
+
+
+
+<?php
+
+$milliseconds = round(microtime(true) * 1000);
+$length = 6;
+$validation_code = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, $length);
+$passwordHash = password_hash($password,PASSWORD_BCRYPT);
+
+if (isset($_POST['submit']) && $usernameErr=="" && $passwordErr=="" && $emailErr=="" && $re_passwordErr=="")
+{
+    $nuser = new Users(1,1,1,$email,$username,$passwordHash,"",'0',0,$validation_code,$milliseconds);
+    $result = $nuser->register();
+    echo "<br>";
+    echo $result;
+
+    if ($result)
+        echo "Utilizador ",$username," registrado com sucesso!";
+    else
+        echo "Erro no registro: ",$nuser->conn->error,".";
+}
+
+?>
 
 <!-- start footer Area -->
 <footer class="footer-area section-gap ">

@@ -29,13 +29,37 @@
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/main.css">
+
 </head>
-<body>
-
-<h2>Nome do componente</h2>
-
-<</P>
+<body background="img/background.png" style="background-attachment: fixed">
+<h1>Componentes</h1>
+<div id="info">
 
 
+</div>
+<script>
+    var parameters = window.location.search.split("=");
+    var id = parameters[1];
+
+     $.get(
+        "get_components_id.php",
+        {
+        id: 8
+        },
+     function(data, status){
+          if (status == "success")
+        {
+        var objData = JSON.parse(data);
+
+     $("div#info").append("<p>"  + objData[0].name + "</p>");
+
+
+        }
+    }
+    );
+</script>
 </body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 </html>

@@ -14,59 +14,7 @@
     <!-- meta character set -->
     <meta charset="UTF-8">
     <!-- Site Title -->
-    <title>HardwareHamlet</title>
-
-    <?php
-
-    include_once "Users.php";
-
-
-    // define variables and set to empty values
-    $emailErr = $passwordErr = "";
-    $email = $password = "";
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (empty($_POST["email"])) {
-            $emailErr = "O email é obrigatório!";
-        } else {
-            $email = test_input($_POST["email"]);
-        }
-
-        if (empty($_POST["password"])) {
-            $passwordErr = "A senha é obrigatória!";
-        } else {
-            $password = test_input($_POST["password"]);
-        }
-    }
-
-    function test_input($data)
-    {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
-
-    ?>
-    <?php
-
-    if (isset($_POST['login']) && $emailErr=="" && $passwordErr=="")
-    {
-        $nuser = new Users("","","",$email,"",$password, "", "", "", "","");
-        $result = $nuser->passVerification();
-
-        if ($result)
-        {
-            header("Location: index.php");
-        }
-        else{
-
-        }
-
-    }
-
-    ?>
-
+    <title>Robotics</title>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
     <!--
@@ -81,9 +29,6 @@
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/main.css">
-    <script src="js/vendor/jquery-2.2.4.min.js"></script>
-    <script src="scripts.js"></script>
-
 </head>
 <body background="img/background.png" style="background-attachment: fixed">
 <header id="header">
@@ -148,9 +93,9 @@
         <div class="row d-flex align-items-center justify-content-center">
             <div class="about-content col-lg-12">
                 <h1 class="text-white">
-                    Login
+                    Top Componentes
                 </h1>
-                <p class="text-white link-nav"><a href="index.php">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="login.php"> Login</a></p>
+                <p class="text-white link-nav"><a href="index.php">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="blog-single.html"> Top Componentes</a></p>
             </div>
         </div>
     </div>
@@ -158,29 +103,67 @@
 <!-- End banner Area -->
 
 
-<br>
-<div class="container" style="background-color: #eeeeee;margin-top: 20px;margin-bottom: 20px">
-    <form name = "loginform" method="post"  >
-        <div class="form-group">
-             <label>Email</label>
-             <input class="form-control" type="email" name="email" placeholder="Email">
-         </div>
-        <div class="form-group">
-            <label>Password</label>
-            <input class="form-control" type="password" name="password" placeholder="Password">
-        </div>
-        <input style="margin:auto; display: block" class="btn btn-primary" type="submit" name="login" value="Login"  >
-        <br>
 
-    </form>
-</div>
-
-
+<!--<div class="container" style="background-color: #eeeeee;margin-top: 20px; margin-bottom: 20px">-->
+<!---->
+<!---->
+<!--    <div  class="align-content-center">-->
+<!---->
+<!--        --><?php
+//
+//        include_once "Components.php";
+//
+//
+//        $nc = new Components("", "", "", "", "","", "", "", "");
+//        $result = $nc->query_top_components();
+//
+//        echo "<br>";
+//
+//        if ($result != null) {
+//            // output data of each row
+//            echo "<table class='table table-striped' style='border:2px solid; border-collapse: collapse'>";
+//            echo "<thead>";
+//            echo "<tr>
+//								<th name='name' scope='col' style='border:4px solid; padding:10px;'>Nome</th>
+//								<th name='price' scope='col' style='border:4px solid; padding:10px;'>Preço</th>
+//								<th name='icon_url' scope='col' style='border:4px solid; padding:10px;'>Imagem</th>
+//							</tr>
+//							</thead>
+//							<tbody style=''>";
+//
+//            while ($row = $result->fetch_assoc()) {
+//                $id = $row['component_id'];
+//
+//                $component = $nc->query_component_id($id);
+////                $newComponent = new Components( $component['component_type_id'], $component['user_id'], $component['brand']
+////                    , $component['name'], $component['description'], $component['price'], $component['flg_available'], $component['icon_url'], $component['regist_date']);
+////
+//
+//                echo "<tr>",
+//                "<td style='border:4px solid; padding:10px'>",$component['name'],"</td>",
+//                "<td style='border:4px solid; padding:10px;'>",$component['price'],"</td>",
+//                "<td style='border:4px solid; padding:10px;'><img src=",$component['icon_url']," alt=",$component['icon_url']," </img></td>",
+//
+//                "</tr>";
+//
+//            }
+//            echo  "</tbody></table>";
+//            echo "<br>";
+//
+//
+//        }
+//
+//        ?>
+<!--    </div>-->
+<!--</div>-->
+<!---->
+<!--</section>-->
 
 
 <!-- start footer Area -->
 <footer class="footer-area section-gap ">
     <div class="container">
+
 
         <div class="row footer-bottom d-flex justify-content-between">
             <p class="col-lg-8 col-sm-12 footer-text m-0 text-white"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
@@ -197,7 +180,7 @@
 </footer>
 <!-- End footer Area -->
 
-
+<script src="js/vendor/jquery-2.2.4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
@@ -213,5 +196,9 @@
 <script src="js/waypoints.min.js"></script>
 <script src="js/mail-script.js"></script>
 <script src="js/main.js"></script>
+<script src="scripts.js"></script>
 </body>
 </html>
+
+
+

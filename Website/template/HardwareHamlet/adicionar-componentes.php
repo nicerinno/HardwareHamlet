@@ -4,7 +4,7 @@
 		<!-- Mobile Specific Meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<!-- Favicon-->
-		<link rel="shortcut icon" href="img/fav.png">
+		<link rel="shortcut icon" href="img/fav.png" style="background-attachment: fixed">
 		<!-- Author Meta -->
 		<meta name="author" content="codepixer">
 		<!-- Meta Description -->
@@ -16,7 +16,95 @@
 		<!-- Site Title -->
 		<title>HardwareHamlet</title>
 
-		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+        <?php
+        include_once "Components.php";
+        include_once "Users.php";
+
+        $session = new Users("","","","","","","","","","","");
+        session_start();
+        // define variables and set to empty values
+        $nameErr = $descriptionErr = $typeErr = $dateErr = $iconErr = $brandErr = $priceErr = "";
+        $name = $description = $type = $date = $icon = $brand = $price="";
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if (empty($_POST["name"])) {
+                $nameErr = "O nome é obrigatório!";
+            } else {
+                $name = test_input($_POST["name"]);
+
+            }
+
+            if (empty($_POST["description"])) {
+                $descriptionErr = "A descrição obrigatória!";
+            } else {
+                $description = test_input($_POST["description"]);
+
+            }
+
+            if (empty($_POST["type"])) {
+                $typeErr = "O tipo é obrigatório!";
+            } else {
+                $type = test_input($_POST["type"]);
+
+            }
+
+            if (empty($_POST["brand"])) {
+                $brandErr = "A marca é obrigatória";
+            } else {
+                $brand = test_input($_POST["brand"]);
+            }
+
+            if (empty($_POST["icon"])) {
+                $iconErr = "O icon é obrigatório";
+            } else {
+                $icon = $_POST["icon"];
+            }
+
+            if (empty($_POST["price"])) {
+                $priceErr = "O preço é obrigatório";
+            } else {
+                $price = test_input($_POST["price"]);
+            }
+
+            if (empty($_POST["description"])) {
+                $descriptionErr = "A descrição é obrigatória";
+            } else {
+                $description = test_input($_POST["description"]);
+            }
+
+
+        }
+
+        function test_input($data)
+        {
+            $data = trim($data);
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+            return $data;
+        }
+
+        ?>
+        <?php
+
+        if(isset($_POST['submit'])){
+            $type = $_POST['components_type'];
+
+        }
+        if($session->check_session()){
+        $email = $_SESSION['email'];
+        $user = new Users('','','',$email,'','','','','','','');
+        $user_id = $user->getIdUserByUsername();
+        $milliseconds = round(microtime(true) * 1000);
+        }
+        if( isset($_POST['submit']) && $nameErr =  $descriptionErr = $brandErr = $priceErr = $iconErr == "") {
+            $nuser = new Components($type, $user_id, $brand, $name, $description, $price,1, $icon, $milliseconds);
+            $result = $nuser->addComponent();
+
+
+
+        }
+        ?>
 			<!--
 			CSS
 			============================================= -->
@@ -31,41 +119,53 @@
 			<link rel="stylesheet" href="css/main.css">
             <script src="scripts.js"></script>
 		</head>
-		<body>	
+		<body background="img/background.png" style="background-attachment: fixed" >
 			    <header id="header">
 			    <div class="container main-menu">
 			    	<div class="row align-items-center justify-content-between d-flex">
 				      <div id="logo">
-				        <a href="index.html"><img src="img/logo.png" alt="" title="" /></a>
+				        <a href="index.php"><img src="img/icon.png" height="120" width="180" alt="" title="" /></a>
 				      </div>
 				      <nav id="nav-menu-container">
 				        <ul class="nav-menu">
-				          <li><a href="index.html">Home</a>
+				          <li><a href="index.php">Home</a>
 				          <li class="menu-has-children"><a href="">Componentes</a>
 				            <ul>
-				              <li><a href="ver-componentes.html">Ver Componentes</a></li>
+				              <li><a href="ver-componentes.php">Ver Componentes</a></li>
 				              <li><a href="adicionar-componentes.php">Adicionar Componentes</a></li>
 				            </ul>
 				          </li>						          
 				          <li><a class="menu-has-children" href="">Builds</a>
 							<ul>
-				              <li><a href="minhas-builds.html">Minhas Builds</a></li>	
-				              <li><a href="criar-build.html">Criar Build</a></li>
-				              <li> <a href="ver-builds.html">Ver Builds</a></li>
+				              <li><a href="minhas-builds.php">Minhas Builds</a></li>
+				              <li><a href="criar-build.php">Criar Build</a></li>
+				              <li> <a href="ver-builds.php">Ver Builds</a></li>
 							</ul>
 						  </li>
 				          <li class="menu-has-children"><a href="">Rankings</a>
 				            <ul>
-								<li><a href="top-componentes.html">Top Components</a></li>
-								<li><a href="top-builds.html">Top Builds</a></li>
-				              	<li><a href="top-utilizadores.html">Top Utilizadores</a></li>
+								<li><a href="top-componentes.php">Top Components</a></li>
+								<li><a href="top-builds.php">Top Builds</a></li>
+				              	<li><a href="top-utilizadores.php">Top Utilizadores</a></li>
 				            </ul>	
 							
 				        </ul>
-				      </nav><!-- #nav-menu-container -->	
-					    <div id="profile">
-				        <a href="index.html"><img src="img/transferir.png" alt="" title="" /></a>
-				      </div>
+				      </nav><!-- #nav-menu-container -->
+                        <div id="profile">
+                            <?php
+
+                            if ($session->check_session()){
+
+                                $username = $_SESSION['email'];
+                                echo'<h5 style="color: #eeeeee"> ' . $username . '</h5>
+                                 <h6 style="color: #eeeeee"><a href="?logout" onclick="javascript:window.location.reload();">Logout</a>';
+                                if (isset($_GET['logout'])) $session->close_session();
+                            }else{
+                                echo'<h6 style="color: #eeeeee"><a href="regist.php">Registo</a>/<a href="login.php">Login</a></h6>';
+                            }
+
+                            ?>
+                        </div>
 					  
 			    	</div>
 					
@@ -81,8 +181,8 @@
 						<div class="about-content col-lg-12">
 							<h1 class="text-white">
 								Adicionar Componentes
-							</h1>	
-							<p class="text-white link-nav"><a href="index.html">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="elements.html"> Adicionar Componentes</a></p>
+							</h1>
+							<p class="text-white link-nav"><a href="index.php">Home </a>  <span class="lnr lnr-arrow-right"></span><a href="elements.html"> Adicionar Componentes</a></p>
 						</div>	
 					</div>
 				</div>
@@ -90,70 +190,7 @@
 			<!-- End banner Area -->	
 
 			<!-- Start Sample Area -->
-                <?php
-                include_once "Components.php";
-                // define variables and set to empty values
-                $nameErr = $descriptionErr = $typeErr = $dateErr = $iconErr = $brandErr = $priceErr = "";
-                $name = $description = $type = $date = $icon = $brand = $price="";
 
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    if (empty($_POST["name"])) {
-                        $nameErr = "O nome é obrigatório!";
-                    } else {
-                        $name = test_input($_POST["name"]);
-
-                    }
-
-                    if (empty($_POST["description"])) {
-                        $descriptionErr = "A descrição obrigatória!";
-                    } else {
-                        $description = test_input($_POST["description"]);
-
-                    }
-
-                    if (empty($_POST["type"])) {
-                        $typeErr = "O tipo é obrigatório!";
-                    } else {
-                        $type = test_input($_POST["type"]);
-
-                    }
-
-                    if (empty($_POST["brand"])) {
-                        $brandErr = "A marca é obrigatória";
-                    } else {
-                        $brand = test_input($_POST["brand"]);
-                    }
-
-                    if (empty($_POST["icon"])) {
-                        $iconErr = "O icon é obrigatório";
-                    } else {
-                        $icon = $_POST["icon"];
-                    }
-
-                    if (empty($_POST["price"])) {
-                        $priceErr = "O preço é obrigatório";
-                    } else {
-                        $price = test_input($_POST["price"]);
-                    }
-
-                    if (empty($_POST["description"])) {
-                        $descriptionErr = "A descrição é obrigatória";
-                    } else {
-                        $description = test_input($_POST["description"]);
-                    }
-
-
-                }
-
-                function test_input($data)
-                {
-                    $data = trim($data);
-                    $data = stripslashes($data);
-                    $data = htmlspecialchars($data);
-                    return $data;
-                }
-
-                ?>
 				<section class="">
 
                     <div class="container" style="background-color: #eeeeee;margin-top: 20px">
@@ -161,6 +198,7 @@
 
 					    <form method="post" accept-charset="ISO-8859-1" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                             <div style="margin-bottom: 10px">
+                                <p style="text-align: center ">* O login é necessário</p>
                                 <div class="form-group">
                                     <label>Nome do componente:</label>
                                     <span class="error">*<?php echo $nameErr; ?></span>
@@ -194,16 +232,16 @@
                                 </div>
                                 <div class=" form-group" >
                                     <label>Descrição:</label>
-                                    <span class="error">* <?php echo $descriptionErr; ?></span>
+                                    <span class="error">*<?php echo $descriptionErr; ?></span>
                                     <textarea  cols="35" rows="8" class="form-control text"  name="description"><?php echo $description; ?></textarea>
                                 </div>
                                 <div class=" form-group" >
                                     <label>URL imagem:</label>
-                                    <span class="error">* <?php echo $iconErr; ?></span>
+                                    <span class="error">*<?php echo $iconErr; ?></span>
                                     <input class="form-control" type="text" name="icon" placeholder="https://" value="<?php echo $icon; ?>">
 
                                 </div>
-                                 <p><span class="error">* Preenchimento obrigatório</span></p>
+                                 <p><span class="error">*Preenchimento obrigatório</span></p>
 
                                  <input style="margin:auto; display: block" class="btn btn-primary" type="submit" name="submit" value="Submeter">
                                  <br>
@@ -211,29 +249,7 @@
 
                         </form>
 
-                        <?php
 
-                        if(isset($_POST['submit'])){
-                            $type = $_POST['components_type'];
-
-                        }
-
-
-                        $milliseconds = round(microtime(true) * 1000);
-
-
-                        if( isset($_POST['submit']) && $nameErr = $descriptionErr = $brandErr = $priceErr = $iconErr = "") {
-                            $nuser = new Components($type, 1, $brand, $name, $description, $price,1, $icon, $milliseconds);
-                            $result = $nuser->addComponent();
-                            echo "<br>";
-                            if($result)
-                                echo "Registrado com sucesso!";
-                            else
-                                echo "Erro no registo: ", $nuser->conn->error,".";
-
-
-                        }
-                        ?>
                     </div>
 
 
