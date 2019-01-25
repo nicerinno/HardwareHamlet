@@ -102,8 +102,9 @@ public class BuildsList extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if( PreferencesManager.getSavedUserId(getContext()) != 0){
-                    Intent intent = new Intent(getActivity(), AddBuild.class);
-                    startActivityForResult(intent,REQUEST_BUILD_CREATOR);
+                    Intent intent = new Intent(getActivity(), BuildsDetails.class);
+                    intent.putExtra(BUILD_ID, id);
+                    startActivity(intent);
                 }else{
                     Snackbar snackbar = Snackbar.make(view.findViewById(android.R.id.content)
                             ,"Apenas utilizadores podem aceder a esta fucionalidade."

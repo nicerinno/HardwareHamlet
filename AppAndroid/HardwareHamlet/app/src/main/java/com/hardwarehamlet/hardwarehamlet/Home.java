@@ -29,7 +29,7 @@ import java.util.TimerTask;
 public class Home extends Fragment {
     private TextView textViewDate;
     private TextView textViewVisitSite;
-    private static final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
+    private static final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
     @Nullable
     @Override
@@ -43,23 +43,7 @@ public class Home extends Fragment {
         this.textViewDate = view.findViewById(R.id.textViewTodayDate);
         this.textViewVisitSite = view.findViewById(R.id.textViewVisitSite);
 
-
-        Timer timer = new Timer();
-        //Set the schedule function
-        timer.scheduleAtFixedRate(new TimerTask() {
-
-                                      @Override
-                                      public void run() {
-                                          // Magic here
-                                          getActivity().runOnUiThread(new Runnable() {
-                                              @Override
-                                              public void run() {
-                                                  textViewDate.setText(simpleDateFormat.format(new Date(System.currentTimeMillis())));
-                                              }
-                                          });
-                                      }
-                                  },
-                0, 1000);
+        textViewDate.setText(simpleDateFormat.format(new Date(System.currentTimeMillis())));
 
         this.textViewVisitSite.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -249,6 +249,10 @@ public class BuildsDetails extends AppCompatActivity {
             if(comment.isEmpty()){
                 Toast.makeText(this, "Não pode enviar um comentário vazio", Toast.LENGTH_SHORT).show();
             }else{
+                InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+
+                inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
+                        InputMethodManager.HIDE_NOT_ALWAYS);
                 CommentsRepository.sendComment(this, build_id, comment, PreferencesManager.getSavedUserId(this)
                         ,System.currentTimeMillis(), new CommentsRepository.InsertCommentCallBack() {
                             @Override
@@ -262,10 +266,6 @@ public class BuildsDetails extends AppCompatActivity {
                                                 runOnUiThread(new Runnable() {
                                                     @Override
                                                     public void run() {
-                                                        InputMethodManager inputManager = (InputMethodManager) BuildsDetails.this.getSystemService(Context.INPUT_METHOD_SERVICE);
-
-                                                        inputManager.hideSoftInputFromWindow(BuildsDetails.this.getCurrentFocus().getWindowToken(),
-                                                                InputMethodManager.HIDE_NOT_ALWAYS);
                                                         adapterComments.refreshList(commentsList,5);
                                                         Utility.setListViewHeightBasedOnChildren(listViewComments);
                                                         editTextComments.setText("");
@@ -396,7 +396,7 @@ public class BuildsDetails extends AppCompatActivity {
                                         runOnUiThread(new Runnable() {
                                             @Override
                                             public void run() {
-                                                String stringLikes = likes + " likes";
+                                                String stringLikes = likes + " pessoas gostaram disto";
                                                 textViewLikes.setText(stringLikes);
                                                 imageButtonLike.setImageResource(R.drawable.like);
                                             }
@@ -433,7 +433,7 @@ public class BuildsDetails extends AppCompatActivity {
                                         runOnUiThread(new Runnable() {
                                             @Override
                                             public void run() {
-                                                String stringLikes = likes + " likes";
+                                                String stringLikes = likes + " pessoas gostaram disto";
                                                 textViewLikes.setText(stringLikes);
                                                 imageButtonLike.setImageResource(R.drawable.dislike);
                                             }

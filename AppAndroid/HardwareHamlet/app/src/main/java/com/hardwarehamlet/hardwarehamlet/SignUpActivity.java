@@ -42,12 +42,6 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void signUp(View view) {
-        InputMethodManager inputManager = (InputMethodManager)
-                getSystemService(Context.INPUT_METHOD_SERVICE);
-
-        assert inputManager != null;
-        inputManager.hideSoftInputFromWindow((getCurrentFocus()).getWindowToken(),
-                InputMethodManager.HIDE_NOT_ALWAYS);
         final String username = this.editTextUsername.getText().toString();
         String password = this.editTextPassword.getText().toString();
         String passwordConf = this.editTextPasswordConf.getText().toString();
