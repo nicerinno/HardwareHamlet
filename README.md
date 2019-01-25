@@ -1,4 +1,3 @@
-
 <body>
 <h1>Hardware Hamlet</h1>
 <h2>Explicação do tema</h2>
@@ -51,7 +50,7 @@ Talvez, mais tarde, precisaremos de aumentar o espaço de armazenamento, depende
 <ol>
     <li>Criação de um PowerPoint da apresentação; </li>
     <li>Atribuição dos slides a apresentar aos membros do grupo;</li>
-    <li>Discução e conclusão das ideias para a apresentação;</li>
+    <li>Discussão e conclusão das ideias para a apresentação;</li>
     <li>Realização da apresentação;</li>
     <li>Aquisição de ideias com base nas perguntas feitas pela turma e professor</li>
 </ol>
@@ -107,12 +106,33 @@ Talvez, mais tarde, precisaremos de aumentar o espaço de armazenamento, depende
 <p>Utilizando websites de templates gratuitos, procedemos para a escolha de um template para o nosso website.</p>
 <p>Estudámos a framework Smartie de modo a implementar o código php que iremos desenvolver mais tarde.</p>
 <p><strong>Status:</strong> Terminado.</p>
-<p><strong>Auto-avaliação:</strong> (0-5).</p>
+<p><strong>Auto-avaliação:</strong> 4(0-5).</p>
 
 <h3>8º Objetivo - Desenvolvimento da API para a APP Android</h3>
 <p><strong>Task Manager -</strong> Rodrigo Serra </p>
 <p><strong>Descrição da tarefa:</strong></p>
 <p>Utilizando a linguagem PHP e os exemplos desenvolvidos nas aulas de Programação para a Web, procedemos para o desenvolvimento da API que iremos utilizar na Aplicação Android que iremos desenvolver.</p>
+<p><strong>Status:</strong> Terminado.</p>
+<p><strong>Auto-avaliação:</strong> 5(0-5).</p>
+
+<h3>9º Objetivo - Desenvolvimento do site</h3>
+<p><strong>Task Manager -</strong> Mário Miguel </p>
+<p><strong>Descrição da tarefa:</strong></p>
+<p></p>
+<p><strong>Status:</strong> Em curso...</p>
+<p><strong>Auto-avaliação:</strong> (0-5).</p>
+
+<h3>10º Objetivo - Desenvolvimento da app(LogIn, Registo de utilizadores, Home, Lista componentes, Detalhes de componentes, Criação das builds, Detalhes das builds)</h3>
+<p><strong>Task Manager -</strong> Rodrigo Serra </p>
+<p><strong>Descrição da tarefa:</strong></p>
+<p></p>
+<p><strong>Status:</strong> Em curso.</p>
+<p><strong>Auto-avaliação:</strong> (0-5).</p>
+
+<h3>11º Objetivo - Desenvolvimento da APP(Rankings, Builds) </h3>
+<p><strong>Task Manager -</strong> Alexandre Amorim </p>
+<p><strong>Descrição da tarefa:</strong></p>
+<p></p>
 <p><strong>Status:</strong> Em curso.</p>
 <p><strong>Auto-avaliação:</strong> (0-5).</p>
 
