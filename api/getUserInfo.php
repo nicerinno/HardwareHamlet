@@ -10,6 +10,7 @@ include_once(__DIR__ . "/model/Users.php");
 include_once "db.php";
 
 $conn = connDB();
+header("Content-Type: application/json");
 
 
 if(isset($_GET['user_id'])){
@@ -37,5 +38,5 @@ if(isset($_GET['user_id'])){
         $data = ["request_type" => "user_id", "result" => "$user_id"];
     }
 }
-$conn->close();
+endConnDB($conn);
 echo json_encode($data);

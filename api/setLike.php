@@ -12,7 +12,7 @@ include_once "db.php";
 header("Content-Type: application/json");
 
 $conn = connDB();
-$data = [];
+$data = array();
 if(isset($_GET['build_id']) && isset($_GET['user_id'])){
     $user_id = $_GET['user_id'];
     $build_id = $_GET['build_id'];
@@ -46,26 +46,22 @@ if(isset($_GET['build_id']) && isset($_GET['user_id'])){
                     $query = $conn->query($setNewMedal);
                 }
                 //json responde body success
-                $data = ["request_type" => "post like", "result" => "successfull"];
+                $data = array("request_type" => "post like", "result" => "successfull");
             } else{
                 //json response body failure
-                $data = ["request_type" => "post like", "result" => "failure" ];
+                $data = array("request_type" => "post like", "result" => "failure");
             }
-        }else{
+        }else {
             $sql2 = "INSERT INTO likes (build_id,user_id) values ($build_id,$user_id)";
             $registLike = $conn->query($sql2);
-            $sql = "UPDATE builds SET likes = likes + - WHERE build_id = '$build_id'";
-            $regist = $conn->query($sql);
-            if($regist){
-            $data = ["request_type" => "post like", "result" => "already liked" ];
+            if ($registLike) {
+                $data = array("request_type" => "post like", "result" => "already liked");
+            }
 
-            //TODO: TRATAR DO removing likes
         }
-
-
     }else{
         //json response body failure
-        $data = ["request_type" => "build registration", "result" => "User not active"];
+        $data = array("request_type" => "post like", "result" => "User not active");
     }
     endConnDB($conn);
 

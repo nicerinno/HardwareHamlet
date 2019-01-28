@@ -1,4 +1,3 @@
-
 <body>
 <h1>Hardware Hamlet</h1>
 <h2>Explicação do tema</h2>
@@ -51,7 +50,7 @@ Talvez, mais tarde, precisaremos de aumentar o espaço de armazenamento, depende
 <ol>
     <li>Criação de um PowerPoint da apresentação; </li>
     <li>Atribuição dos slides a apresentar aos membros do grupo;</li>
-    <li>Discução e conclusão das ideias para a apresentação;</li>
+    <li>Discussão e conclusão das ideias para a apresentação;</li>
     <li>Realização da apresentação;</li>
     <li>Aquisição de ideias com base nas perguntas feitas pela turma e professor</li>
 </ol>
@@ -106,14 +105,44 @@ Talvez, mais tarde, precisaremos de aumentar o espaço de armazenamento, depende
 <p><strong>Descrição da tarefa:</strong></p>
 <p>Utilizando websites de templates gratuitos, procedemos para a escolha de um template para o nosso website.</p>
 <p>Estudámos a framework Smartie de modo a implementar o código php que iremos desenvolver mais tarde.</p>
-<p><strong>Status:</strong> Em curso.</p>
-<p><strong>Auto-avaliação:</strong> (0-5).</p>
+<p><strong>Status:</strong> Terminado.</p>
+<p><strong>Auto-avaliação:</strong> 4(0-5).</p>
 
 <h3>8º Objetivo - Desenvolvimento da API para a APP Android</h3>
 <p><strong>Task Manager -</strong> Rodrigo Serra </p>
 <p><strong>Descrição da tarefa:</strong></p>
 <p>Utilizando a linguagem PHP e os exemplos desenvolvidos nas aulas de Programação para a Web, procedemos para o desenvolvimento da API que iremos utilizar na Aplicação Android que iremos desenvolver.</p>
-<p><strong>Status:</strong> Em curso.</p>
-<p><strong>Auto-avaliação:</strong> (0-5).</p>
+<p><strong>Status:</strong> Terminado.</p>
+<p><strong>Auto-avaliação:</strong> 5(0-5).</p>
+
+<h3>9º Objetivo - Desenvolvimento do site</h3>
+<p><strong>Task Manager -</strong> Mário Miguel </p>
+<p><strong>Descrição da tarefa:</strong></p>
+<p>Alteramos bastante o template, pois grande parte do conteudo foi adicionado dinamicamente através de PHP e jquery. Tivemos bastantes dificuldades, especialmente na utilização de jquery pois não conhecemos muito bem a linguagem. No fim não conseguimos concluir alguns dos objetivos para o website por falta de tempo e/ou conhecimento. </p>
+<p><strong>Status:</strong> Em curso...</p>
+<p><strong>Auto-avaliação:</strong> 4(0-5).</p>
+
+<h3>10º Objetivo - Desenvolvimento da app(LogIn, Registo de utilizadores, Home, Lista componentes, Detalhes de componentes, Criação das builds, Detalhes das builds)</h3>
+<p><strong>Task Manager -</strong> Rodrigo Serra </p>
+<p><strong>Descrição da tarefa:</strong></p>
+<p>Através do Android studio procedemos ao desenvolvimento da aplicação web para o nosso projeto.</p>
+<p>Começámos por criar todas as activities que iriamos precisar. Estabelecemos a activity que iria alojar a barra de navegação e o FrameLayout, onde iria ser alterado o fragment consoante solicitado</p>
+<p>Depois, criámos os repositórios, os services, para realizar requests ao servidor através do retrofit2, e o Room, para termos uma base de dados local,
+ que serve de cache e permite que a app seja utilizada sem internet (caso tenha sido iniciada pelo menos uma vez com internet)</p>
+<p>É possível aceder ao interior da nossa aplicação sendo um guest, mas não é possível realizar certas acções sem ter feito login primeiro.
+A nossa aplicação faz gestão da sessão, pelo que se no login for colocado um visto na checkbox, o utilizador irá estar sempre logado na aplicação, através das SharedPreferences</p>
+<p>Ficámos bastante contentes com a aplicação, pois tem um aspecto bonito e tem todas as funcionalidades que queriamos: visualizar os componentes por categoria,
+visualizar as builds por categoria, vistualizar os detalhes dos componentes e das builds e registar uma build e os seus componentes.</p>
+<p><strong>Status:</strong> Terminado.</p>
+<p><strong>Auto-avaliação:</strong> 5(0-5).</p>
+
+<h3>11º Objetivo - Desenvolvimento da APP(Rankings, Builds) </h3>
+<p><strong>Task Manager -</strong> Alexandre Amorim </p>
+<p><strong>Descrição da tarefa:</strong></p>
+<p>Nesta tarefa para fazer a atividade dos Rankings foi necessário criarmos um repositório, os request à API no service e um adapter para mostrar os utilizadores numa lista.</p>
+<p>Nos Builds foi preciso criar uma atividade através de fragments com 6 imageButtons para as diferentes categorias.</p>
+<p><strong>Status:</strong> Terminado.</p>
+<p><strong>Auto-avaliação:</strong> 4(0-5).</p>
 
     .....
+</body>
