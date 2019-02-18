@@ -10,7 +10,8 @@ function connDB ()
 {
     $servername = "localhost";
     $username = "root";
-    $password = "XfuH4ft1TRtdwfki";
+    //$password = "XfuH4ft1TRtdwfki";
+    $password = "";
     $dbname = "HardwareHamlet";
 
 // Create connection

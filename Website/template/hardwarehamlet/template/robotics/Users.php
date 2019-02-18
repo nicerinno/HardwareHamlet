@@ -121,11 +121,13 @@ class Users
 
     }
 
-
-
-
-
-
+    function checkEmail(){
+        $sql = "SELECT * FROM users WHERE email = '$this->email'";
+        $result = $this->conn->query($sql);
+        $result2 = $result->fetch_assoc();
+        endConnDB($this->conn);
+        return $result2;
+    }
 
 
 
