@@ -138,23 +138,42 @@ function test_input($data)
 }
 
 ?>
+ 
+<!--by alex-->
 
 <!-- Start home-about Area -->
-<section class="container" style="text-align:center; width:25%">
-<!--    <form method="post" accept-charset="ISO-8859-1" action="--><?php //echo htmlspecialchars($_SERVER["PHP_SELF"]); ?><!--">-->
-        <div style="margin-bottom: 10px">
-            <div class="form-group">
-                <br>
+<section class="container">
+
+    <div class="" style="text-align: center; margin-top: 70px">
+        <form accept-charset="ISO-8859-1" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" style="color: white; text-align: center" >
+            <h4> Validation Code:
                 <span class="error"><?php echo $validationErr; ?></span>
-                <p>Insira o código que lhe foi enviado por email</p>
                 <label>
-                    <input class="form-control" type="text" name="username" value="<?php echo $validation; ?>" id="valCode">
+                    <input class="input" type="text" name="username" value="<?php echo $validation; ?>" id="valCode" <input style="box-shadow: 0 0 0 0; " >
                 </label>
-            </div>
-            <input style="margin:auto;" class="btn" type="submit" name="submit" value="Validar" onClick="validate()">
-        </div>
+                <input style="margin:auto" class="btn" type="submit" name="submit" value="Validar" onClick="validate()">
+
+            </h4>
+        </form>
+    </div>
+
+<!--by rodrigo-->
+
+<!--    <form method="post" accept-charset="ISO-8859-1" action="--><?php //echo htmlspecialchars($_SERVER["PHP_SELF"]); ?><!--">-->
+<!--        <div style="margin-bottom: 10px">-->
+<!--            <div class="form-group">-->
+<!--                <br>-->
+<!--                <span class="error">--><?php //echo $validationErr; ?><!--</span>-->
+<!--                <p>Insira o código que lhe foi enviado por email</p>-->
+<!--                <label>-->
+<!--                    <input class="form-control" type="text" name="username" value="--><?php //echo $validation; ?><!--" id="valCode">-->
+<!--                </label>-->
+<!--            </div>-->
+<!--            <input style="margin:auto;" class="btn" type="submit" name="submit" value="Validar" onClick="validate()">-->
+<!--        </div>-->
 <!--    </form>-->
 </section>
+<br><br><br>
 <!-- End home-about Area -->
 <?php
 //
@@ -164,23 +183,45 @@ function test_input($data)
 //}
 //echo $email2;
 //?>
-<!-- start footer Area -->
-<footer class="footer-area section-gap">
-    <div class="container">
 
-        <div class="row footer-bottom d-flex justify-content-between">
-            <p class="col-lg-8 col-sm-12 footer-text m-0 text-white"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+<!--By alex-->
+
+<!-- start footer Area -->
+<footer class="footer-area section-gap " style="position: fixed; height: 100%;  width: 100%;">
+    <div class="containerValCode">
+        <div class="row footer-bottomCodeVal d-flex justify-content-between" >
+            <p class="text-white"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-            <div class="col-lg-4 col-sm-12 footer-social">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-dribbble"></i></a>
-                <a href="#"><i class="fa fa-behance"></i></a>
-            </div>
+            <!--            <div class="col-lg-4 col-sm-12 footer-social">-->
+            <!--                <a href="#"><i class="fa fa-facebook"></i></a>-->
+            <!--                <a href="#"><i class="fa fa-twitter"></i></a>-->
+            <!--                <a href="#"><i class="fa fa-dribbble"></i></a>-->
+            <!--                <a href="#"><i class="fa fa-behance"></i></a>-->
+            <!--            </div>-->
         </div>
     </div>
 </footer>
+
+<!--By rodrigo-->
+
+<!-- start footer Area -->
+<!--<footer class="footer-area section-gap">-->
+<!--    <div class="container">-->
+<!---->
+<!--        <div class="row footer-bottom d-flex justify-content-between">-->
+<!--            <p class="col-lg-8 col-sm-12 footer-text m-0 text-white"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->-->
+<!--                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>-->
+<!--                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>-->
+<!--            <div class="col-lg-4 col-sm-12 footer-social">-->
+<!--                <a href="#"><i class="fa fa-facebook"></i></a>-->
+<!--                <a href="#"><i class="fa fa-twitter"></i></a>-->
+<!--                <a href="#"><i class="fa fa-dribbble"></i></a>-->
+<!--                <a href="#"><i class="fa fa-behance"></i></a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</footer>-->
 <!-- End footer Area -->
 
 <script src="js/vendor/jquery-2.2.4.min.js"></script>

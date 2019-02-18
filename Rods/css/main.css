@@ -3747,6 +3747,7 @@ body::-webkit-scrollbar-thumb {
 .btn:hover:focus{
   background-color: #FFC107;
   outline-color: #FFC107 ;
+  border: 3px;
 }
 
 
@@ -3757,4 +3758,27 @@ body::-webkit-scrollbar-thumb {
 
 .validation{
   text-align: center;
+}
+
+
+/*Adicionado*/
+.input{
+  margin-left: 3px;
+  padding: 7px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+outline-color: #FFC107 ;
+}
+
+.containerValCode{
+  width: 100%;
+  text-align: center;
+}
+
+.footer-bottomCodeVal {
+  padding-top: 6%;
+  text-align: center;
+  padding-left: 34%;
 }
